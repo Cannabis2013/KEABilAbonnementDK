@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.repository.mysqlregistration;
+package com.example.keabilabonnement.repository.mysql.registration;
 
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 

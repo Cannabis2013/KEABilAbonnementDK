@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.repository.mysqlinspection;
+package com.example.keabilabonnement.repository.mysql.inspection;
 
 import org.springframework.stereotype.Service;
 
