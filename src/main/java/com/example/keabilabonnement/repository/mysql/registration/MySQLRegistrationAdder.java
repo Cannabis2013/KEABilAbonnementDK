@@ -18,6 +18,8 @@ public class MySQLRegistrationAdder {
     public Boolean add(RentalAgreement agreement) {
         agreement.setId(UUID.randomUUID().toString());
         var prepared = statementBuilder.get(statement());
+        if(prepared == null)
+            return false;
         try {
             initValues(prepared,agreement);
             prepared.execute();
@@ -30,18 +32,22 @@ public class MySQLRegistrationAdder {
 
     private String statement(){
         return """
-                    insert into RentalAgreement (StartDate, ExpirationDate, DeliveryDate, Id, CarNumber, CustomerLicense_Id)
-                    values (?,?,?,?,?,?);
+                insert into RentalAgreement (StartDate, 
+                                            ExpirationDate, 
+                                            DeliveryDate, 
+                                            Id, CarNumber, 
+                                            CustomerLicense_Id)
+                values (?,?,?,?,?,?);
                 """;
     }
 
     private PreparedStatement initValues(PreparedStatement statement, RentalAgreement agreement) throws SQLException {
-        statement.setDate(0,toDate(agreement.getStart()));
-        statement.setDate(1,toDate(agreement.getExpiration()));
-        statement.setDate(2,toDate(agreement.getDelevery()));
-        statement.setString(3,agreement.getId());
-        statement.setString(4,agreement.getCar().getCarNumber());
-        statement.setString(5,agreement.getCustomer().getLicenseID());
+        statement.setDate(1,toDate(agreement.getStart()));
+        statement.setDate(2,toDate(agreement.getExpiration()));
+        statement.setDate(3,toDate(agreement.getDelevery()));
+        statement.setString(4,agreement.getId());
+        statement.setString(5,agreement.getCar().getCarNumber());
+        statement.setString(6,agreement.getCustomer().getLicenseID());
         return statement;
     }
 
