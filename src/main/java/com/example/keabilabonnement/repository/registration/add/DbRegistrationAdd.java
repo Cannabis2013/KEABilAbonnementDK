@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.repository.registration.Add;
+package com.example.keabilabonnement.repository.registration.add;
 
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 
