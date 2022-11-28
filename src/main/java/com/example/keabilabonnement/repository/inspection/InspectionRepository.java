@@ -4,11 +4,12 @@ import com.example.keabilabonnement.models.inspection.Report;
 
 import java.util.List;
 
+
 public interface InspectionRepository {
     boolean addReport(Report report);
     boolean removeReport(String id);
-    Report getReport(String id);
+    Report getReportByRental(String id);
     List<Report> getAllReports();
-    List<Report> getAllReports(String rentalID);
+    List<Report> getAllReportsByCarNumber(String rentalID);
     boolean updateReport(Report report);
 }
