@@ -4,8 +4,8 @@ USE bilabonnement;
 CREATE TABLE `Car` (
                        `Brand` varchar(255) DEFAULT NULL,
                        `Model` varchar(255) DEFAULT NULL,
-                       `VIN` varchar(255) DEFAULT NULL,
-                       `Number` varchar(36) NOT NULL,
+                       `VIN` varchar(17) DEFAULT NULL,
+                       `Number` varchar(5) NOT NULL,
                        PRIMARY KEY (`Number`)
 );
 
