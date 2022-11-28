@@ -7,7 +7,7 @@ CREATE TABLE `Car` (
                        `VIN` varchar(255) DEFAULT NULL,
                        `Number` varchar(36) NOT NULL,
                        PRIMARY KEY (`Number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 CREATE TABLE `Customer` (
                             `License_Id` varchar(36) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE `Customer` (
                             `Address` varchar(255) DEFAULT NULL,
                             `PhoneNumber` varchar(255) DEFAULT NULL,
                             PRIMARY KEY (`License_Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 CREATE TABLE `RentalAgreement` (
                                    `StartDate` date DEFAULT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE `RentalAgreement` (
                                    KEY `FKRentalAgre71306` (`CustomerLicense_Id`),
                                    CONSTRAINT `FKRentalAgre182509` FOREIGN KEY (`CarNumber`) REFERENCES `Car` (`Number`),
                                    CONSTRAINT `FKRentalAgre71306` FOREIGN KEY (`CustomerLicense_Id`) REFERENCES `Customer` (`License_Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 CREATE TABLE `DamageReport` (
                                 `Id` varchar(36) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `DamageReport` (
                                 PRIMARY KEY (`Id`),
                                 KEY `FKDamageRepo506364` (`RentalAgreementId`),
                                 CONSTRAINT `FKDamageRepo506364` FOREIGN KEY (`RentalAgreementId`) REFERENCES `RentalAgreement` (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 CREATE TABLE `Damage` (
                           `Type` varchar(255) DEFAULT NULL,
@@ -51,4 +51,4 @@ CREATE TABLE `Damage` (
                           PRIMARY KEY (`Id`),
                           KEY `FKDamage191580` (`DamageReportId`),
                           CONSTRAINT `FKDamage191580` FOREIGN KEY (`DamageReportId`) REFERENCES `DamageReport` (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
