@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.repository.inspection;
+package com.example.keabilabonnement.repository.mysqlinspection;
 
 import com.example.keabilabonnement.models.inspection.Report;
 import org.springframework.stereotype.Service;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class Inspections {
+public class MySQLInspections {
     public Report getInspectionByRental(String rentalID) {
         return null;
     }

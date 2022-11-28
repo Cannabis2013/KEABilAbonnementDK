@@ -1,10 +1,10 @@
-package com.example.keabilabonnement.repository.inspection;
+package com.example.keabilabonnement.repository.mysqlinspection;
 
 import com.example.keabilabonnement.models.inspection.Report;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DbInspectionUpdater {
+public class MySQLInspectionUpdater {
     public boolean update(Report report) {
         return false;
     }
