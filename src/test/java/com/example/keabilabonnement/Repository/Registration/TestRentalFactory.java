@@ -4,9 +4,7 @@ import com.example.keabilabonnement.models.cars.Car;
 import com.example.keabilabonnement.models.customers.Customer;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
-import java.util.Random;
 import java.util.UUID;
 
 @Service
@@ -25,13 +23,13 @@ class TestRentalFactory {
 
     private RentalAgreement agreement(){
         var reg = new RentalAgreement();
-        reg.setId(randomID());
+        reg.setId("42a90b5e-bc1a-4380-aa34-d47c21fc617b");
         return reg;
     }
 
     private Car randomCar(){
         var car = new Car();
-        car.setCarNumber(randomNumberAsString());
+        car.setCarNumber("TS116");
         car.setId(randomID());
         return car;
     }
@@ -39,17 +37,11 @@ class TestRentalFactory {
     private Customer randomCustomer(){
         var customer = new Customer();
         customer.setId(randomID());
-        customer.setLicenseID(randomNumberAsString());
+        customer.setLicenseID("12345678");
         return customer;
     }
 
     private String randomID(){
         return UUID.randomUUID().toString();
-    }
-
-    private String randomNumberAsString(){
-        var rand = new Random();
-        var randVal = rand.nextInt(100000);
-        return String.valueOf(randVal);
     }
 }

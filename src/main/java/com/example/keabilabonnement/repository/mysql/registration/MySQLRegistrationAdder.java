@@ -7,7 +7,6 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Service
 public class MySQLRegistrationAdder {
@@ -16,7 +15,6 @@ public class MySQLRegistrationAdder {
     }
 
     public Boolean add(RentalAgreement agreement) {
-        agreement.setId(UUID.randomUUID().toString());
         var prepared = statementBuilder.get(statement());
         if(prepared == null)
             return false;
