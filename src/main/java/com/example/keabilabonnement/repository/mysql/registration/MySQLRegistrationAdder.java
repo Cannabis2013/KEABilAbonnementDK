@@ -29,10 +29,11 @@ public class MySQLRegistrationAdder {
         return """
                 insert into RentalAgreement (StartDate, 
                                             ExpirationDate, 
-                                            DeliveryDate, 
+                                            DeliveryDate,
+                                            Payment,
                                             Id, CarNumber, 
                                             CustomerLicense_Id)
-                values (?,?,?,?,?,?);
+                values (?,?,?,?,?,?,?);
                 """;
     }
 
@@ -40,9 +41,10 @@ public class MySQLRegistrationAdder {
         statement.setDate(1,toDate(agreement.getStart()));
         statement.setDate(2,toDate(agreement.getExpiration()));
         statement.setDate(3,toDate(agreement.getDelevery()));
-        statement.setString(4,agreement.getId());
-        statement.setString(5,agreement.getCar().getCarNumber());
-        statement.setString(6,agreement.getCustomer().getLicenseID());
+        statement.setDouble(4,agreement.getPayment());
+        statement.setString(5,agreement.getId());
+        statement.setString(6,agreement.getCar().getCarNumber());
+        statement.setString(7,agreement.getCustomer().getLicenseID());
         return statement;
     }
 

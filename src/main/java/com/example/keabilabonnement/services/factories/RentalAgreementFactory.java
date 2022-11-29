@@ -16,6 +16,7 @@ public class RentalAgreementFactory {
         rentalAgreement.setExpiration(set.getDate("ExpirationDate").toLocalDate());
         rentalAgreement.setDelevery(set.getDate("DeliveryDate").toLocalDate());
         rentalAgreement.setId(set.getString("Id"));
+        rentalAgreement.setPayment(set.getDouble("Payment"));
 
         Car car = new Car();
         car.setCarNumber(set.getString("Number"));

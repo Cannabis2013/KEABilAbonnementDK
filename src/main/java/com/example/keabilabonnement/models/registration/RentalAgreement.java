@@ -10,6 +10,7 @@ public class RentalAgreement extends Entity {
     private LocalDate expiration;
     private LocalDate delevery;
     private Customer customer;
+    private double payment;
 
     private Car car;
 
@@ -51,5 +52,13 @@ public class RentalAgreement extends Entity {
 
     public void setCar(Car car) {
         this.car = car;
+    }
+
+    public double getPayment() {
+        return payment;
+    }
+
+    public void setPayment(double payment) {
+        this.payment = payment;
     }
 }

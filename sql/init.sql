@@ -22,6 +22,7 @@ CREATE TABLE `RentalAgreement` (
                                    `StartDate` date DEFAULT NULL,
                                    `ExpirationDate` date DEFAULT NULL,
                                    `DeliveryDate` date DEFAULT NULL,
+                                   `Payment` double DEFAULT NULL,
                                    `Id` varchar(36) NOT NULL,
                                    `CarNumber` varchar(36) NOT NULL,
                                    `CustomerLicense_Id` varchar(36) NOT NULL,
