@@ -6,6 +6,6 @@ import com.example.keabilabonnement.models.customers.Customer;
 import java.util.List;
 
 public interface CarCustomerRepository {
-    List<Car> getCar();
+    List<Car> getCars();
     List<Customer> getCustomers();
 }
