@@ -11,6 +11,7 @@ public class Customer extends Entity {
     private String address;
     private String phoneNumber;
 
+
     public String getName() {
         return name;
     }
