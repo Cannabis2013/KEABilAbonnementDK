@@ -5,6 +5,24 @@ import com.example.keabilabonnement.models.entity.Entity;
 public class Car extends Entity {
     private String carNumber;
     private String vin;
+    private String brand;
+    private String model;
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getBrand() {
+        return this.brand;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getModel() {
+        return this.model;
+    }
 
     public String getCarNumber() {
         return carNumber;
