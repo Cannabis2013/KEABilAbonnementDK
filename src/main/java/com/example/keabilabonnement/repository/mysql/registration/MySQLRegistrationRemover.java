@@ -9,13 +9,16 @@ import java.sql.SQLException;
 public class MySQLRegistrationRemover {
     public boolean remove(String id) {
         try {
-            return DBConnection.statement("""
+            var statement = DBConnection.statement("""
                     DELETE FROM RentalAgreement
                     WHERE id = ?;
-                    """).setString(1,id).execute();
+                    """);
+            statement.setString(1,id);
+            statement.execute();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return true;
     }
 }
