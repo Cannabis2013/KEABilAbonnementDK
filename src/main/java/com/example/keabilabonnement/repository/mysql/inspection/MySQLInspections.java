@@ -11,9 +11,9 @@ public class MySQLInspections {
         return null;
     }
 
-    public Report getInspectionByCarNumber(String number) {
+   /* public Report getInspectionByCarNumber(String number) {
         return null;
-    }
+    } */
 
     public List<Report> getAllInspections() {
         return null;
