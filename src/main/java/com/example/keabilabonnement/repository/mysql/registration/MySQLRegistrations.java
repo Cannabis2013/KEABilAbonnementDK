@@ -2,7 +2,7 @@ package com.example.keabilabonnement.repository.mysql.registration;
 
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.db.DBConnection;
-import com.example.keabilabonnement.services.factories.registration.RegistrationFactory;
+import com.example.keabilabonnement.services.factories.registration.RentalAgreementFactory;
 import org.springframework.stereotype.Service;
 
 import java.sql.PreparedStatement;
@@ -13,8 +13,8 @@ import java.util.List;
 
 @Service
 public class MySQLRegistrations {
-    public MySQLRegistrations(RegistrationFactory registrationFactory) {
-        this.registrationFactory = registrationFactory;
+    public MySQLRegistrations(RentalAgreementFactory rentalAgreementFactory) {
+        this.rentalAgreementFactory = rentalAgreementFactory;
     }
 
     public RentalAgreement getRegistration(String id){
@@ -32,7 +32,7 @@ public class MySQLRegistrations {
             PreparedStatement statement = DBConnection.statement(sql);
             statement.setString(1, id);
             ResultSet set = statement.executeQuery();
-            return registrationFactory.fromResultSet(set);
+            return rentalAgreementFactory.fromResultSet(set);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -53,7 +53,7 @@ public class MySQLRegistrations {
             PreparedStatement query = DBConnection.statement(sql);
             ResultSet set = query.executeQuery();
             while (set.next()) {
-                rentalAgreements.add(registrationFactory.fromResultSet(set));
+                rentalAgreements.add(rentalAgreementFactory.fromResultSet(set));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -75,7 +75,7 @@ public class MySQLRegistrations {
             PreparedStatement query = DBConnection.statement(sql);
             ResultSet set = query.executeQuery();
             while (set.next()) {
-                rentalAgreements.add(registrationFactory.fromResultSet(set));
+                rentalAgreements.add(rentalAgreementFactory.fromResultSet(set));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,5 +83,5 @@ public class MySQLRegistrations {
         return rentalAgreements;
     }
 
-    private final RegistrationFactory registrationFactory;
+    private final RentalAgreementFactory rentalAgreementFactory;
 }
