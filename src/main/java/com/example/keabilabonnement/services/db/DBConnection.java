@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.services;
+package com.example.keabilabonnement.services.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

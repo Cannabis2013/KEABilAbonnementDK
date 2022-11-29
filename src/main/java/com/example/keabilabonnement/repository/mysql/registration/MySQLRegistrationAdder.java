@@ -1,9 +1,9 @@
 package com.example.keabilabonnement.repository.mysql.registration;
 
-import com.example.keabilabonnement.contracts.db.DbStatement;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
-import com.example.keabilabonnement.services.db.DbPreparedStatement;
+import com.example.keabilabonnement.services.db.DBConnection;
 import org.springframework.stereotype.Service;
+
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -16,7 +16,7 @@ public class MySQLRegistrationAdder {
 
     public Boolean add(RentalAgreement agreement) {
         try {
-            var prepared = DbPreparedStatement.get(statement());
+            var prepared = DBConnection.statement(statement());
             initValues(prepared,agreement).execute();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
