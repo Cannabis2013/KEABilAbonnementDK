@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Service
-public class RegistrationFactory {
+public class RentalAgreementFactory {
     public RentalAgreement fromResultSet(ResultSet set) throws SQLException {
         RentalAgreement rentalAgreement = new RentalAgreement();
         rentalAgreement.setStart(set.getDate("StartDate").toLocalDate());
