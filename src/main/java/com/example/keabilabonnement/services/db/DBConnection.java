@@ -1,9 +1,8 @@
 package com.example.keabilabonnement.services.db;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import com.example.keabilabonnement.models.Db.MySQLStatement;
+
+import java.sql.*;
 
 // A singleton class for DB connection, meaning there is only one instance for the entirety of the program.
 // There can be only one! (Highlander=)
@@ -39,7 +38,7 @@ public class DBConnection {
         return instance;
     }
 
-    public static PreparedStatement statement(String sql) throws SQLException {
+    public static MySQLStatement statement(String sql) throws SQLException {
         //initializing connection
         DBConnection instance = DBConnection.getInstance();
         //get connection
@@ -47,7 +46,17 @@ public class DBConnection {
         //if conn is not established, throws exception
         if (conn == null)
             throw new SQLException();
-        return conn.prepareStatement(sql);
+        return new MySQLStatement(conn.prepareStatement(sql));
+    }
+
+    public static ResultSet runQuery(String query) throws SQLException {
+        DBConnection instance = DBConnection.getInstance();
+        //get connection
+        Connection conn = instance.connection;
+        //if conn is not established, throws exception
+        if (conn == null)
+            throw new SQLException();
+        return conn.prepareStatement(query).executeQuery();
     }
 
 }

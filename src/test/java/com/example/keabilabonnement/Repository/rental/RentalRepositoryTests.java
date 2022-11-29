@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class TestRegistrationServices {
+public class RentalRepositoryTests {
     @AfterAll
     void cleanUp(){
         cleaner.cleanUp();
@@ -27,7 +27,7 @@ public class TestRegistrationServices {
     private MySQLRegistrationAdder dbRegistrationAdder;
 
     @Autowired
-    private TestRentalFactory rentalFactory;
+    private RentalFactoryTest rentalFactory;
 
     @Autowired
     private RentalTestCleanup cleaner;

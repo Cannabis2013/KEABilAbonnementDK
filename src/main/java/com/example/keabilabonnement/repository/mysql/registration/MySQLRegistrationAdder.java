@@ -1,11 +1,11 @@
 package com.example.keabilabonnement.repository.mysql.registration;
 
+import com.example.keabilabonnement.models.Db.MySQLStatement;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.db.DBConnection;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -36,14 +36,13 @@ public class MySQLRegistrationAdder {
                 """;
     }
 
-    private PreparedStatement initValues(PreparedStatement statement, RentalAgreement agreement) throws SQLException {
-        statement.setDate(1,toDate(agreement.getStart()));
-        statement.setDate(2,toDate(agreement.getExpiration()));
-        statement.setDate(3,toDate(agreement.getDelevery()));
-        statement.setString(4,agreement.getId());
-        statement.setString(5,agreement.getCar().getCarNumber());
-        statement.setString(6,agreement.getCustomer().getLicenseID());
-        return statement;
+    private MySQLStatement initValues(MySQLStatement statement, RentalAgreement agreement) throws SQLException {
+        return statement.setDate(1,agreement.getStart())
+                .setDate(2,agreement.getExpiration())
+                .setDate(3,agreement.getDelevery())
+                .setString(4,agreement.getId())
+                .setString(5,agreement.getCar().getCarNumber())
+                .setString(6,agreement.getCustomer().getLicenseID());
     }
 
     private Date toDate(LocalDate date){
