@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.Repository.Registration;
+package com.example.keabilabonnement.Repository.rental;
 
 import com.example.keabilabonnement.models.cars.Car;
 import com.example.keabilabonnement.models.customers.Customer;

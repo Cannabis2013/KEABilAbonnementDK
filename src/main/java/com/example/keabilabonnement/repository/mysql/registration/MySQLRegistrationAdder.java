@@ -2,6 +2,7 @@ package com.example.keabilabonnement.repository.mysql.registration;
 
 import com.example.keabilabonnement.contracts.db.DbStatement;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
+import com.example.keabilabonnement.services.db.DbPreparedStatement;
 import org.springframework.stereotype.Service;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -10,17 +11,13 @@ import java.time.LocalDate;
 
 @Service
 public class MySQLRegistrationAdder {
-    public MySQLRegistrationAdder(DbStatement statementBuilder) {
-        this.statementBuilder = statementBuilder;
+    public MySQLRegistrationAdder() {
     }
 
     public Boolean add(RentalAgreement agreement) {
-        var prepared = statementBuilder.get(statement());
-        if(prepared == null)
-            return false;
         try {
-            initValues(prepared,agreement);
-            prepared.execute();
+            var prepared = DbPreparedStatement.get(statement());
+            initValues(prepared,agreement).execute();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return false;
@@ -52,6 +49,4 @@ public class MySQLRegistrationAdder {
     private Date toDate(LocalDate date){
         return Date.valueOf(date);
     }
-
-    private final DbStatement statementBuilder;
 }
