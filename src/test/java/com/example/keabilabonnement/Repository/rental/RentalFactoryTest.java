@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Service
-class TestRentalFactory {
+class RentalFactoryTest {
     public RentalAgreement rentalOne(){
         var rental = agreement();
         rental.setCar(randomCar());
