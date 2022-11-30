@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.services.factories.registration;
+package com.example.keabilabonnement.services.factories;
 
 import com.example.keabilabonnement.models.inspection.Damage;
 import com.example.keabilabonnement.models.inspection.Report;
@@ -6,9 +6,21 @@ import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 @Service
 public class DamageReportFactory {
+    public Report emptyReport() {
+        Report report = new Report();
+        report.setId(UUID.randomUUID().toString());
+        return report;
+    }
+
+    public Damage emptyDamage() {
+        Damage damage = new Damage();
+        damage.setId(UUID.randomUUID().toString());
+        return damage;
+    }
 
     public Damage damageFromResultSet(ResultSet set) throws SQLException {
         Damage damage = new Damage();

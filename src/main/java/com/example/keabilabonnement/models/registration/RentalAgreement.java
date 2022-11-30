@@ -12,7 +12,6 @@ public class RentalAgreement extends Entity {
     private LocalDate delevery;
     private Customer customer;
     private double payment;
-
     private Car car;
 
     public LocalDate getStart() {

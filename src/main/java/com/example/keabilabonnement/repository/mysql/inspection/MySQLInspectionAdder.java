@@ -15,7 +15,6 @@ import java.util.UUID;
 public class MySQLInspectionAdder {
 
     public Boolean add(Report newDamageReport) {
-        newDamageReport.setId(UUID.randomUUID().toString());//Randomized Id is given.
         try {
             PreparedStatement damageReport = DBConnection.statement(//Connection established.
                     "INSERT INTO DamageReport " +//MySQL Statement
@@ -33,7 +32,6 @@ public class MySQLInspectionAdder {
     }
 
     public Boolean addDamage(Damage newDamage) {//Add damages to damage report.
-        newDamage.setId(UUID.randomUUID().toString());//Random id given to damages.
         try {
             PreparedStatement damages = DBConnection.statement(//Db connection established & MySQL Statement
                     """

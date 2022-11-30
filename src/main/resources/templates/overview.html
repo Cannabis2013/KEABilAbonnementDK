@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/global.css">
+    <link rel="stylesheet" th:href="@{/css/global.css}"/>
+</head>
+<body>
+    <div class="container">
+        <!--    Import navbar fragment    -->
+        <!--    Import page title fragment    -->
+        <!--    Price for cars   -->
+        <!--    Import filter bar fragment    -->
+
+        <!--    Import card fragment    -->
+        <div th:each="agreement : ${agreements}">
+            <div th:replace="/fragments/overview/card.html :: card(${agreement})"/>
+        </div>
+    </div>
+</body>
+</html>
