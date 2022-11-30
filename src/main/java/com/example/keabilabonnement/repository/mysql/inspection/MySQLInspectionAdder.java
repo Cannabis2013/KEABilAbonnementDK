@@ -22,8 +22,8 @@ public class MySQLInspectionAdder {
                             "(Date, " +
                             "RentalAgreementId) " +
                             "VALUES (?, ?)");
-            damageReport.setDate(1, newDamageReport.getDate());
-            damageReport.setInt(2, newDamageReport.getId());
+            damageReport.setDate(1, Date.valueOf(newDamageReport.getDate()));
+            damageReport.setString(2, newDamageReport.getId());
             damageReport.executeUpdate();
         } catch (SQLException e) {
             printDbError(e);
@@ -33,21 +33,25 @@ public class MySQLInspectionAdder {
     }
 
     public Boolean addDamage(Damage newDamage) {
+        newDamage.setId(UUID.randomUUID().toString());
         try {
             PreparedStatement damages = DBConnection.statement(
-                    "INSERT INTO Damage " +
-                            "(Type, " +
-                            "Description, " +
-                            "Date, " +
-                            "Cost, " +
-                            "Id, " +
-                            "DamageReportId)");
+                    """
+                            INSERT INTO Damage
+                            (Type,
+                            Description,
+                            Date,
+                            Cost,
+                            Id,
+                            DamageReportId)
+                            VALUES (?, ?, ?, ?, ?, ?)
+                            """);
             damages.setString(1, newDamage.getType());
             damages.setString(2, newDamage.getDescription());
-            damages.setDate(3, (Date) newDamage.getDate());
+            damages.setDate(3, Date.valueOf(newDamage.getDate()));
             damages.setDouble(4, newDamage.getCost());
-            damages.setInt(5, newDamage.getId());
-            damages.setInt(6, newDamage.getDamageReportId());
+            damages.setString(5, newDamage.getId());
+            damages.setString(6, newDamage.getReportID());
 
         } catch (SQLException e) {
             printDbError(e);
@@ -61,49 +65,3 @@ public class MySQLInspectionAdder {
         dbError.printStackTrace();
     }
 }
-/*
-
-@Service
-public class MySQLRegistrationAdder {
-    public MySQLRegistrationAdder() {
-    }
-
-    public Boolean add(RentalAgreement agreement) {
-        try {
-            var prepared = DBConnection.statement(statement());
-            initValues(prepared,agreement).execute();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-        return true;
-    }
-
-    private String statement(){
-        return """
-        insert into RentalAgreement (StartDate,
-                                    ExpirationDate,
-                                    DeliveryDate,
-                                    Payment,
-                                    Id, CarNumber,
-                                    CustomerLicense_Id)
-        values (?,?,?,?,?,?,?);
-        """;
-    }
-
-    private PreparedStatement initValues(PreparedStatement statement, RentalAgreement agreement) throws SQLException {
-        statement.setDate(1,toDate(agreement.getStart()));
-        statement.setDate(2,toDate(agreement.getExpiration()));
-        statement.setDate(3,toDate(agreement.getDelevery()));
-        statement.setDouble(4,agreement.getPayment());
-        statement.setString(5,agreement.getId());
-        statement.setString(6,agreement.getCar().getCarNumber());
-        statement.setString(7,agreement.getCustomer().getLicenseID());
-        return statement;
-    }
-
-    private Date toDate(LocalDate date){
-        return Date.valueOf(date);
-    }
-        }*/
-
