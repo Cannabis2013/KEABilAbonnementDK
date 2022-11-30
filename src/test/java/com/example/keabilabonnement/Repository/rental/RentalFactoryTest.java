@@ -30,13 +30,11 @@ class RentalFactoryTest {
     private Car randomCar(){
         var car = new Car();
         car.setCarNumber("TS116");
-        car.setId(randomID());
         return car;
     }
 
     private Customer randomCustomer(){
         var customer = new Customer();
-        customer.setId(randomID());
         customer.setLicenseID("12345678");
         return customer;
     }

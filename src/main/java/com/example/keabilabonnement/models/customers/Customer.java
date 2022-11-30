@@ -4,7 +4,7 @@ import com.example.keabilabonnement.models.entity.Entity;
 
 import java.time.LocalDate;
 
-public class Customer extends Entity {
+public class Customer {
     private String licenseID;
     private String name;
     private LocalDate birthday;

@@ -1,15 +1,16 @@
 package com.example.keabilabonnement.models.inspection;
 
+import com.example.keabilabonnement.models.entity.Entity;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Report {
+public class Report extends Entity {
     private RentalAgreement rentalAgreement;
-    private List<Damage> damages;
+    private List<Damage> damages = new ArrayList<>();
     private LocalDate date;
-    private String id;
     private String rentalId;
 
     public String getRentalId() {
@@ -36,19 +37,16 @@ public class Report {
         this.damages.add(damage);
     }
 
+    public void setDamages(List<Damage> damages) {
+        this.damages = damages;
+    }
+
+
     public LocalDate getDate() {
         return date;
     }
 
     public void setDate(LocalDate date) {
         this.date = date;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }

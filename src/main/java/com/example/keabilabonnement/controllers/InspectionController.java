@@ -1,7 +1,8 @@
 package com.example.keabilabonnement.controllers;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+
+@RestController
 public class InspectionController {
 }

@@ -12,11 +12,12 @@ public class DamageReportFactory {
 
     public Damage damageFromResultSet(ResultSet set) throws SQLException {
         Damage damage = new Damage();
-        damage.setId(set.getString("Id"));
-        damage.setDate(set.getDate("Date").toLocalDate());
-        damage.setType(set.getString("Type"));
-        damage.setDescription(set.getString("Description"));
-        damage.setCost(set.getDouble("Cost"));
+        damage.setId(set.getString("Damage.Id"));
+        damage.setDate(set.getDate("Damage.Date").toLocalDate());
+        damage.setType(set.getString("Damage.Type"));
+        damage.setDescription(set.getString("Damage.Description"));
+        damage.setCost(set.getDouble("Damage.Cost"));
+        damage.setReportID(set.getString("Damage.DamageReportId"));
         return damage;
     }
 

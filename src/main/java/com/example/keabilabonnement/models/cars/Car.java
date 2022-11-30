@@ -2,7 +2,7 @@ package com.example.keabilabonnement.models.cars;
 
 import com.example.keabilabonnement.models.entity.Entity;
 
-public class Car extends Entity {
+public class Car {
     private String carNumber;
     private String vin;
     private String brand;
