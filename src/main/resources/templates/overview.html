@@ -2,14 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Overview</title>
     <link href="../static/css/global.css">
     <link rel="stylesheet" th:href="@{/css/global.css}"/>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}"/>
 </head>
 <body>
     <div class="container">
         <!--    Import navbar fragment    -->
-        <div th:replace="/fragments/navbar.html :: overviewNavBar"></div>
+        <div th:insert="/fragments/navbar.html :: overviewNavBar"></div>
         <!--    Import page title fragment    -->
         <!--    Price for cars   -->
         <!--    Import filter bar fragment    -->
