@@ -1,0 +1,60 @@
+.agr-form-grid{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 506px;
+    column-gap: 15px;
+}
+
+.label-row{
+    display: grid;
+    grid-auto-flow: row;
+    grid-column: span 2;
+    align-items: start;
+    align-content: start;
+    justify-content: start;
+    justify-items: start;
+
+}
+
+#label-font{
+    color: #828692;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-size: 15px;
+
+    padding: 0;
+    margin: 0;
+
+}
+
+.ipts-row{
+    display: grid;
+    grid-auto-flow: row;
+
+}
+
+.ipt-title-font{
+    font-family: 'Inter', serif;
+    font-style: normal;
+    color: #A4AAB4;
+}
+
+.submit-btn{
+    border-radius: 20px;
+    grid-column: span 2;
+    align;
+    width:64px;
+}
+
+.div-border{
+    border: 1px solid white;
+}
+
+.ipt-date{
+
+}
+
+h1,p{
+    padding: 0;
+    margin: 0;
+}

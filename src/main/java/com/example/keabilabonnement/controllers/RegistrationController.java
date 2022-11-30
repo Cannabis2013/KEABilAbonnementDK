@@ -40,7 +40,7 @@ public class RegistrationController {
         model.addAttribute("agreement", agreement);
         model.addAttribute("cars", cars);
         model.addAttribute("customers", customers);
-        return "/forms/CreateAgreement";
+        return "/forms/create_agreement";
     }
 
     @PostMapping("/rental/new")
