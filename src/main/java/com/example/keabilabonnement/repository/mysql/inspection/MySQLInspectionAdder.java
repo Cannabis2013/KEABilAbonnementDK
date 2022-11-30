@@ -9,28 +9,30 @@ import org.springframework.stereotype.Service;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.UUID;
 
 @Service
 public class MySQLInspectionAdder {
 
-    public Boolean add(Report newDamageReport, Damage newDamage) {
+    public Boolean add(Report newDamageReport) {
+        newDamageReport.setId(UUID.randomUUID().toString());
         try {
             PreparedStatement damageReport = DBConnection.statement(
                     "INSERT INTO DamageReport " +
                             "(Date, " +
-                            "RentalAgrementId) " +
+                            "RentalAgreementId) " +
                             "VALUES (?, ?)");
             damageReport.setDate(1, newDamageReport.getDate());
             damageReport.setInt(2, newDamageReport.getId());
             damageReport.executeUpdate();
-            addDamages(newDamage);//??
         } catch (SQLException e) {
             printDbError(e);
+            return false;
         }
         return true;
     }
 
-    public Boolean addDamages(Damage newDamage) {
+    public Boolean addDamage(Damage newDamage) {
         try {
             PreparedStatement damages = DBConnection.statement(
                     "INSERT INTO Damage " +
@@ -49,6 +51,7 @@ public class MySQLInspectionAdder {
 
         } catch (SQLException e) {
             printDbError(e);
+            return false;
         }
         return true;
     }
