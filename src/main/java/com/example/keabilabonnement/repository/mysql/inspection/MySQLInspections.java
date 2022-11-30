@@ -4,8 +4,8 @@ import com.example.keabilabonnement.models.inspection.Damage;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.db.DBConnection;
+import com.example.keabilabonnement.services.factories.DamageReportFactory;
 import com.example.keabilabonnement.services.factories.RentalAgreementFactory;
-import com.example.keabilabonnement.services.factories.registration.DamageReportFactory;
 import org.springframework.stereotype.Service;
 
 import java.sql.PreparedStatement;
