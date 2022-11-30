@@ -1,14 +1,14 @@
 package com.example.keabilabonnement.models.inspection;
 
+import com.example.keabilabonnement.models.entity.Entity;
 
 import java.time.LocalDate;
 
-public class Damage {
+public class Damage extends Entity {
     private String type;
     private String description;
     private LocalDate date;
     private double cost;
-    private String id;
     private String reportID;
 
 
@@ -50,13 +50,5 @@ public class Damage {
 
     public void setCost(double cost) {
         this.cost = cost;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }
