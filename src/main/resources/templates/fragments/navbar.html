@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Navbar</title>
-    <link href="../static/css/global.css">
-    <link rel="stylesheet" th:href="@{/css/global.css}"/>
-    <link rel="stylesheet" th:href="@{/css/navbar.css}"/>
-</head>
-<body>
-
-    <nav class="overviewNavBar" th:fragment="overviewNavBar">
-
-
-        <div class="navbarBox">
-
+<nav class="overviewNavBar" th:fragment="overviewNavBar">
+    <div class="navbarBox">
         <a class="navbarHome" th:href="@{/overview}">Bilabonnement.dk A/S</a>
         <a class="navbarNewAgreement" th:href="@{/}">Opret lejeaftaler</a>
-
-        </div>
-
-    </nav>
-
-</body>
-
-</html>
+    </div>
+</nav>
