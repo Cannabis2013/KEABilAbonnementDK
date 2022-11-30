@@ -14,6 +14,7 @@ public class ConsoleInformation {
                     Nikki Delerian aka Nikki Delorian
                 
                 Endpoints:
+                    Root: http://localhost:8080/
                     Agreement overview: http://localhost:8080/overview
                     Create agreement: http://localhost:8080/rental/new
                 """);
