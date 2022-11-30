@@ -23,11 +23,20 @@ public class RegistrationController {
         this.agreementFactory = agreementFactory;
     }
 
+    @GetMapping("/")
+    public String index() {
+        return "redirect:/overview";
+    }
 
     // Rental overview
     @GetMapping("/overview")
     public String get(Model model) {
         List<RentalAgreement> registrations = repository.getAllActiveRegistrations();
+        int activeCount = registrations.size();
+        int totalCarCount = auxiliary.getCars().size();
+        int inactiveCount = totalCarCount-activeCount;
+        model.addAttribute("activeCount", activeCount);
+        model.addAttribute("inactiveCount", inactiveCount);
         model.addAttribute("registrations", registrations);
         return "overview";
     }
