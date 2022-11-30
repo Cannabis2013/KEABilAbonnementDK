@@ -2,7 +2,7 @@ package com.example.keabilabonnement.repository.mysql.registration;
 
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.db.DBConnection;
-import com.example.keabilabonnement.services.factories.registration.RentalAgreementFactory;
+import com.example.keabilabonnement.services.factories.RentalAgreementFactory;
 import org.springframework.stereotype.Service;
 
 import java.sql.PreparedStatement;

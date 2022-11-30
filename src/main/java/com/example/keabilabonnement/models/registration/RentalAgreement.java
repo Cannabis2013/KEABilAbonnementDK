@@ -3,6 +3,7 @@ package com.example.keabilabonnement.models.registration;
 import com.example.keabilabonnement.models.cars.Car;
 import com.example.keabilabonnement.models.customers.Customer;
 import com.example.keabilabonnement.models.entity.Entity;
+
 import java.time.LocalDate;
 
 public class RentalAgreement extends Entity {
