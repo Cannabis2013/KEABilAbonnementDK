@@ -12,53 +12,51 @@
   <!-- Top panel section
   <top fragment>
   -->
-  <div class="agr-form-grid">
-    <div class="label-row div-border">
-      <h1>Lejekontrakt</h1>
-      <div id="label-font">Opret en ny kontrakt</div>
-    </div>
-    <div class="ipts-row">
-      <!-- Customer name-->
-      <p class="ipt-title-font">Title</p>
-      <input class="ipt-text">
-    </div>
-    <div class="ipts-row">
-      <!-- Start date-->
-      <p class="ipt-title-font">Title</p>
-      <input type="date" class="ipt-date">
-    </div>
-    <div class="ipts-row">
-      <!-- License id-->
-      <p class="ipt-title-font">Title</p>
-      <input class="ipt-text">
-    </div>
-    <div class="ipts-row">
-      <!-- End date-->
-      <p class="ipt-title-font">Title</p>
-      <input type="date" class="ipt-date">
-    </div>
-    <div class="ipts-row">
-      <!-- Customer address-->
-      <p class="ipt-title-font">Title</p>
-      <input class="ipt-text">
-    </div>
-    <div class="ipts-row">
-      <!-- Customer birthday-->
-      <p class="ipt-title-font">Title</p>
-      <input type="date" class="ipt-date">
-    </div>
-    <div class="ipts-row">
-      <!-- Customer phone number-->
-      <p class="ipt-title-font">Title</p>
-      <input class="ipt-text">
-    </div>
-    <div class="ipts-row">
-      <!-- Customer car number-->
-      <p class="ipt-title-font">Title</p>
-      <select class="ipt-date"></select>
-    </div>
-    <input class="submit-btn" type="submit" th:text="Opret">
+  <div th:replace="/fragments/navbar.html :: overviewNavBar"></div>
+  <div class="label-row">
+    <h1 style="color: white">Lejekontrakt</h1>
+    <div id="label-font">Opret en ny kontrakt</div>
   </div>
+  <div class="form form-dims form-grid">
+    <div class="ipts-row ipts-row-dims">
+      <label for="customer-name" >Title</label>
+      <input id="customer-name" name="customer-name" class="ipt-text">
+    </div>
+    <div class="ipts-row ipts-row-dims">
+      <label for="start-date">Title</label>
+      <input type="date" id="start-date" name="start-date" class="ipt-date">
+    </div>
+    <div class="ipts-row ipts-row-dims">
+      <!-- License id-->
+      <label for="license-id">Title</label>
+      <input id="license-id" name="license-id" class="ipt-text">
+    </div>
+    <div class="ipts-row ipts-row-dims">
+      <!-- End date-->
+      <label for="end-date">Title</label>
+      <input id="end-date" name="end-date" type="date" class="ipt-date">
+    </div>
+    <div class="ipts-row ipts-row-dims">
+      <label for="customer-address">Title</label>
+      <input id="customer-address" name="customer-address" class="ipt-text">
+    </div>
+    <div class="ipts-row ipts-row-dims">
+      <label for="customer-birth">Title</label>
+      <input id="customer-birth" name="customer-birth" type="date" class="ipt-date">
+    </div>
+    <div class="ipts-row ipts-row-dims">
+      <label for="customer-phone" class="ipt-label">Title</label>
+      <input id="customer-phone" name="customer-phone" class="ipt-text">
+    </div>
+    <div class="ipts-row ipts-row-dims">
+      <label for="cars" class="ipt-label">Vognnummer</label>
+      <select name="cars" id="cars" class="ipt-date">
+        <option value="TS 116">TS 116</option>
+        <option value="TS 166"> TS 166 </option>
+      </select>
+    </div>
+  </div>
+  <div class="btn-flex"><input class="submit-btn" type="submit"></div>
 </div>
 </body>
 </html>
