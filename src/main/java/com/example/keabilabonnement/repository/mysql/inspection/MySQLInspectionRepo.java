@@ -12,7 +12,7 @@ public class MySQLInspectionRepo implements InspectionRepository {
     private final MySQLInspectionAdder inspectionAdder;
     private final MySQLInspections inspections;
     private final DbInspectionRemover inspectionRemover;
-    private final MySQLInspectionUpdater inspectionUpdater;
+    private final MySQLInspectionUpdater_imp1 inspectionUpdater;
 
     @Override
     public boolean addReport(Report report) {
@@ -45,7 +45,7 @@ public class MySQLInspectionRepo implements InspectionRepository {
         return inspectionUpdater.update(report);
     }
 
-    public MySQLInspectionRepo(MySQLInspectionAdder inspectionAdder, MySQLInspections inspections, DbInspectionRemover inspectionRemover, MySQLInspectionUpdater inspectionUpdater) {
+    public MySQLInspectionRepo(MySQLInspectionAdder inspectionAdder, MySQLInspections inspections, DbInspectionRemover inspectionRemover, MySQLInspectionUpdater_imp1 inspectionUpdater) {
         this.inspectionAdder = inspectionAdder;
         this.inspections = inspections;
         this.inspectionRemover = inspectionRemover;
