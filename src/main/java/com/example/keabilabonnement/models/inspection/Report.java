@@ -1,14 +1,13 @@
 package com.example.keabilabonnement.models.inspection;
 
-import java.sql.Time;
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Report {
 
     private int id;
-    private Time date;
+    private Date date;
 
-    public Report(int id, Time date) {
+    public Report(int id, Date date) {
         this.id = id;
         this.date = date;
     }
@@ -21,11 +20,11 @@ public class Report {
         this.id = id;
     }
 
-    public Time getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Time date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }
