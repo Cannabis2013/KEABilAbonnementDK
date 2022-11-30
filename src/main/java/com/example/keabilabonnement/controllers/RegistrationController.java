@@ -23,6 +23,10 @@ public class RegistrationController {
         this.agreementFactory = agreementFactory;
     }
 
+    @GetMapping("/")
+    public String index() {
+        return "redirect:/overview";
+    }
 
     // Rental overview
     @GetMapping("/overview")
