@@ -1,7 +1,68 @@
+.top__line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.agreement__info {
+    display: flex;
+    margin-top: 20px;
+    justify-content: end;
+    flex-grow: 1;
+    height: 79px;
+}
+
+.agreement__info__grid {
+    display: grid;
+    width: 100%;
+    gap: 24px;
+    grid-template-columns: 1fr 2fr;
+}
+
+.agreement__info__grid__card {
+    background-color: #161928;
+    border-radius: 11px;
+    border: 2px solid #292D38;
+}
+
+.agreement__info__grid__card {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.agreement__info__grid__card label {
+    color: #A4AAB4;
+    font-weight: bold;
+}
+.agreement__info__text {
+   color: white;
+}
+
+.agreement__info__subgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-content: center;
+    height: 100%;
+}
+.agreement__info__item {
+    display: grid;
+    place-content: center;
+    gap: 12px;
+    height: 100%;
+}
+
+.agreement__info__item__single {
+    display: grid;
+    place-content: center;
+    gap: 12px;
+    height: 100%;
+}
+
 .card__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    margin-bottom: 6rem;
 }
 
 .card {
@@ -101,7 +162,9 @@
 }
 
 .damage__card {
-    height: 240px;
+    /*height: 240px;*/
+    height: auto;
+    max-height: 240px;
     margin-bottom: 12px;
     border-radius: 9px;
     border: 2px solid #2E3343;
@@ -154,7 +217,8 @@
 
 .damage__card__description {
     margin-top: 2.5rem;
-    height: calc(100% - 9rem);
+    height: auto;
+    max-height: 180px;
     overflow-y: auto;
 }
 

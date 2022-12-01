@@ -77,7 +77,7 @@ input[type="text"]::placeholder {
 .placeholderText {
     width: 99%;
     height: 15px;
-    border: #161928 solid 2px;
+    border: none;
 }
 
 

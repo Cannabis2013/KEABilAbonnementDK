@@ -9,6 +9,7 @@
     height: 192px;
     animation: popUp;
     animation-duration: 2s;
+    border: 2px solid #292D38;
 }
 
 .card-img{

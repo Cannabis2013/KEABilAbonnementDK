@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,20 +27,28 @@ public class InspectionController {
         this.damageReportFactory = damageReportFactory;
     }
 
-    @GetMapping("/report/new")
-    public String newReport(Model model) {
-        Report damageReport = damageReportFactory.emptyReport();
-        List<CarDetails> cars = auxiliary.getCars();
+    @GetMapping("/report/damage/new")
+    public String newReport(@RequestParam String rentalID, Model model) {
+        Report damageReport = inspectionRepository.getReportByRental(rentalID);
         model.addAttribute("damageReport", damageReport);
-        model.addAttribute("cars", cars);
         return "/forms/createDamageReport";
     }
 
-    @PostMapping("/report/new")
+    @PostMapping("/report/damage/new")
     public String newReport(Report newDamage) {
         if (inspectionRepository.addReport(newDamage))
             return "redirect:/create_agreement";
         return "redirect:/errors/CreateDamageReportError";
+    }
+
+    @PostMapping("/report/new")
+    public String createInspection(@RequestParam String rentalId) {
+        Report report = damageReportFactory.emptyReport();
+        report.setRentalId(rentalId);
+        if (inspectionRepository.addReport(report)) {
+            return "redirect:/rental?rentalId=" + rentalId;
+        }
+        return "redirect:err";
     }
 
     private final RegistrationRepository repository;

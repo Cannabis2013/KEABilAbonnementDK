@@ -68,15 +68,7 @@ public class RegistrationController {
         return "single_rental_view";
     }
 
-    @PostMapping("/inspection/new")
-    public String createInspection(@RequestParam String rentalId) {
-        Report report = damageReportFactory.emptyReport();
-        report.setRentalId(rentalId);
-        if (inspectionRepository.addReport(report)) {
-            return "redirect:/rental?rentalId=" + rentalId;
-        }
-        return "redirect:err";
-    }
+
 
 
     @PostMapping("/rental/new")

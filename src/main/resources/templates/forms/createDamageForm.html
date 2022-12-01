@@ -1,5 +1,5 @@
 
-<div th:fragment="createDamageForm(damageReport,cars)">
+<div th:fragment="createDamageForm(damageReport)">
     <form action="#"
           th:action="@{/report/new}"
           method="post"
@@ -23,10 +23,9 @@
             </div>
         </div>
         <div class="columnStyle">
-            <label class="fontDamage" for="damagePrice" >Dato</label>
+            <label class="fontDamage" for="damageDate" >Dato</label>
             <div class="damageContainer">
-                <input class="placeholderText" type="date" style="background-color: #161928;border-color: #161928; color:white; color-scheme:dark;" placeholder="" id="damagePrice" name="price">
-
+                <input class="placeholderText" type="date" style="background-color: #161928;border: none; color:white; color-scheme:dark;" id="damageDate" name="date">
             </div>
         </div>
         </div>
