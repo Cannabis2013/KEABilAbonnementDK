@@ -42,6 +42,7 @@
     border-radius: 4px;
     color:white;
     color-scheme: dark;
+    padding:5px;
 }
 
 .btn-flex{
@@ -61,21 +62,14 @@
 
 .ipt-label{
     color: #A4AAB4 !important;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 24px;
+    font-size: 0.75rem;
+    font-weight: 750;
+    line-height: 1.25rem;
     text-transform: uppercase;
 
 }
 
 #form-head{
     font-size: 2rem;
-}
-
-.default-font{
-    color: #828692;
-    font-family: 'Inter', serif;
-    font-style: normal;
-    margin: 0;
 }
 

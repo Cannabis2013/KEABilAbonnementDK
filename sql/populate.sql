@@ -8,10 +8,10 @@ DELETE FROM Customer;
 
 DELETE FROM Car;
 
-insert into Car (Brand, Model, VIN, Number)
-values ("Opel","Kadet","ABCJW12WFSD2442WW","TS440"),
-("Nissan","Shitbox 1983","GFDAW6HGF3842FFA1","TS316"),
-("Fiat","Duna 70 1989","GPARKENFCK1992S12","TS116");
+insert into Car (Brand, Model,Year,VIN,Number)
+values ("Opel","Kadet",1992,"ABCJW12WFSD2442WW","TS440"),
+("Nissan","Shitbox",1983,"GFDAW6HGF3842FFA1","TS316"),
+("Fiat","Duna 70", 1989,"GPARKENFCK1992S12","TS116");
 
 insert into Customer (License_Id, Name, Birthday, Address, PhoneNumber)
 values

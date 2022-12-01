@@ -25,4 +25,8 @@ body {
     }
 }
 
+.default-font{
+    font-family: 'Inter', serif;
+    font-style: normal;
+}
 

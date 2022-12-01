@@ -3,6 +3,7 @@ CREATE DATABASE bilabonnement;
 USE bilabonnement;
 CREATE TABLE `Car` (
                        `Brand` varchar(255) DEFAULT NULL,
+                       `Year` int DEFAULT NULL,
                        `Model` varchar(255) DEFAULT NULL,
                        `VIN` varchar(17) DEFAULT NULL,
                        `Number` varchar(5) NOT NULL,
