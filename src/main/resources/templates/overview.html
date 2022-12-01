@@ -6,12 +6,14 @@
     <link href="../static/css/global.css">
     <link rel="stylesheet" th:href="@{/css/global.css}"/>
     <link rel="stylesheet" th:href="@{/css/navbar.css}"/>
+    <link rel="stylesheet" th:href="@{/css/pageTitle.css}"/>
 </head>
 <body>
     <div class="container">
         <!--    Import navbar fragment    -->
         <div th:insert="/fragments/navbar.html :: overviewNavBar"></div>
         <!--    Import page title fragment    -->
+        <div th:insert="/fragments/page_title.html :: title('Udlejet biler', 'Samlet indtjening for udlejet biler i valgt periode')"></div>
         <!--    Price for cars   -->
         <!--    Import filter bar fragment    -->
 

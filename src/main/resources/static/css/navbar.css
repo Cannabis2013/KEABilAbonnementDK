@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: #1B1E2A;
+
 }
 
 .navbarHome {
@@ -17,6 +18,7 @@
     color: #FFFFFF;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 .navbarNewAgreement {
@@ -31,6 +33,7 @@
     color: #FFFFFF;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 @media (min-width: 1024px) {

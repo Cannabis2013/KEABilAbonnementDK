@@ -1,0 +1,35 @@
+
+.PageTitleBox {
+    width: 600px;
+    height: 130px;
+
+   /* border: #FFFFFF solid 1px; */
+}
+
+
+.PageTitleTopText {
+    width: 600px;
+    height: 60px;
+    font-family: Inter;
+    font-weight: 800;
+    font-size: 48px;
+    color: #FFFFFF;
+    margin-top: 80px;
+    margin-bottom: 0px;
+
+  /*  border: #FFFFFF solid 1px; */
+}
+
+
+.PageTitleBottomText {
+    width: 600px;
+    height: 18px;
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 15px;
+    color: #828692;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+  /*  border: #FFFFFF solid 1px; */
+}
