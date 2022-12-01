@@ -1,10 +1,17 @@
 package com.example.keabilabonnement.models.inspection;
 
-import com.example.keabilabonnement.models.entity.Entity;
-
 import java.time.LocalDate;
 
-public class Damage extends Entity {
+public class Damage{
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     private String type;
     private String description;
     private LocalDate date;

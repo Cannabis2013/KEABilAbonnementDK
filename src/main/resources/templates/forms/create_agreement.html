@@ -15,8 +15,9 @@
   <top fragment>
   -->
   <div th:replace="/fragments/navbar.html :: overviewNavBar"></div>
+
   <div th:replace="/fragments/page_title.html :: title(Lejekontrakt, 'Opret en ny kontrakt')"/>
-  <div th:replace="/fragments/forms/create_rental_form.html :: create_rental_form(${agreement},${cars})"></div>
+  <div th:replace="/forms/form_fragment.html :: formFragment(${agreement},${cars})"></div>
 </div>
 </body>
 </html>

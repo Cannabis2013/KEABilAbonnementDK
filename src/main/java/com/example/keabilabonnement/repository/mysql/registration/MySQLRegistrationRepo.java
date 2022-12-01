@@ -1,5 +1,6 @@
 package com.example.keabilabonnement.repository.mysql.registration;
 
+import com.example.keabilabonnement.contracts.models.Agreement;
 import com.example.keabilabonnement.contracts.repository.RegistrationRepository;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import org.springframework.stereotype.Repository;
@@ -14,7 +15,7 @@ public class MySQLRegistrationRepo implements RegistrationRepository {
     }
 
     @Override
-    public boolean addRegistration(RentalAgreement agreement) {
+    public boolean addRegistration(Agreement agreement) {
         return adder.add(agreement);
     }
 
@@ -24,17 +25,17 @@ public class MySQLRegistrationRepo implements RegistrationRepository {
     }
 
     @Override
-    public RentalAgreement getRegistration(String id) {
+    public Agreement  getRegistration(String id) {
         return registrations.getRegistration(id);
     }
 
     @Override
-    public List<RentalAgreement> getAllRegistrations() {
+    public List<Agreement> getAllRegistrations() {
         return registrations.getAllRegistrations();
     }
 
     @Override
-    public List<RentalAgreement> getAllActiveRegistrations() {
+    public List<Agreement > getAllActiveRegistrations() {
         return registrations.getAllActiveRegistrations();
     }
 

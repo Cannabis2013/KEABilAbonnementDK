@@ -13,10 +13,9 @@ CREATE TABLE `Car` (
 CREATE TABLE `Customer` (
                             `License_Id` varchar(8) NOT NULL,
                             `Name` varchar(255) DEFAULT NULL,
-                            `Birthday` date DEFAULT NULL,
                             `Address` varchar(255) DEFAULT NULL,
                             `PhoneNumber` varchar(255) DEFAULT NULL,
-                            PRIMARY KEY (`License_Id`)
+                             PRIMARY KEY (`License_Id`)
 );
 
 CREATE TABLE `RentalAgreement` (

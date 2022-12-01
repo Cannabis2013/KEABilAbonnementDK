@@ -1,53 +1,50 @@
 package com.example.keabilabonnement.models.customers;
 
-import com.example.keabilabonnement.models.entity.Entity;
+import com.example.keabilabonnement.contracts.models.CustomerDetails;
 
-import java.time.LocalDate;
-
-public class Customer {
-    private String licenseID;
-    private String name;
-    private LocalDate birthday;
-    private String address;
-    private String phoneNumber;
+public class Customer implements CustomerDetails {
+    protected String licenseID;
+    protected String customerName;
+    protected String customerAddress;
+    protected String customerPhone;
 
 
-    public String getName() {
-        return name;
+    @Override
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public LocalDate getBirthday() {
-        return birthday;
+    @Override
+    public String getCustomerAddress() {
+        return customerAddress;
     }
 
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
+    @Override
+    public void setCustomerAddress(String customerAddress) {
+        this.customerAddress = customerAddress;
     }
 
-    public String getAddress() {
-        return address;
+    @Override
+    public String getCustomerPhone() {
+        return customerPhone;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    @Override
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
+    @Override
     public String getLicenseID() {
         return licenseID;
     }
 
+    @Override
     public void setLicenseID(String licenseID) {
         this.licenseID = licenseID;
     }

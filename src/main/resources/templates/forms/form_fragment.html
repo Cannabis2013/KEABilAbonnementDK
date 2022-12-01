@@ -1,9 +1,10 @@
-<div th:fragment="create_rental_form(agreement,cars)">
+<div th:fragment="formFragment(agreement,cars)">
   <form action="#"
         th:action="@{/rental/new}"
         method="post"
         th:object="${agreement}">
     <input th:field="*{id}" type="hidden">
+    <input th:field="*{vin}" type="hidden">
     <div class="form form-dims form-grid">
       <div class="ipts-row ipts-row-dims">
         <label class="ipt-label default-font" for="customerName" >Navn</label>
@@ -42,12 +43,12 @@
         <select th:field="*{carNumber}" id="cars" class="form-ipt">
           <option value="0">Vælg en bil</option>
           <option th:each="car : ${cars}"
-                  th:value="${car.getCarNumber()}"
+                  th:value="${car.getInternalNumber()}"
                   th:text="${
-                  car.getCarNumber()+' ('+car.getBrand()+' '+ car.getModel()+')'}">></option>
+                  car.getInternalNumber()+' ('+car.getBrand()+' '+ car.getModel()+')'}">></option>
         </select>
       </div>
     </div>
-    <div class="btn-flex"><input class="submit-btn" type="submit"></div>
+    <div class="btn-flex"><button class="submit-btn" type="submit">Opret</button></div>
   </form>
 </div>

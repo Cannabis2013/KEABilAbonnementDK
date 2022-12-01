@@ -1,10 +1,11 @@
 package com.example.keabilabonnement.controllers;
 
+import com.example.keabilabonnement.contracts.models.Agreement;
+import com.example.keabilabonnement.contracts.models.CarDetails;
+import com.example.keabilabonnement.contracts.models.CustomerDetails;
 import com.example.keabilabonnement.contracts.repository.CarCustomerRepository;
 import com.example.keabilabonnement.contracts.repository.InspectionRepository;
 import com.example.keabilabonnement.contracts.repository.RegistrationRepository;
-import com.example.keabilabonnement.models.cars.Car;
-import com.example.keabilabonnement.models.customers.Customer;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.factories.DamageReportFactory;
@@ -36,7 +37,7 @@ public class RegistrationController {
     // Rental overview
     @GetMapping("/overview")
     public String get(Model model) {
-        List<RentalAgreement> registrations = repository.getAllActiveRegistrations();
+        List<Agreement> registrations = repository.getAllActiveRegistrations();
         int activeCount = registrations.size();
         int totalCarCount = auxiliary.getCars().size();
         int inactiveCount = totalCarCount-activeCount;
@@ -50,8 +51,8 @@ public class RegistrationController {
     @GetMapping("/rental/new")
     public String newRental(Model model) {
         RentalAgreement agreement = agreementFactory.empty();
-        List<Car> cars = auxiliary.getCars();
-        List<Customer> customers = auxiliary.getCustomers();
+        List<CarDetails> cars = auxiliary.getCars();
+        List<CustomerDetails> customers = auxiliary.getCustomers();
         model.addAttribute("agreement", agreement);
         model.addAttribute("cars", cars);
         model.addAttribute("customers", customers);
@@ -60,7 +61,7 @@ public class RegistrationController {
 
     @GetMapping("/rental")
     public String viewRental(@RequestParam String rentalId, Model model) {
-        RentalAgreement agreement = repository.getRegistration(rentalId);
+        Agreement agreement = repository.getRegistration(rentalId);
         Report report = inspectionRepository.getReportByRental(rentalId);
         model.addAttribute("agreement", agreement);
         model.addAttribute("report", report);

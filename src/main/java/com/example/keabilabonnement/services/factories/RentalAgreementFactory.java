@@ -2,8 +2,7 @@ package com.example.keabilabonnement.services.factories;
 
 import com.example.keabilabonnement.contracts.factories.CarFactory;
 import com.example.keabilabonnement.contracts.factories.CustomerFactory;
-import com.example.keabilabonnement.models.cars.Car;
-import com.example.keabilabonnement.models.customers.Customer;
+import com.example.keabilabonnement.contracts.models.CustomerDetails;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import org.springframework.stereotype.Service;
 
@@ -25,12 +24,8 @@ public class RentalAgreementFactory {
 
     public RentalAgreement fromResultSet(ResultSet set) throws SQLException {
         RentalAgreement rentalAgreement = buildRentalFromSQLResult(set);
-        Car car = carFactory.fromResultSet(set);
-        if(car != null)
-            rentalAgreement.setCar(car);
-        Customer customer = customerFactory.fromResultSet(set);
-        if(customer != null)
-            rentalAgreement.setCustomer(customer);
+        carFactory.fillDetailsFromResultSet(rentalAgreement,set);
+        customerFactory.fillDetailsFromResultSet(rentalAgreement,set);
         return rentalAgreement;
     }
 
