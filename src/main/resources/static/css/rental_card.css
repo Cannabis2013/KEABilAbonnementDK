@@ -25,6 +25,12 @@
     color: white;
 
 }
+.card-cont a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .details-btn{
     height: 32px;

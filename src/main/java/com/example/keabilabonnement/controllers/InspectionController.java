@@ -1,9 +1,9 @@
 package com.example.keabilabonnement.controllers;
 
+import com.example.keabilabonnement.contracts.models.CarDetails;
 import com.example.keabilabonnement.contracts.repository.CarCustomerRepository;
 import com.example.keabilabonnement.contracts.repository.InspectionRepository;
 import com.example.keabilabonnement.contracts.repository.RegistrationRepository;
-import com.example.keabilabonnement.models.cars.Car;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.services.factories.DamageReportFactory;
 import com.example.keabilabonnement.services.factories.RentalAgreementFactory;
@@ -29,7 +29,7 @@ public class InspectionController {
     @GetMapping("/report/new")
     public String newReport(Model model) {
         Report damageReport = damageReportFactory.emptyReport();
-        List<Car> cars = auxiliary.getCars();
+        List<CarDetails> cars = auxiliary.getCars();
         model.addAttribute("damageReport", damageReport);
         model.addAttribute("cars", cars);
         return "/forms/createDamageReport";

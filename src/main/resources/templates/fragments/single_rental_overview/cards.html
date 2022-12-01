@@ -1,0 +1,53 @@
+<div th:fragment="cardGrid(agreement, report)" class="card__grid">
+    <!--  Customer Information Card  -->
+    <div class="card">
+        <div class="card__wrapper">
+            <div th:insert="/fragments/single_rental_overview/CardTitle.html :: cardTitle(Kundeinformation)"/>
+            <div class="info__area">
+                <div th:replace="/fragments/single_rental_overview/InfoBox.html :: infoBox(NAVN, 1)"/>
+                <div th:replace="/fragments/single_rental_overview/InfoBox.html :: infoBox(ADRESSE, 2)"/>
+                <div th:replace="/fragments/single_rental_overview/InfoBox.html :: infoBox(TELEFONNUMMER, 3)"/>
+                <div th:replace="/fragments/single_rental_overview/InfoBox.html :: infoBox(KØREKORTSNUMMER, 4)"/>
+            </div>
+        </div>
+    </div>
+
+    <!--  Car Information Card  -->
+    <div class="card">
+        <div class="card__wrapper">
+            <div th:insert="/fragments/single_rental_overview/CardTitle.html :: cardTitle(Bilinformation)"/>
+            <div class="info__area">
+                <div th:replace="/fragments/single_rental_overview/InfoBox.html :: infoBox(BILNUMMER, 1)"/>
+                <div th:replace="/fragments/single_rental_overview/InfoBox.html :: infoBox(STELNUMMER, 2)"/>
+                <div th:replace="/fragments/single_rental_overview/InfoBox.html :: infoBox(MÆRKE, 3)"/>
+                <div th:replace="/fragments/single_rental_overview/InfoBox.html :: infoBox(MODEL, 4)"/>
+            </div>
+        </div>
+    </div>
+
+    <!--  Damage Report Card  -->
+    <div class="card">
+        <div class="card__wrapper">
+            <div class="card__title">
+                <h2>Skadesrapport</h2>
+                <form th:if="${report.getId() != null}" action="#" th:action="@{/inspection/damage/new(rentalId=${agreement.getId()})}" method="post">
+                    <button>Tilføj skade</button>
+                </form>
+                <form th:if="${report.getId() == null}" action="#" th:action="@{/inspection/new(rentalId=${agreement.getId()})}" method="post">
+                    <button>Opret</button>
+                </form>
+            </div>
+            <div class="damage__cards no-scrollbar">
+                <div th:if="${report.getDamages().size() > 0}" th:each="damage : ${report.getDamages()}">
+                    <div th:replace="/fragments/single_rental_overview/DamageCard.html :: damage(${damage})"/>
+                </div>
+                <div th:if="${report.getId() == null}" class="damage__error">
+                    Der eksisterer ikke en skadesrapport
+                </div>
+                <div th:if="${report.getDamages().size() == 0 && report.getId() != null}" class="damage__error">
+                    Der eksisterer ingen skader
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

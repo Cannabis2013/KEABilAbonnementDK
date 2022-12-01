@@ -1,5 +1,6 @@
 package com.example.keabilabonnement.repository.mysql.registration;
 
+import com.example.keabilabonnement.contracts.models.Agreement;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.db.DBConnection;
 import com.example.keabilabonnement.services.factories.RentalAgreementFactory;
@@ -17,7 +18,7 @@ public class MySQLRegistrations {
         this.rentalAgreementFactory = rentalAgreementFactory;
     }
 
-    public RentalAgreement getRegistration(String id){
+    public Agreement  getRegistration(String id){
         String sql = """
                 SELECT *
                 FROM RentalAgreement
@@ -32,15 +33,18 @@ public class MySQLRegistrations {
             PreparedStatement statement = DBConnection.statement(sql);
             statement.setString(1, id);
             ResultSet set = statement.executeQuery();
-            return rentalAgreementFactory.fromResultSet(set);
+            RentalAgreement agreement = new RentalAgreement();
+            while (set.next())
+                agreement = rentalAgreementFactory.fromResultSet(set);
+            return agreement;
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return null;
     }
-    public List<RentalAgreement> getAllRegistrations(){
-        List<RentalAgreement> rentalAgreements = new ArrayList<>();
+    public List<Agreement> getAllRegistrations(){
+        List<Agreement > rentalAgreements = new ArrayList<>();
         String sql = """
                 SELECT *
                 FROM RentalAgreement
@@ -60,8 +64,8 @@ public class MySQLRegistrations {
         }
         return rentalAgreements;
     }
-    public List<RentalAgreement> getAllActiveRegistrations(){
-        List<RentalAgreement> rentalAgreements = new ArrayList<>();
+    public List<Agreement > getAllActiveRegistrations(){
+        List<Agreement > rentalAgreements = new ArrayList<>();
         String sql = """
                 SELECT *
                 FROM RentalAgreement
