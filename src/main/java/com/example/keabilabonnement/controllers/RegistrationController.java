@@ -68,9 +68,6 @@ public class RegistrationController {
         return "single_rental_view";
     }
 
-
-
-
     @PostMapping("/rental/new")
     public String newRental(RentalAgreement agreement) {
         if (repository.addRegistration(agreement))
