@@ -1,11 +1,11 @@
 package com.example.keabilabonnement.contracts.repository;
 
-import com.example.keabilabonnement.models.cars.Car;
-import com.example.keabilabonnement.models.customers.Customer;
+import com.example.keabilabonnement.contracts.models.CarDetails;
+import com.example.keabilabonnement.contracts.models.CustomerDetails;
 
 import java.util.List;
 
 public interface CarCustomerRepository {
-    List<Car> getCars();
-    List<Customer> getCustomers();
+    List<CarDetails> getCars();
+    List<CustomerDetails> getCustomers();
 }

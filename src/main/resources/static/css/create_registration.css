@@ -58,6 +58,7 @@
     border: 3px solid #3F455B;
     border-radius: 20px;
     color: white;
+    align-self: end;
 }
 
 .ipt-label{

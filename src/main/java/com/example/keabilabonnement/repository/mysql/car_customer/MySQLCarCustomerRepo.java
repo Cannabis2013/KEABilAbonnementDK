@@ -2,9 +2,9 @@ package com.example.keabilabonnement.repository.mysql.car_customer;
 
 import com.example.keabilabonnement.contracts.factories.CarFactory;
 import com.example.keabilabonnement.contracts.factories.CustomerFactory;
+import com.example.keabilabonnement.contracts.models.CarDetails;
+import com.example.keabilabonnement.contracts.models.CustomerDetails;
 import com.example.keabilabonnement.contracts.repository.CarCustomerRepository;
-import com.example.keabilabonnement.models.cars.Car;
-import com.example.keabilabonnement.models.customers.Customer;
 import com.example.keabilabonnement.services.db.DBConnection;
 import org.springframework.stereotype.Repository;
 import java.sql.PreparedStatement;
@@ -22,9 +22,9 @@ public class MySQLCarCustomerRepo implements CarCustomerRepository {
     }
 
     @Override
-    public List<Car> getCars() {
+    public List<CarDetails> getCars() {
 
-        List<Car> listOfCar = new LinkedList<>();
+        List<CarDetails> listOfCar = new LinkedList<>();
 
         String sql = """
                 SELECT * FROM Car;
@@ -35,7 +35,7 @@ public class MySQLCarCustomerRepo implements CarCustomerRepository {
             ResultSet RS = statement.executeQuery();
 
             while (RS.next()) {
-                Car car = carFactory.fromResultSet(RS);
+                CarDetails car = carFactory.buildFromResultSet(RS);
                 listOfCar.add(car);
             }
 
@@ -47,9 +47,9 @@ public class MySQLCarCustomerRepo implements CarCustomerRepository {
     }
 
     @Override
-    public List<Customer> getCustomers() {
+    public List<CustomerDetails> getCustomers() {
 
-        List<Customer> listOfCustomer = new LinkedList<>();
+        List<CustomerDetails> listOfCustomer = new LinkedList<>();
 
         String sql = """
                 SELECT * FROM Customer;
@@ -60,7 +60,7 @@ public class MySQLCarCustomerRepo implements CarCustomerRepository {
             ResultSet RS = statement.executeQuery();
 
             while (RS.next()) {
-                Customer customer = customerFactory.fromResultSet(RS);
+                CustomerDetails customer = customerFactory.buildFromResultSet(RS);
                 listOfCustomer.add(customer);
             }
 

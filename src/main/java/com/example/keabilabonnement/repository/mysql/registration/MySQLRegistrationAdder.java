@@ -1,5 +1,6 @@
 package com.example.keabilabonnement.repository.mysql.registration;
 
+import com.example.keabilabonnement.contracts.models.Agreement;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.db.DBConnection;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class MySQLRegistrationAdder {
     public MySQLRegistrationAdder() {
     }
 
-    public Boolean add(RentalAgreement agreement) {
+    public Boolean add(Agreement agreement) {
         try {
             var prepared = DBConnection.statement(statement());
             initValues(prepared,agreement).execute();
@@ -37,13 +38,13 @@ public class MySQLRegistrationAdder {
                 """;
     }
 
-    private PreparedStatement initValues(PreparedStatement statement, RentalAgreement agreement) throws SQLException {
+    private PreparedStatement initValues(PreparedStatement statement, Agreement agreement) throws SQLException {
         statement.setDate(1,toDate(agreement.getStart()));
         statement.setDate(2,toDate(agreement.getExpiration()));
         statement.setDate(3,toDate(agreement.getDelevery()));
         statement.setDouble(4,agreement.getPayment());
         statement.setString(5,agreement.getId());
-        statement.setString(6,agreement.getCarNumber());
+        statement.setString(6,agreement.getInternalNumber());
         statement.setString(7,agreement.getLicenseID());
         return statement;
     }

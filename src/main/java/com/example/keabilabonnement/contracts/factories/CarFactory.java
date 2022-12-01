@@ -1,9 +1,10 @@
 package com.example.keabilabonnement.contracts.factories;
 
-import com.example.keabilabonnement.models.cars.Car;
+import com.example.keabilabonnement.contracts.models.CarDetails;
 
 import java.sql.ResultSet;
 
 public interface CarFactory {
-    Car fromResultSet(ResultSet set);
+    CarDetails buildFromResultSet(ResultSet set);
+    CarDetails fillDetailsFromResultSet(CarDetails details, ResultSet set);
 }

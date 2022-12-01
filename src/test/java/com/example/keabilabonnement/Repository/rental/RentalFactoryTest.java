@@ -1,7 +1,5 @@
 package com.example.keabilabonnement.Repository.rental;
 
-import com.example.keabilabonnement.models.cars.Car;
-import com.example.keabilabonnement.models.customers.Customer;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
@@ -11,7 +9,7 @@ import java.util.UUID;
 class RentalFactoryTest {
     public RentalAgreement rentalOne(){
         var rental = agreement();
-        rental.setCarNumber("TS116");
+        rental.setInternalNumber("TS116");
         rental.setLicenseID("12345678");
         var dateToday = LocalDate.now();
         rental.setStart(dateToday);

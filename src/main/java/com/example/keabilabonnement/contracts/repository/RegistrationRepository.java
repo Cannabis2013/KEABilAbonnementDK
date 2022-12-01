@@ -1,11 +1,12 @@
 package com.example.keabilabonnement.contracts.repository;
 
+import com.example.keabilabonnement.contracts.models.Agreement;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 
 import java.util.List;
 
 public interface RegistrationRepository {
-    boolean addRegistration(RentalAgreement agreement);
+    boolean addRegistration(Agreement agreement);
     boolean removeRegistration(String id);
 
     /*
@@ -13,11 +14,11 @@ public interface RegistrationRepository {
 
         Further discussion required
      */
-    default boolean updateRegistration(RentalAgreement agreement) {
+    default boolean updateRegistration(Agreement agreement) {
         return false;
     }
 
-    RentalAgreement getRegistration(String id);
-    List<RentalAgreement> getAllRegistrations();
-    List<RentalAgreement> getAllActiveRegistrations();
+    Agreement  getRegistration(String id);
+    List<Agreement > getAllRegistrations();
+    List<Agreement > getAllActiveRegistrations();
 }

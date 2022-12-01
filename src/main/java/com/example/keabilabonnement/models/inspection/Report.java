@@ -1,13 +1,22 @@
 package com.example.keabilabonnement.models.inspection;
 
-import com.example.keabilabonnement.models.entity.Entity;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Report extends Entity {
+public class Report {
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     private RentalAgreement rentalAgreement;
     private List<Damage> damages = new ArrayList<>();
     private LocalDate date;

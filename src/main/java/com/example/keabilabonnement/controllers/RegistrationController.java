@@ -1,9 +1,10 @@
 package com.example.keabilabonnement.controllers;
 
+import com.example.keabilabonnement.contracts.models.Agreement;
+import com.example.keabilabonnement.contracts.models.CarDetails;
+import com.example.keabilabonnement.contracts.models.CustomerDetails;
 import com.example.keabilabonnement.contracts.repository.CarCustomerRepository;
 import com.example.keabilabonnement.contracts.repository.RegistrationRepository;
-import com.example.keabilabonnement.models.cars.Car;
-import com.example.keabilabonnement.models.customers.Customer;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.factories.RentalAgreementFactory;
 import org.springframework.stereotype.Controller;
@@ -31,7 +32,7 @@ public class RegistrationController {
     // Rental overview
     @GetMapping("/overview")
     public String get(Model model) {
-        List<RentalAgreement> registrations = repository.getAllActiveRegistrations();
+        List<Agreement> registrations = repository.getAllActiveRegistrations();
         int activeCount = registrations.size();
         int totalCarCount = auxiliary.getCars().size();
         int inactiveCount = totalCarCount-activeCount;
@@ -45,8 +46,8 @@ public class RegistrationController {
     @GetMapping("/rental/new")
     public String newRental(Model model) {
         RentalAgreement agreement = agreementFactory.empty();
-        List<Car> cars = auxiliary.getCars();
-        List<Customer> customers = auxiliary.getCustomers();
+        List<CarDetails> cars = auxiliary.getCars();
+        List<CustomerDetails> customers = auxiliary.getCustomers();
         model.addAttribute("agreement", agreement);
         model.addAttribute("cars", cars);
         model.addAttribute("customers", customers);

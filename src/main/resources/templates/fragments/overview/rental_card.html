@@ -11,14 +11,14 @@
               <img width="252px" style="border-radius: 9px;"  th:src="@{/images/Nissan Shitbox.jpeg}">
           </div>
           <div class="card-title default-font">
-              <div th:text=" ${agreement.getCar().getBrand()} + ' ' + ${agreement.getCar().getModel()}"></div>
+              <div th:text=" ${agreement.getBrand()} + ' ' + ${agreement.getModel()}"></div>
           </div>
           <button class="details-btn">Detaljer</button>
           <div class="card-details">
               <p class="default-font card-details-head">
                   ÅRGANG
               </p>
-              <p class="default-font card-details-sub" th:text="${agreement.getCar().getYear()}">
+              <p class="default-font card-details-sub" th:text="${agreement.getYear()}">
               </p>
               <p class="default-font card-details-head">
                   UDLEJET SIDEN
@@ -29,7 +29,7 @@
                   LEJER
               </p>
               <p class="default-font card-details-sub"
-                 th:text="${agreement.getCustomer().getName()}">
+                 th:text="${agreement.getCustomerName()}">
               </p>
           </div>
           <div class="card-payment">
