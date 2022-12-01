@@ -15,7 +15,7 @@ CREATE TABLE `Customer` (
                             `Name` varchar(255) DEFAULT NULL,
                             `Address` varchar(255) DEFAULT NULL,
                             `PhoneNumber` varchar(255) DEFAULT NULL,
-                            PRIMARY KEY (`License_Id`)
+                             PRIMARY KEY (`License_Id`)
 );
 
 CREATE TABLE `RentalAgreement` (

@@ -26,7 +26,7 @@ public class MySQLInspections {
         String sql = """
                 SELECT *
                 FROM DamageReport
-                INNER JOIN Damage
+                LEFT JOIN Damage
                 ON DamageReport.Id = Damage.DamageReportId
                 INNER JOIN RentalAgreement
                 ON DamageReport.RentalAgreementId = RentalAgreement.Id
@@ -48,7 +48,8 @@ public class MySQLInspections {
                     agreement = rentalFactory.fromResultSet(set);
                 }
                 Damage damage = damageFactory.damageFromResultSet(set);
-                report.addDamage(damage);
+                if (damage != null)
+                    report.addDamage(damage);
             }
             report.setRentalAgreement(agreement);
             return report;

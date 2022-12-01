@@ -33,7 +33,10 @@ public class MySQLRegistrations {
             PreparedStatement statement = DBConnection.statement(sql);
             statement.setString(1, id);
             ResultSet set = statement.executeQuery();
-            return rentalAgreementFactory.fromResultSet(set);
+            RentalAgreement agreement = new RentalAgreement();
+            while (set.next())
+                agreement = rentalAgreementFactory.fromResultSet(set);
+            return agreement;
         } catch (SQLException e) {
             e.printStackTrace();
         }

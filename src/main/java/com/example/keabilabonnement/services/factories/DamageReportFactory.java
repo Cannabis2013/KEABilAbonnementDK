@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Service
@@ -13,6 +14,8 @@ public class DamageReportFactory {
     public Report emptyReport() {
         Report report = new Report();
         report.setId(UUID.randomUUID().toString());
+        LocalDate date = LocalDate.now();
+        report.setDate(date);
         return report;
     }
 
@@ -24,6 +27,11 @@ public class DamageReportFactory {
 
     public Damage damageFromResultSet(ResultSet set) throws SQLException {
         Damage damage = new Damage();
+        String id = set.getString("Damage.id");
+        // If id is not set, we can assume the rest of the damage values are null as well
+        // as damage for the specific report does not exist then.
+        if (id == null)
+            return null;
         damage.setId(set.getString("Damage.Id"));
         damage.setDate(set.getDate("Damage.Date").toLocalDate());
         damage.setType(set.getString("Damage.Type"));

@@ -15,7 +15,11 @@ values ("Opel","Kadet",1992,"ABCJW12WFSD2442WW","TS440"),
 
 insert into Customer (License_Id, Name, Address, PhoneNumber)
 values
+<<<<<<< HEAD
     ("12345678","Elon Musk","Twitter Street 4, Los Angeles, US","12121212"),
+=======
+    ("12345678","Jens Kværner","Kværnergade 22, 2200 København DK","12121212"),
+>>>>>>> production
     ("98765432","Martin Hansen","Hyben Alle 56 1.MF, Kastrup, DK","31165870");
 
 insert into RentalAgreement (StartDate, ExpirationDate, DeliveryDate, Payment, Id, CarNumber, CustomerLicense_Id)

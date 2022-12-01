@@ -4,8 +4,11 @@ import com.example.keabilabonnement.contracts.models.Agreement;
 import com.example.keabilabonnement.contracts.models.CarDetails;
 import com.example.keabilabonnement.contracts.models.CustomerDetails;
 import com.example.keabilabonnement.contracts.repository.CarCustomerRepository;
+import com.example.keabilabonnement.contracts.repository.InspectionRepository;
 import com.example.keabilabonnement.contracts.repository.RegistrationRepository;
+import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
+import com.example.keabilabonnement.services.factories.DamageReportFactory;
 import com.example.keabilabonnement.services.factories.RentalAgreementFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,10 +21,12 @@ import java.util.List;
 
 @Controller
 public class RegistrationController {
-    public RegistrationController(RegistrationRepository repository, CarCustomerRepository auxiliary, RentalAgreementFactory agreementFactory) {
+    public RegistrationController(RegistrationRepository repository, CarCustomerRepository auxiliary, RentalAgreementFactory agreementFactory, InspectionRepository inspectionRepository, DamageReportFactory damageReportFactory) {
         this.repository = repository;
         this.auxiliary = auxiliary;
         this.agreementFactory = agreementFactory;
+        this.inspectionRepository = inspectionRepository;
+        this.damageReportFactory = damageReportFactory;
     }
 
     @GetMapping("/")
@@ -54,6 +59,26 @@ public class RegistrationController {
         return "/forms/create_agreement";
     }
 
+    @GetMapping("/rental")
+    public String viewRental(@RequestParam String rentalId, Model model) {
+        Agreement agreement = repository.getRegistration(rentalId);
+        Report report = inspectionRepository.getReportByRental(rentalId);
+        model.addAttribute("agreement", agreement);
+        model.addAttribute("report", report);
+        return "single_rental_view";
+    }
+
+    @PostMapping("/inspection/new")
+    public String createInspection(@RequestParam String rentalId) {
+        Report report = damageReportFactory.emptyReport();
+        report.setRentalId(rentalId);
+        if (inspectionRepository.addReport(report)) {
+            return "redirect:/rental?rentalId=" + rentalId;
+        }
+        return "redirect:err";
+    }
+
+
     @PostMapping("/rental/new")
     public String newRental(RentalAgreement agreement) {
         if (repository.addRegistration(agreement))
@@ -71,4 +96,6 @@ public class RegistrationController {
     private final RegistrationRepository repository;
     private final CarCustomerRepository auxiliary;
     private final RentalAgreementFactory agreementFactory;
+    private final InspectionRepository inspectionRepository;
+    private final DamageReportFactory damageReportFactory;
 }

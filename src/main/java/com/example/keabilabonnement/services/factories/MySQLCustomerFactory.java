@@ -19,7 +19,6 @@ public class MySQLCustomerFactory implements CustomerFactory {
             return null;
         }
     }
-
     @Override
     public CustomerDetails fillDetailsFromResultSet(CustomerDetails details,ResultSet set) {
         try {
