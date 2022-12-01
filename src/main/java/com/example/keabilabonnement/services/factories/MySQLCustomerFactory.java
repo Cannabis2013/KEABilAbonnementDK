@@ -23,7 +23,6 @@ public class MySQLCustomerFactory implements CustomerFactory {
         Customer customer = new Customer();
         customer.setLicenseID(set.getString("License_Id"));
         customer.setName(set.getString("Name"));
-        customer.setBirthday(set.getDate("Birthday").toLocalDate());
         customer.setAddress(set.getString("Address"));
         customer.setPhoneNumber(set.getString("PhoneNumber"));
         return customer;
