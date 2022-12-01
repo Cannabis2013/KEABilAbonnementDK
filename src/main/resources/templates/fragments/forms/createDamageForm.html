@@ -1,0 +1,12 @@
+<div th:fragment="createDamageForm(report,cars)">
+    <form action="#"
+          th:action="@{/report/new}"
+          method="post"
+          th:object="${report}">
+        <div class="label-row">
+            <h1 class="default-font" style="color: white">Skade Rapport</h1>
+            <p class="default-font">Opret en ny skade rapport</p>
+        </div>
+    </form>
+
+    </div>
