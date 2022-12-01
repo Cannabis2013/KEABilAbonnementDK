@@ -62,10 +62,13 @@
     border-radius: 20px;
     color: white;
     align-self: end;
+}
+
+.submit-btn-flex{
     display: flex;
     justify-content: center;
     align-items: center;
-    row-gap: 5px;
+    column-gap: 5px;
     flex-direction: row;
 }
 

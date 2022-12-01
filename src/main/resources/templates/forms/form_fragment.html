@@ -50,10 +50,13 @@
       </div>
     </div>
     <div class="btn-flex">
-      <button name="action" class="submit-btn" th:formmethod="get" th:formaction="@{/overview}" type="submit">
-        <img width="24px" style="border-radius: 9px;"  th:src="@{/images/vector.png}">
+      <button name="action" class="submit-btn submit-btn-flex" th:formmethod="get" th:formaction="@{/overview}" type="submit">
+        <img width="20px" style="border-radius: 9px;"  th:src="@{/images/cancel_icon.png}">
         Annuller
       </button>
-      <button class="submit-btn" type="submit">Opret</button></div>
+      <button class="submit-btn submit-btn-flex" type="submit">
+        <img width="20px" style="border-radius: 9px;"  th:src="@{/images/submit_icon.png}">
+        Opret
+      </button></div>
   </form>
 </div>
