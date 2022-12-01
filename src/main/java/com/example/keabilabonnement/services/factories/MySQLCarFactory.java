@@ -12,7 +12,7 @@ public class MySQLCarFactory implements CarFactory {
     @Override
     public CarDetails buildFromResultSet(ResultSet set) {
         try {
-            return buldFromSQLResult(set);
+            return buildFromSQLResult(set);
         } catch (SQLException e){
             e.printStackTrace();
             return null;
@@ -38,7 +38,7 @@ public class MySQLCarFactory implements CarFactory {
         return details;
     }
 
-    private CarDetails buldFromSQLResult(ResultSet set) throws SQLException {
+    private CarDetails buildFromSQLResult(ResultSet set) throws SQLException {
         CarDetails details = new RentalCar();
         details.setInternalNumber(set.getString("Number"));
         details.setVin(set.getString("VIN"));
