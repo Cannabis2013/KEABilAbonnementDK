@@ -1,0 +1,58 @@
+
+<div th:fragment="createDamageForm(damageReport,cars)">
+    <form action="#"
+          th:action="@{/report/new}"
+          method="post"
+          th:object="${damageReport}">
+        <div class="label-row">
+            <h1 class="default-font" style="color: white">Skade Rapport</h1>
+            <p class="default-font" style="color: #828692">Opret en ny skade rapport</p>
+        </div>
+            <input th:field="*{id}" type="hidden">
+            <label class="fontDamage" for="damageType" >Type</label>
+            <div class="damageContainerType">
+            <input class="placeholderText" style="background-color: #161928;border-color: #161928; color:white;" type="text" id="damageType" name="type">
+        </div>
+        <br>
+        <div class="rowStyle">
+        <div class="columnStyle">
+            <input th:field="*{id}" type="hidden">
+            <label class="fontDamage" for="damagePrice" >Pris</label>
+            <div class="damageContainer">
+                <input class="placeholderText" style="background-color: #161928;border-color: #161928; color:white;" type="text" placeholder="KR" id="damagePrice" name="price">
+            </div>
+        </div>
+        <div class="columnStyle">
+            <label class="fontDamage" for="damagePrice" >Dato</label>
+            <div class="damageContainer">
+                <input class="placeholderText" type="date" style="background-color: #161928;border-color: #161928; color:white; color-scheme:dark;" placeholder="" id="damagePrice" name="price">
+
+            </div>
+        </div>
+        </div>
+        <br>
+        <div class="columnStyle">
+        <input th:field="*{id}" type="hidden">
+        <label class="fontDamage" for="damageDesc" >Beskrivelse</label>
+            <div class="damageContainerDesc">
+        <textarea id="damageDesc" name="desc" rows="4" cols="50" placeholder="" style="background-color: #161928;border-color: #161928; color:white; resize: none;" type="text"></textarea>
+            </div>
+            </div>
+        <br>
+        <br>
+
+        <div class="rowStyleButtons">
+
+        <a class="cancelled-btn" th:href="@{/overview}"><div class="buttonCenter"><i class="fa fa-times-circle" style="font-size:20px"></i> &nbsp;Annullere</div></a>
+            <div class="buttonSpace"></div>
+            <button type="submit" class="submit-btn"><i class="fa fa-plus-square" style="font-size:20px"></i> &nbsp;Opret</button>
+
+
+        </div>
+
+    </form>
+
+</div>
+
+<!--
+<i class="fa fa-calendar" style="font-size:20px"></i>-->

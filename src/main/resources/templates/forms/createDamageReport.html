@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Damage Report Form</title>
+    <link href="../../static/css/global.css">
+    <link rel="stylesheet" th:href="@{/css/global.css}"/>
+    <link rel="stylesheet" th:href="@{/css/createDamageReport.css}"/>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}"/>
+    <link rel="stylesheet" th:href="@{/css/createDamageReport.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+    <!-- Top panel section-->
+    <div th:replace="/fragments/navbar.html :: overviewNavBar"></div>
+    <br><br>
+    <div th:replace="/forms/createDamageForm.html :: createDamageForm(${damageReport},${cars})"></div>
+</div>
+</body>
+</html>
