@@ -41,13 +41,9 @@
         <br>
         <br>
 
-        <div class="rowStyleButtons">
-
-        <a class="cancelled-btn" th:href="@{/overview}"><div class="buttonCenter"><i class="fa fa-times-circle" style="font-size:20px"></i> &nbsp;Annullere</div></a>
-            <div class="buttonSpace"></div>
-            <button type="submit" class="submit-btn"><i class="fa fa-plus-square" style="font-size:20px"></i> &nbsp;Opret</button>
-
-
+        <div class="btn-flex">
+            <div th:replace="/shared/crud_buttons/cancel_button.html :: cancelButton('/overview')"></div>
+            <div th:replace="/shared/crud_buttons/submit_button.html"></div>
         </div>
 
     </form>
