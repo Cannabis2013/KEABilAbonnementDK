@@ -50,13 +50,7 @@
       </div>
     </div>
     <div class="btn-flex">
-      <button name="action" class="submit-btn submit-btn-flex" th:formmethod="get" th:formaction="@{/overview}" type="submit">
-        <img width="20px" style="border-radius: 9px;"  th:src="@{/images/cancel_icon.png}">
-        Annuller
-      </button>
-      <button class="submit-btn submit-btn-flex" type="submit">
-        <img width="20px" style="border-radius: 9px;"  th:src="@{/images/submit_icon.png}">
-        Opret
-      </button></div>
+      <div th:replace="/shared/crud_buttons/cancel_button.html :: cancelButton('/overview')"></div>
+      <div th:replace="/shared/crud_buttons/submit_button.html"></div>
   </form>
 </div>
