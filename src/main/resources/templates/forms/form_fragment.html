@@ -1,11 +1,11 @@
-<div th:fragment="formFragment(agreement,cars)">
+<div th:fragment="formFragment(agreement,cars)" xmlns:th="http://www.thymeleaf.org">
   <form action="#"
         th:action="@{/rental/new}"
         method="post"
         th:object="${agreement}">
     <input th:field="*{id}" type="hidden">
     <input th:field="*{vin}" type="hidden">
-    <div class="form form-dims form-grid">
+    <div class="form form-grid">
       <div class="ipts-row ipts-row-dims">
         <label class="ipt-label default-font" for="customerName" >Navn</label>
         <input value="Jens Kværner" id="customerName" name="customerName" class="form-ipt">
@@ -49,6 +49,14 @@
         </select>
       </div>
     </div>
-    <div class="btn-flex"><button class="submit-btn" type="submit">Opret</button></div>
+    <div class="btn-flex">
+      <button name="action" class="submit-btn submit-btn-flex" th:formmethod="get" th:formaction="@{/overview}" type="submit">
+        <img width="20px" style="border-radius: 9px;"  th:src="@{/images/cancel_icon.png}">
+        Annuller
+      </button>
+      <button class="submit-btn submit-btn-flex" type="submit">
+        <img width="20px" style="border-radius: 9px;"  th:src="@{/images/submit_icon.png}">
+        Opret
+      </button></div>
   </form>
 </div>
