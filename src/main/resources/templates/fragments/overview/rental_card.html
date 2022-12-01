@@ -11,7 +11,7 @@
               <img width="252px" style="border-radius: 9px;"  th:src="@{/images/Nissan Shitbox.jpeg}">
           </div>
           <div class="card-title default-font">
-              <div th:text="${agreement.getCar().getModel()}"></div>
+              <div th:text=" ${agreement.getCar().getBrand()} + ' ' + ${agreement.getCar().getModel()}"></div>
           </div>
           <button class="details-btn">Detaljer</button>
           <div class="card-details">
