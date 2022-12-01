@@ -17,6 +17,7 @@ public class ConsoleInformation {
                     Root: http://localhost:8080/
                     Agreement overview: http://localhost:8080/overview
                     Create agreement: http://localhost:8080/rental/new
+                    Create damage report: http://localhost:8080/report/new
                 """);
     }
 }

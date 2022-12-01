@@ -1,0 +1,7 @@
+<div th:fragment="cancelButton(back_url)" xmlns:th="http://www.thymeleaf.org">
+  <button name="action" class="submit-btn submit-btn-flex" type="submit"
+          th:formmethod="get" th:formaction="@{/overview}">
+    <img width="20px" style="border-radius: 9px;"  th:src="@{/images/cancel_icon.png}">
+    Annuller
+  </button>
+</div>
