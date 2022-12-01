@@ -30,7 +30,7 @@ public class InspectionController {
     public String newReport(Model model) {
         Report damageReport = damageReportFactory.emptyReport();
         List<Car> cars = auxiliary.getCars();
-        model.addAttribute("damage", damageReport);
+        model.addAttribute("damageReport", damageReport);
         model.addAttribute("cars", cars);
         return "/forms/createDamageReport";
     }

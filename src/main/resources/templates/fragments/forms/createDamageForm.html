@@ -1,12 +1,32 @@
-<div th:fragment="createDamageForm(report,cars)">
+<div th:fragment="createDamageForm(damageReport,cars)">
     <form action="#"
           th:action="@{/report/new}"
           method="post"
-          th:object="${report}">
+          th:object="${damageReport}">
         <div class="label-row">
             <h1 class="default-font" style="color: white">Skade Rapport</h1>
-            <p class="default-font">Opret en ny skade rapport</p>
+            <p class="default-font" style="color: #828692">Opret en ny skade rapport</p>
         </div>
+            <input th:field="*{id}" type="hidden">
+            <label class="fontDamage" for="damageType" >Type</label>
+            <div class="damageContainer">
+            <input style="background-color: #161928;border-color: #161928; color:white;" type="text" id="damageType" name="type">
+        </div>
+        <div class="columnStyle">
+            <input th:field="*{id}" type="hidden">
+            <label class="fontDamage" for="damagePrice" >Pris</label>
+            <div class="damageContainer">
+                <input style="background-color: #161928;border-color: #161928; color:white; text-align: right" type="text" placeholder="KR" id="damagePrice" name="price">
+            </div>
+            <label class="fontDamage" for="damagePrice" >Date</label>
+            <div class="damageContainer">
+                <input style="background-color: #161928;border-color: #161928; color:white;" type="text" placeholder="" id="damagePrice" name="price">
+            </div>
+        </div>
+
     </form>
 
-    </div>
+</div>
+
+<!--
+<i class="fa fa-calendar" style="font-size:20px"></i>-->

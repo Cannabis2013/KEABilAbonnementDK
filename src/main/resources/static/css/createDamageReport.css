@@ -1,0 +1,36 @@
+.formBG{
+    background: #161928;
+}
+
+.damageContainer {
+    width: 500px;
+    box-sizing: border-box;
+    display: grid;
+
+    background: #161928;
+    border: 3px solid #3F455B;
+    border-radius: 4px;
+}
+
+.columnStyle{
+    display: grid;
+    grid-template-rows: auto;
+
+}
+
+.fontDamage{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    color: #A4AAB4;
+}
+/*
+
+display: grid;
+grid-auto-flow: row;
+grid-template-columns: 1fr;
+grid-template-rows:  min-content;
+column-gap: 0;
+row-gap: 15px;*/
