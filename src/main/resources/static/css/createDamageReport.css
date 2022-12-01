@@ -48,11 +48,9 @@ row-gap: 15px;*/
 
 input[type="text"]::placeholder {
     text-align: right;
-
 }
 
 .damageContainerDesc {
-
     width: 100%;
     height: 250px;
     box-sizing: border-box;
@@ -62,8 +60,6 @@ input[type="text"]::placeholder {
     border: 3px solid #3F455B;
     border-radius: 4px;
     padding: 10px;
-
-
 }
 
 
@@ -79,12 +75,9 @@ input[type="text"]::placeholder {
 }
 
 .placeholderText {
-
     width: 99%;
     height: 15px;
-
     border: #161928 solid 2px;
-
 }
 
 
@@ -92,13 +85,11 @@ input[type="text"]::placeholder {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-
 }
 
 
 .cancelled-btn {
-
-    width: 244px;
+    width: 180px;
     height: 62px;
     border-radius: 20px;
     color: #FFFFFF;
@@ -108,64 +99,44 @@ input[type="text"]::placeholder {
     font-weight: 700;
     font-size: 20px;
    /* line-height: 24.2px; */
-
     text-decoration: none;
-
     align-items: center;
-
-
-
 }
 
 .cancelled-btn:hover {
-
-    text-decoration: underline;
     color: #FFFFFF;
-
+    opacity: 70%;
 }
 
 .submit-btn {
-
-    width: 244px;
+    width: 180px;
     height: 62px;
     border-radius: 20px;
     color: #FFFFFF;
     background-color: #668CD7;
-
     font-family: Inter;
     font-weight: 700;
     font-size: 20px;
    /*  line-height: 24.2px; */
-
     text-decoration: none;
-
     align-items: center;
-
 }
 
 .submit-btn:hover {
-
-    text-decoration: underline;
     color: #FFFFFF;
     cursor: pointer;
-
+    opacity: 70%;
 }
 
 .buttonSpace {
-
     width: 20px;
 }
 
 .buttonCenter {
-
     display: flex;
-
     justify-content: center;
-
     margin-top: 20px;
-
-
-
 }
+
 
 
