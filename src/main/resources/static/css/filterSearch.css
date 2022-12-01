@@ -1,71 +1,97 @@
 
-@media (min-width: 1024px) {
+    .displayAll {
+        box-sizing: content-box;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
 
-    .Container {
+    .filterPeriodeDisplay {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .activeInactiveDisplay{
+        width: 80px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 4px;
+    }
+
+    .filterPeriodeContainer {
         box-sizing: border-box;
-        position: absolute;
+        align-self: center;
+
         background: #161928;
         border: 3px solid #3F455B;
         border-radius: 4px;
-    }
-    .periodContainer {
-        box-sizing: border-box;
-        position: absolute;
-        left: 11.42%;
-        right: 78.7%;
-        top: 0%;
-        bottom: 0%;
-        background: #161928;
-        border: 3px solid #3F455B;
-        border-radius: 4px;
+
+        padding: 5px;
     }
 
-    .filterContainer {
-        box-sizing: border-box;
-        position: absolute;
-        left: 0%;
-        right: 90.43%;
-        top: 0%;
-        bottom: 0%;
-        background: #161928;
-        border: 3px solid #3F455B;
-        border-radius: 4px;
+    .carContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
     }
 
-    .font {
-        font-family: 'Inter';
-        font-style: normal;
+    #activeBG{
+        background: #668CD7;
+    }
+    #inactiveBG{
+        background: #3D455A;
+    }
+
+    .spacing {
+        padding-right: 3px;
+    }
+
+
+    .fontFilterPeriode {
+
         font-weight: 500;
         font-size: 20px;
         line-height: 24px;
         text-transform: uppercase;
+
         color: #3F455B;
+
     }
 
     .fontActiveInactive{
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 800;
-        font-size: 8px;
+
+        font-weight: 500;
+        font-size: 12px;
         line-height: 10px;
 
         color: #FFFFFF;
     }
 
-    .textPositionPeriode {
-        position: absolute;
-        left: 14.04%;
-        right: 79.4%;
-        top: 26%;
-        bottom: 26%;
+    .searchDisplay{
+        display: grid;
+        grid-auto-rows: 1fr 1fr;
+        justify-content: right;
     }
 
-    .textPositionFilter {
-        position: absolute;
-        left: 3.09%;
-        right: 91.9%;
-        top: 26%;
-        bottom: 26%;
+    .searchContainer {
+        box-sizing: border-box;
+        align-items: center;
+
+        background: #161928;
+        border: 3px solid #3F455B;
+        border-radius: 4px;
+
+        padding: 3px;
     }
-}
+    .fontSearch {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+
+        color: #3F455B;
+    }
+
 
