@@ -1,12 +1,12 @@
 package com.example.keabilabonnement.repository.mysql.car_customer;
 
+import com.example.keabilabonnement.contracts.factories.CarFactory;
+import com.example.keabilabonnement.contracts.factories.CustomerFactory;
 import com.example.keabilabonnement.contracts.repository.CarCustomerRepository;
 import com.example.keabilabonnement.models.cars.Car;
 import com.example.keabilabonnement.models.customers.Customer;
 import com.example.keabilabonnement.services.db.DBConnection;
 import org.springframework.stereotype.Repository;
-
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,6 +15,11 @@ import java.util.List;
 
 @Repository
 public class MySQLCarCustomerRepo implements CarCustomerRepository {
+
+    public MySQLCarCustomerRepo(CarFactory carFactory, CustomerFactory customerFactory) {
+        this.carFactory = carFactory;
+        this.customerFactory = customerFactory;
+    }
 
     @Override
     public List<Car> getCars() {
@@ -30,19 +35,8 @@ public class MySQLCarCustomerRepo implements CarCustomerRepository {
             ResultSet RS = statement.executeQuery();
 
             while (RS.next()) {
-                String Brand = RS.getString("Brand");
-                String Model = RS.getString("Model");
-                String VIN = RS.getString("VIN");
-                String Number = RS.getString("Number");
-
-                Car car = new Car();
-                car.setBrand(Brand);
-                car.setModel(Model);
-                car.setVin(VIN);
-                car.setCarNumber(Number);
-
+                Car car = carFactory.fromResultSet(RS);
                 listOfCar.add(car);
-
             }
 
         } catch (SQLException e) {
@@ -51,9 +45,6 @@ public class MySQLCarCustomerRepo implements CarCustomerRepository {
 
         return listOfCar;
     }
-
-
-
 
     @Override
     public List<Customer> getCustomers() {
@@ -69,21 +60,8 @@ public class MySQLCarCustomerRepo implements CarCustomerRepository {
             ResultSet RS = statement.executeQuery();
 
             while (RS.next()) {
-                String License_Id = RS.getString("License_Id");
-                String Name = RS.getString("Name");
-                Date Birthday = RS.getDate("Birthday");
-                String Address = RS.getString("Address");
-                String PhoneNumber = RS.getString("PhoneNumber");
-
-                Customer customer = new Customer();
-                customer.setLicenseID(License_Id);
-                customer.setName(Name);
-                customer.setBirthday(Birthday.toLocalDate());
-                customer.setAddress(Address);
-                customer.setPhoneNumber(PhoneNumber);
-
+                Customer customer = customerFactory.fromResultSet(RS);
                 listOfCustomer.add(customer);
-
             }
 
         } catch (SQLException e) {
@@ -92,4 +70,7 @@ public class MySQLCarCustomerRepo implements CarCustomerRepository {
 
         return listOfCustomer;
     }
+
+    private final CarFactory carFactory;
+    private final CustomerFactory customerFactory;
 }

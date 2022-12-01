@@ -1,0 +1,48 @@
+<div th:fragment="filterSearch(activeCount, inactiveCount)">
+    <div class="displayAll">
+
+        <div class="filterPeriodeDisplay">
+            <div class="filterPeriodeContainer">
+                <div class="fontFilterPeriode">
+                    <i class="fa fa-filter" style="font-size:20px"></i>
+                    FILTER
+                </div>
+            </div>
+            <span class="spacing"></span>
+            <div class="filterPeriodeContainer">
+                <div class="fontFilterPeriode">
+                    <i class="fa fa-calendar" style="font-size:20px"></i>
+                    PERIODE
+                </div>
+            </div>
+            <span class="spacing"></span>
+            <div class="activeInactiveDisplay">
+                <div class="carContainer" id="activeBG">
+                    <div class="fontActiveInactive spacing" th:text="${activeCount}"/>
+                    <div class="fontActiveInactive">Aktiv</div>
+                </div>
+                <div class="carContainer" id="inactiveBG">
+                    <div class="fontActiveInactive spacing" th:text="${inactiveCount}"/>
+                    <div class="fontActiveInactive">Inaktiv</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="searchDisplay">
+            <div class="searchContainer">
+                <div class="fontSearch">
+                    <form action >
+                        <button type="submit" style="background-color: #161928"><i class="fa fa-search" style="color: #3F455B"></i></button>
+                        <input style="background-color: #161928" type="text" placeholder="Søg... " name="search">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+Search bar
+
+-->
+
+

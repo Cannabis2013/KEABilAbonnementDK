@@ -1,10 +1,9 @@
 package com.example.keabilabonnement.models.cars;
 
-import com.example.keabilabonnement.models.entity.Entity;
-
 public class Car {
     private String carNumber;
     private String vin;
+    private int year;
     private String brand;
     private String model;
 
@@ -38,5 +37,13 @@ public class Car {
 
     public void setVin(String vin) {
         this.vin = vin;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 }
