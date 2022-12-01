@@ -33,6 +33,7 @@ public class RentalAgreementFactory {
         car.setVin(set.getString("VIN"));
         car.setModel(set.getString("Model"));
         car.setBrand(set.getString("Brand"));
+        car.setYear(set.getInt("Year"));
 
         customer.setLicenseID(set.getString("License_Id"));
         customer.setName(set.getString("Name"));

@@ -71,11 +71,6 @@
     align-items: end;
 }
 
-.default-font{
-    font-family: 'Inter', serif;
-    font-style: normal;
-}
-
 @keyframes popUp {
     from {opacity: 0}
     to {opacity: 1}

@@ -34,10 +34,12 @@ public class MySQLCarCustomerRepo implements CarCustomerRepository {
                 String Model = RS.getString("Model");
                 String VIN = RS.getString("VIN");
                 String Number = RS.getString("Number");
+                int year = RS.getInt("Year");
 
                 Car car = new Car();
                 car.setBrand(Brand);
                 car.setModel(Model);
+                car.setYear(year);
                 car.setVin(VIN);
                 car.setCarNumber(Number);
 
