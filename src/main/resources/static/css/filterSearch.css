@@ -1,32 +1,25 @@
 
 @media (min-width: 1024px) {
 
-    .Container {
-        box-sizing: border-box;
-        position: absolute;
-        background: #161928;
-        border: 3px solid #3F455B;
-        border-radius: 4px;
+    .display {
+        box-sizing: content-box;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+        color: white;
     }
-    .periodContainer {
+
+    .filterContainer {
         box-sizing: border-box;
-        position: absolute;
-        left: 11.42%;
-        right: 78.7%;
-        top: 0%;
-        bottom: 0%;
+
         background: #161928;
         border: 3px solid #3F455B;
         border-radius: 4px;
     }
 
-    .filterContainer {
+    .periodeContainer {
         box-sizing: border-box;
-        position: absolute;
-        left: 0%;
-        right: 90.43%;
-        top: 0%;
-        bottom: 0%;
+
         background: #161928;
         border: 3px solid #3F455B;
         border-radius: 4px;
@@ -41,6 +34,21 @@
         text-transform: uppercase;
         color: #3F455B;
     }
+
+    .fontFilter {
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+
+        color: #3F455B;
+
+    }
+
+
 
     .fontActiveInactive{
         font-family: 'Inter';
@@ -64,6 +72,39 @@
         position: absolute;
         left: 3.09%;
         right: 91.9%;
+        top: 26%;
+        bottom: 26%;
+    }
+
+    .activeContainer{
+
+        background: #668CD7;
+        border-radius: 10px;
+    }
+
+    .inactiveContainer{
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 8px;
+        line-height: 10px;
+
+        color: #FFFFFF;
+    }
+
+    .searchContainer {
+        box-sizing: border-box;
+
+        background: #161928;
+        border: 3px solid #3F455B;
+        border-radius: 4px;
+    }
+
+    .searchTextPosition {
+        position: absolute;
+        left: 75.39%;
+        right: 20.37%;
         top: 26%;
         bottom: 26%;
     }

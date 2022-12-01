@@ -1,31 +1,19 @@
 
 <!--        Filter, kalendar og tal-->
 <div th:fragment="filterSearch(activeCount, inactiveCount)">
-    <div style="display: flex; justify-content: space-between;">
-        <div class="font, container" >FILTER</div>
-        <div class="font, container" >PERIODE</div>
-    <i class="fa fa-calender" style="font-size:24px"></i>
+    <div class="display">
+        <div class="filterContainer">FILTER</div>
+        <div class="periodeContainer">PERIODE</div>
         <div class="fontActiveInactive" th:text="${activeCount}">Active</div>
         <div class="fontActiveInactive" th:text="${inactiveCount}">Inactive</div>
+        <div class="searchContainer">Søg...</div>
+        <div>TEST</div>
     </div>
 </div>
-
-         <!--
-         <i class="fa fa-calender" style="font-size:24px"></i>
-
-
-
-         <p>Used on a button:</p>
-            <button style="font-size:24px">Button <i class="fa fa-calendar"></i></button>
-
-            <h1>fa fa-calendar</h1>
-
-            <i class="fa fa-calendar"></i>
-            <i class="fa fa-calendar" style="font-size:24px"></i>
-            </div>-->
-
-
-
-<!--        Search bar-->
+<!--        Search bar
+<i class="fa fa-filter" style="font-size:24px"></i>
+<i class="fa fa-calender" style="font-size:24px"></i>
+<i class="fa fa-search" style="font-size:24px"></i>
+-->
 
 
