@@ -17,13 +17,15 @@ public class MySQLInspectionAdder {
     public Boolean add(Report newDamageReport) {
         try {
             PreparedStatement damageReport = DBConnection.statement(//Connection established.
-                    "INSERT INTO DamageReport " +//MySQL Statement
-                            "(Date, " +
-                            "RentalAgreementId) " +
-                            "VALUES (?, ?)");
-            damageReport.setDate(1, Date.valueOf(newDamageReport.getDate()));//Setting values in
-            damageReport.setString(2, newDamageReport.getId());
-            damageReport.executeUpdate();
+                    """
+                            INSERT INTO DamageReport
+                            (Id, Date, RentalAgreementId)
+                            VALUES (?, ?, ?);
+                            """);
+            damageReport.setString(1, newDamageReport.getId());
+            damageReport.setDate(2, Date.valueOf(newDamageReport.getDate()));//Setting values in
+            damageReport.setString(3, newDamageReport.getRentalId());
+            damageReport.execute();
         } catch (SQLException e) { //Error message if add doesn't work.
             printDbError(e);
             return false;

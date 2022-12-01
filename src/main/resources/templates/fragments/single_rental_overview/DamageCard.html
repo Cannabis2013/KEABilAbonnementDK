@@ -1,0 +1,19 @@
+<div th:fragment="damage(damage)" class="damage__card">
+    <div class="damage__wrapper">
+        <div id="damage__card__date" th:text="${damage.getDate()}"></div>
+        <div class="damage__card__info">
+            <div class="damage__card__info__item">
+                <label class="damage__card__info__item__desc">TYPE</label>
+                <div class="damage__card__info__item__value" th:text="${damage.getType()}"></div>
+            </div>
+            <div class="damage__card__info__item">
+                <label id="damage__card__info__item__right" class="damage__card__info__item__desc">PRIS</label>
+                <div class="damage__card__info__item__value" th:text="${damage.getCost()} + ' kr'"></div>
+            </div>
+        </div>
+        <div class="damage__card__description">
+            <label class="damage__card__info__item__desc">Beskrivelse</label>
+            <div class="damage__card__info__item__value" th:text="${damage.getDescription()}"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Overview</title>
+    <link href="../static/css/global.css">
+    <link rel="stylesheet" th:href="@{/css/global.css}"/>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}"/>
+    <link rel="stylesheet" th:href="@{/css/single_rental_overview.css}"/>
+</head>
+<body>
+    <div class="container">
+        <div th:replace="/fragments/navbar.html :: overviewNavBar"/>
+        <div th:replace="/fragments/single_rental_overview/cards.html :: cardGrid(${agreement}, ${report})"/>
+    </div>
+</body>
+</html>
