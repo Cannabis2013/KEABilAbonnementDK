@@ -1,16 +1,32 @@
 
-@media (min-width: 1024px) {
-
-    .display {
+    .displayAll {
         box-sizing: content-box;
         flex-direction: row;
         display: flex;
         justify-content: space-between;
-        color: white;
+        position: relative;
+    }
+
+    .filterPeriodeDisplay {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .activeInactiveDisplay{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .searchDisplay{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
     }
 
     .filterContainer {
         box-sizing: border-box;
+        align-self: center;
 
         background: #161928;
         border: 3px solid #3F455B;
@@ -19,36 +35,49 @@
 
     .periodeContainer {
         box-sizing: border-box;
+        align-self: center;
 
         background: #161928;
         border: 3px solid #3F455B;
         border-radius: 4px;
     }
 
-    .font {
+    .activeContainer{
+
+        background: #668CD7;
+        border-radius: 10px;
+    }
+
+    .inactiveContainer{
+
+        background: #3D455A;
+        border-radius: 10px;
+    }
+
+    .searchContainer {
+        box-sizing: border-box;
+
+        background: #161928;
+        border: 3px solid #3F455B;
+        border-radius: 4px;
+    }
+
+    .searchForm {
+
+    }
+
+    .fontFilterPeriode {
+
         font-family: 'Inter';
         font-style: normal;
         font-weight: 500;
         font-size: 20px;
         line-height: 24px;
         text-transform: uppercase;
-        color: #3F455B;
-    }
-
-    .fontFilter {
-
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        text-transform: uppercase;
 
         color: #3F455B;
 
     }
-
-
 
     .fontActiveInactive{
         font-family: 'Inter';
@@ -58,6 +87,16 @@
         line-height: 10px;
 
         color: #FFFFFF;
+    }
+
+    .fontSearch {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+
+        color: #3F455B;
     }
 
     .textPositionPeriode {
@@ -76,31 +115,6 @@
         bottom: 26%;
     }
 
-    .activeContainer{
-
-        background: #668CD7;
-        border-radius: 10px;
-    }
-
-    .inactiveContainer{
-
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 800;
-        font-size: 8px;
-        line-height: 10px;
-
-        color: #FFFFFF;
-    }
-
-    .searchContainer {
-        box-sizing: border-box;
-
-        background: #161928;
-        border: 3px solid #3F455B;
-        border-radius: 4px;
-    }
-
     .searchTextPosition {
         position: absolute;
         left: 75.39%;
@@ -108,5 +122,4 @@
         top: 26%;
         bottom: 26%;
     }
-}
 

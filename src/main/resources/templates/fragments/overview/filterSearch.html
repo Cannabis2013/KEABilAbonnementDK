@@ -1,19 +1,45 @@
-
-<!--        Filter, kalendar og tal-->
 <div th:fragment="filterSearch(activeCount, inactiveCount)">
-    <div class="display">
-        <div class="filterContainer">FILTER</div>
-        <div class="periodeContainer">PERIODE</div>
-        <div class="fontActiveInactive" th:text="${activeCount}">Active</div>
-        <div class="fontActiveInactive" th:text="${inactiveCount}">Inactive</div>
-        <div class="searchContainer">Søg...</div>
-        <div>TEST</div>
+    <div class="displayAll">
+
+        <div class="filterPeriodeDisplay">
+            <div class="filterContainer">
+                <div class="fontFilterPeriode">
+                    <i class="fa fa-filter" style="font-size:24px"></i>
+                    FILTER
+                </div>
+            </div>
+            <div class="periodeContainer">
+                <div class="fontFilterPeriode">
+                    <i class="fa fa-calender" style="font-size:24px"></i>
+                    PERIODE
+                </div>
+            </div>
+
+            <div class="activeInactiveDisplay">
+                <div class="activeContainer">
+                    <div class="fontActiveInactive" th:text="${activeCount} + Aktiv"></div>
+                </div>
+                <div class="inactiveContainer">
+                    <div class="fontActiveInactive" th:text="${inactiveCount} + Inaktive"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="searchDisplay">
+            <div class="searchContainer">
+                <div class="fontSearch">
+                    <form action="/action_page.php">
+                        <button type="submit" style="background-color: #161928"><i class="fa fa-search"></i></button>
+                        <input style="background-color: #161928" type="text" placeholder="Søg... " name="search">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<!--        Search bar
-<i class="fa fa-filter" style="font-size:24px"></i>
-<i class="fa fa-calender" style="font-size:24px"></i>
-<i class="fa fa-search" style="font-size:24px"></i>
+<!--
+Search bar
+
 -->
 
 
