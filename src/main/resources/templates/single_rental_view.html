@@ -7,10 +7,12 @@
     <link rel="stylesheet" th:href="@{/css/global.css}"/>
     <link rel="stylesheet" th:href="@{/css/navbar.css}"/>
     <link rel="stylesheet" th:href="@{/css/single_rental_overview.css}"/>
+    <link rel="stylesheet" th:href="@{/css/pageTitle.css}"/>
 </head>
 <body>
     <div class="container">
         <div th:replace="/fragments/navbar.html :: overviewNavBar"/>
+        <div th:replace="/fragments/page_title :: title(Lejekontrakt, 'Oplysninger vedrørende en lejekontrakt')"/>
         <div th:replace="/fragments/single_rental_overview/cards.html :: cardGrid(${agreement}, ${report})"/>
     </div>
 </body>

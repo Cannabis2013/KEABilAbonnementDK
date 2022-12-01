@@ -13,7 +13,7 @@
           <div class="card-title default-font">
               <div th:text=" ${agreement.getCar().getBrand()} + ' ' + ${agreement.getCar().getModel()}"></div>
           </div>
-          <button class="details-btn">Detaljer</button>
+          <a th:href="@{/rental(rentalId=${agreement.getId()})}" class="details-btn">Detaljer</a>
           <div class="card-details">
               <p class="default-font card-details-head">
                   ÅRGANG
@@ -34,7 +34,7 @@
           </div>
           <div class="card-payment">
               <p class="default-font card-details-head">MÅNEDLIG YDELSE</p>
-              <p class="default-font  card-details-sub" th:text="${agreement.getPayment()} + 'kr.'"></p>
+              <p style="display: flex; justify-content: end" class="default-font  card-details-sub" th:text="${agreement.getPayment()} + 'kr.'"></p>
           </div>
 
       </div>

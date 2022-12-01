@@ -3,10 +3,6 @@
         th:action="@{/rental/new}"
         method="post"
         th:object="${agreement}">
-    <div class="label-row">
-      <h1 class="default-font" style="color: white">Lejekontrakt</h1>
-      <p class="default-font">Opret en ny kontrakt</p>
-    </div>
     <input th:field="*{id}" type="hidden">
     <div class="form form-dims form-grid">
       <div class="ipts-row ipts-row-dims">

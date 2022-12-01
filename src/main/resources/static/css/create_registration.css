@@ -33,7 +33,7 @@
 }
 
 .ipts-row-dims{
-    height: 56px;
+    height: 70px;
 }
 
 .form-ipt{
@@ -42,7 +42,7 @@
     border-radius: 4px;
     color:white;
     color-scheme: dark;
-    padding:5px;
+    padding:12px;
 }
 
 .btn-flex{
