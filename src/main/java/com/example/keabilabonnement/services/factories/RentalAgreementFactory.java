@@ -29,6 +29,9 @@ public class RentalAgreementFactory {
         rentalAgreement.setId(set.getString("Id"));
         rentalAgreement.setPayment(set.getDouble("RentalAgreement.Payment"));
 
+        /*
+            We should implement a car factory class we can use across contexts.
+         */
         car.setCarNumber(set.getString("Number"));
         car.setVin(set.getString("VIN"));
         car.setModel(set.getString("Model"));
