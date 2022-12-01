@@ -17,7 +17,7 @@
         <!--    Import navbar fragment    -->
         <div th:insert="/fragments/navbar.html :: overviewNavBar"></div>
         <!--    Import page title fragment    -->
-        <div th:insert="/fragments/page_title.html :: title('Udlejet biler', 'Samlet indtjening for udlejet biler i valgt periode')"></div>
+        <div th:insert="/fragments/page_title.html :: title('Udlejede biler', 'Samlet indtjening for udlejede biler i valgt periode')"></div>
         <!--    Price for cars   -->
         <div th:replace="/fragments/overview/filterSearch.html :: filterSearch(${activeCount}, ${inactiveCount})"></div>
 

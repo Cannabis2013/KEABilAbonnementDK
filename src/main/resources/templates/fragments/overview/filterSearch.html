@@ -19,11 +19,13 @@
             <div class="activeInactiveDisplay">
                 <div class="carContainer" id="activeBG">
                     <div class="fontActiveInactive spacing" th:text="${activeCount}"/>
-                    <div class="fontActiveInactive">Aktiv</div>
+                    <div th:if="${activeCount > 1 || activeCount == 0}" class="fontActiveInactive">aktive biler</div>
+                    <div th:if="${activeCount == 1}" class="fontActiveInactive">aktiv bil</div>
                 </div>
                 <div class="carContainer" id="inactiveBG">
                     <div class="fontActiveInactive spacing" th:text="${inactiveCount}"/>
-                    <div class="fontActiveInactive">Inaktiv</div>
+                    <div th:if="${inactiveCount > 1 || inactiveCount == 0}" class="fontActiveInactive">inaktive biler</div>
+                    <div th:if="${inactiveCount == 1}" class="fontActiveInactive">inaktiv bil</div>
                 </div>
             </div>
         </div>
