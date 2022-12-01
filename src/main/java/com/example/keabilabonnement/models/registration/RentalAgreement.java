@@ -1,12 +1,23 @@
 package com.example.keabilabonnement.models.registration;
 
+import com.example.keabilabonnement.models.cars.Car;
+import com.example.keabilabonnement.models.customers.Customer;
 import com.example.keabilabonnement.models.entity.Entity;
+
 import java.time.LocalDate;
 
 public class RentalAgreement extends Entity {
     private LocalDate start;
     private LocalDate expiration;
     private LocalDate delevery;
+    private Customer customer;
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     private String customerAddress;
     private String customerPhone;
@@ -15,6 +26,18 @@ public class RentalAgreement extends Entity {
     private String licenseID;
 
     private String customerName;
+
+
+    // May be removed in the near future
+    private Car car;
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 
     private String carNumber;
 

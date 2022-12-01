@@ -32,7 +32,7 @@ public class RegistrationController {
     @GetMapping("/overview")
     public String get(Model model) {
         List<RentalAgreement> registrations = repository.getAllActiveRegistrations();
-        model.addAttribute("registrations", registrations);
+        model.addAttribute("agreements", registrations);
         return "overview";
     }
 

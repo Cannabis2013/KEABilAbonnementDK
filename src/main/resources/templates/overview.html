@@ -5,7 +5,9 @@
     <title>Overview</title>
     <link href="../static/css/global.css">
     <link rel="stylesheet" th:href="@{/css/global.css}"/>
+    <link rel="stylesheet" th:href="@{/css/overview.css}"/>
     <link rel="stylesheet" th:href="@{/css/navbar.css}"/>
+    <link rel="stylesheet" th:href="@{/css/rental_card.css}"/>
 </head>
 <body>
     <div class="container">
@@ -16,8 +18,12 @@
         <!--    Import filter bar fragment    -->
 
         <!--    Import card fragment    -->
-        <div th:each="agreement : ${agreements}">
-            <div th:replace="/fragments/overview/card.html :: card(${agreement})"/>
+        <br>
+        <br>
+        <div class="cards">
+            <div th:each="agreement : ${agreements}">
+                <div th:replace="/fragments/overview/rental_card.html :: rentalCard(${agreement})"></div>
+            </div>
         </div>
     </div>
 </body>
