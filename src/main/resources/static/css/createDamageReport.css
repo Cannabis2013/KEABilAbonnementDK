@@ -10,11 +10,21 @@
     background: #161928;
     border: 3px solid #3F455B;
     border-radius: 4px;
+    padding: 10px;
 }
 
 .columnStyle{
-    display: grid;
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
+   /* grid-template-rows: auto; */
+
+}
+
+.rowStyle{
+    display: flex;
+    flex-direction: row;
+    /* grid-template-rows: auto; */
+    justify-content: space-between;
 
 }
 
@@ -34,3 +44,128 @@ grid-template-columns: 1fr;
 grid-template-rows:  min-content;
 column-gap: 0;
 row-gap: 15px;*/
+
+
+input[type="text"]::placeholder {
+    text-align: right;
+
+}
+
+.damageContainerDesc {
+
+    width: 100%;
+    height: 250px;
+    box-sizing: border-box;
+    display: grid;
+
+    background: #161928;
+    border: 3px solid #3F455B;
+    border-radius: 4px;
+    padding: 10px;
+
+
+}
+
+
+.damageContainerType {
+    width: 1022px;
+    box-sizing: border-box;
+    display: grid;
+
+    background: #161928;
+    border: 3px solid #3F455B;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.placeholderText {
+
+    width: 99%;
+    height: 15px;
+
+    border: #161928 solid 2px;
+
+}
+
+
+.rowStyleButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+
+.cancelled-btn {
+
+    width: 244px;
+    height: 62px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    background-color: #3F455B;
+
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+   /* line-height: 24.2px; */
+
+    text-decoration: none;
+
+    align-items: center;
+
+
+
+}
+
+.cancelled-btn:hover {
+
+    text-decoration: underline;
+    color: #FFFFFF;
+
+}
+
+.submit-btn {
+
+    width: 244px;
+    height: 62px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    background-color: #668CD7;
+
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+   /*  line-height: 24.2px; */
+
+    text-decoration: none;
+
+    align-items: center;
+
+}
+
+.submit-btn:hover {
+
+    text-decoration: underline;
+    color: #FFFFFF;
+    cursor: pointer;
+
+}
+
+.buttonSpace {
+
+    width: 20px;
+}
+
+.buttonCenter {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+
+
+}
+
+
