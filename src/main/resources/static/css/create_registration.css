@@ -1,0 +1,81 @@
+.form{
+    margin: 25px auto;
+}
+
+.form-grid{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-template-rows:  min-content;
+    column-gap: 0;
+    row-gap: 15px;
+}
+
+.grid-span{
+    grid-column: span 1;
+}
+
+@media (min-width: 1024px) {
+    .form-grid{
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: 2fr 1fr;
+        grid-auto-rows: min-content;
+        column-gap: 25px;
+        row-gap: 25px;
+    }
+}
+
+.ipts-row{
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: min-content 1fr;
+}
+
+.ipts-row-dims{
+    height: 56px;
+}
+
+.form-ipt{
+    background: #161928;
+    border: 2px solid #3F455B;
+    border-radius: 4px;
+    color:white;
+    color-scheme: dark;
+}
+
+.btn-flex{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.submit-btn{
+    width: 80px;
+    height: 48px;
+    background: #5a6397;
+    border: 3px solid #3F455B;
+    border-radius: 20px;
+    color: white;
+}
+
+.ipt-label{
+    color: #A4AAB4 !important;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: uppercase;
+
+}
+
+#form-head{
+    font-size: 2rem;
+}
+
+.default-font{
+    color: #828692;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    margin: 0;
+}
+

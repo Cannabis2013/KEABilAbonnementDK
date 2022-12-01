@@ -1,0 +1,82 @@
+.card-cont{
+    background: #161928;
+    border-radius: 23px;
+    padding:25px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 256px 2fr 1fr;
+    column-gap: 15px;
+    height: 192px;
+    animation: popUp;
+    animation-duration: 2s;
+}
+
+.card-img{
+    display: grid;
+    grid-row: span 2;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 9px;
+}
+
+.card-title{
+    font-size: 3rem;
+    color: white;
+
+}
+
+.details-btn{
+    height: 32px;
+    width: 128px;
+    justify-self: end;
+    background: #668CD7;
+    border:0;
+    border-radius: 13px;
+    color: #FFFFFF;
+}
+
+.details-btn:hover{
+    background: rgba(102, 140, 215, 0.43);
+}
+
+.details-btn:active{
+    scale: 0.90;
+}
+
+.card-details-head{
+    color: #A4AAB4;
+    font-size: 15px;
+}
+
+.card-details-sub{
+    color: white;
+    font-size: 14px;
+}
+
+.card-details{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr 1.25rem;
+    align-items: end;
+    justify-content: start;
+    column-gap: 20px;
+}
+
+.card-payment{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr 1.25rem;
+    justify-content: end;
+    align-items: end;
+}
+
+.default-font{
+    font-family: 'Inter', serif;
+    font-style: normal;
+}
+
+@keyframes popUp {
+    from {opacity: 0}
+    to {opacity: 1}
+}

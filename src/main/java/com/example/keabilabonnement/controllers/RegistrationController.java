@@ -38,6 +38,7 @@ public class RegistrationController {
         model.addAttribute("activeCount", activeCount);
         model.addAttribute("inactiveCount", inactiveCount);
         model.addAttribute("registrations", registrations);
+        model.addAttribute("agreements", registrations);
         return "overview";
     }
 
@@ -49,7 +50,7 @@ public class RegistrationController {
         model.addAttribute("agreement", agreement);
         model.addAttribute("cars", cars);
         model.addAttribute("customers", customers);
-        return "/forms/CreateAgreement";
+        return "/forms/create_agreement";
     }
 
     @PostMapping("/rental/new")

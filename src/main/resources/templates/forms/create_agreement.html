@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="../../static/css/global.css">
+  <link rel="stylesheet" th:href="@{/css/global.css}"/>
+  <link rel="stylesheet" th:href="@{/css/create_registration.css}"/>
+  <link rel="stylesheet" th:href="@{/css/navbar.css}"/>
+</head>
+<body>
+<div class="container">
+  <!-- Top panel section
+  <top fragment>
+  -->
+  <div th:replace="/fragments/navbar.html :: overviewNavBar"></div>
+  <br><br>
+  <div th:replace="/fragments/forms/create_rental_form.html :: create_rental_form(${agreement},${cars})"></div>
+</div>
+</body>
+</html>

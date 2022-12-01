@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Service
@@ -14,6 +15,8 @@ public class RentalAgreementFactory {
     public RentalAgreement empty() {
         RentalAgreement rentalAgreement = new RentalAgreement();
         rentalAgreement.setId(UUID.randomUUID().toString());
+        rentalAgreement.setStart(LocalDate.now());
+        rentalAgreement.setExpiration(LocalDate.now());
         return rentalAgreement;
     }
     public RentalAgreement fromResultSet(ResultSet set) throws SQLException {
@@ -30,7 +33,6 @@ public class RentalAgreementFactory {
         car.setVin(set.getString("VIN"));
         car.setModel(set.getString("Model"));
         car.setBrand(set.getString("Brand"));
-
 
         customer.setLicenseID(set.getString("License_Id"));
         customer.setName(set.getString("Name"));
