@@ -11,10 +11,6 @@
     row-gap: 15px;
 }
 
-.form-dims{
-    width: 90%;
-}
-
 .grid-span{
     grid-column: span 1;
 }
@@ -28,28 +24,6 @@
         column-gap: 25px;
         row-gap: 25px;
     }
-
-    .form-dims{
-        width: 100%;
-    }
-}
-
-.label-row{
-    display: grid;
-    grid-auto-flow: row;
-    align-content: start;
-
-}
-
-#label-font{
-    color: #828692;
-    font-family: 'Inter', serif;
-    font-style: normal;
-    font-size: 15px;
-
-    padding: 0;
-    margin: 0;
-
 }
 
 .ipts-row{
@@ -62,6 +36,14 @@
     height: 56px;
 }
 
+.form-ipt{
+    background: #161928;
+    border: 2px solid #3F455B;
+    border-radius: 4px;
+    color:white;
+    color-scheme: dark;
+}
+
 .btn-flex{
     width: 100%;
     display: flex;
@@ -69,19 +51,31 @@
 }
 
 .submit-btn{
-    border-radius: 20px;
     width: 80px;
     height: 48px;
+    background: #5a6397;
+    border: 3px solid #3F455B;
+    border-radius: 20px;
+    color: white;
 }
 
-label{
+.ipt-label{
+    color: #A4AAB4 !important;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: uppercase;
+
+}
+
+#form-head{
+    font-size: 2rem;
+}
+
+.default-font{
+    color: #828692;
     font-family: 'Inter', serif;
     font-style: normal;
-    color: #A4AAB4;
-    font-size: 20px;
-}
-
-h1,p{
     margin: 0;
 }
 

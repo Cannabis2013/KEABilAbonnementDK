@@ -1,7 +1,5 @@
 package com.example.keabilabonnement.models.cars;
 
-import com.example.keabilabonnement.models.entity.Entity;
-
 public class Car {
     private String carNumber;
     private String vin;

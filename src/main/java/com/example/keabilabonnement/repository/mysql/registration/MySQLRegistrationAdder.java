@@ -43,8 +43,8 @@ public class MySQLRegistrationAdder {
         statement.setDate(3,toDate(agreement.getDelevery()));
         statement.setDouble(4,agreement.getPayment());
         statement.setString(5,agreement.getId());
-        statement.setString(6,agreement.getCar().getCarNumber());
-        statement.setString(7,agreement.getCustomer().getLicenseID());
+        statement.setString(6,agreement.getCarNumber());
+        statement.setString(7,agreement.getLicenseID());
         return statement;
     }
 
