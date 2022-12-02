@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.contracts.repository;
+package com.example.keabilabonnement.contracts.statistics;
 
 import com.example.keabilabonnement.models.analytics.Statistics;
 

@@ -1,6 +1,6 @@
 package com.example.keabilabonnement.models.registration;
 
-import com.example.keabilabonnement.contracts.models.Agreement;
+import com.example.keabilabonnement.contracts.agreement.Agreement;
 import com.example.keabilabonnement.models.cars.RentalCar;
 import java.time.LocalDate;
 

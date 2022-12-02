@@ -1,6 +1,6 @@
 package com.example.keabilabonnement.models.cars;
 
-import com.example.keabilabonnement.contracts.models.CarDetails;
+import com.example.keabilabonnement.contracts.auxiliary.CarDetails;
 import com.example.keabilabonnement.models.customers.Customer;
 
 public class RentalCar extends Customer implements CarDetails {

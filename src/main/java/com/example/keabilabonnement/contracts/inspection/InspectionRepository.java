@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.contracts.repository;
+package com.example.keabilabonnement.contracts.inspection;
 
 import com.example.keabilabonnement.models.inspection.Report;
 

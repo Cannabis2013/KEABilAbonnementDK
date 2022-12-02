@@ -1,6 +1,4 @@
-package com.example.keabilabonnement.contracts.factories;
-
-import com.example.keabilabonnement.contracts.models.CarDetails;
+package com.example.keabilabonnement.contracts.auxiliary;
 
 import java.sql.ResultSet;
 

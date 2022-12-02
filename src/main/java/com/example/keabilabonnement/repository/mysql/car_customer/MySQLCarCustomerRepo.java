@@ -1,10 +1,10 @@
 package com.example.keabilabonnement.repository.mysql.car_customer;
 
-import com.example.keabilabonnement.contracts.factories.CarFactory;
-import com.example.keabilabonnement.contracts.factories.CustomerFactory;
-import com.example.keabilabonnement.contracts.models.CarDetails;
-import com.example.keabilabonnement.contracts.models.CustomerDetails;
-import com.example.keabilabonnement.contracts.repository.CarCustomerRepository;
+import com.example.keabilabonnement.contracts.auxiliary.CarFactory;
+import com.example.keabilabonnement.contracts.auxiliary.CustomerFactory;
+import com.example.keabilabonnement.contracts.auxiliary.CarDetails;
+import com.example.keabilabonnement.contracts.auxiliary.CustomerDetails;
+import com.example.keabilabonnement.contracts.auxiliary.CarCustomerRepository;
 import com.example.keabilabonnement.services.db.DBConnection;
 import org.springframework.stereotype.Repository;
 import java.sql.PreparedStatement;

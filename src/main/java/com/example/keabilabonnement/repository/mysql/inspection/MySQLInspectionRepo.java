@@ -1,6 +1,7 @@
 package com.example.keabilabonnement.repository.mysql.inspection;
 
-import com.example.keabilabonnement.contracts.repository.InspectionRepository;
+import com.example.keabilabonnement.contracts.inspection.InspectionRepository;
+import com.example.keabilabonnement.contracts.inspection.InspectionUpdater;
 import com.example.keabilabonnement.models.inspection.Report;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +13,7 @@ public class MySQLInspectionRepo implements InspectionRepository {
     private final MySQLInspectionAdder inspectionAdder;
     private final MySQLInspections inspections;
     private final DbInspectionRemover inspectionRemover;
-    private final MySQLInspectionUpdater_imp1 inspectionUpdater;
+    private final InspectionUpdater inspectionUpdater;
 
     @Override
     public boolean addReport(Report report) {

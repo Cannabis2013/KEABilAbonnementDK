@@ -1,7 +1,7 @@
 package com.example.keabilabonnement.factories;
 
-import com.example.keabilabonnement.contracts.factories.CarFactory;
-import com.example.keabilabonnement.contracts.models.CarDetails;
+import com.example.keabilabonnement.contracts.auxiliary.CarFactory;
+import com.example.keabilabonnement.contracts.auxiliary.CarDetails;
 import com.example.keabilabonnement.models.cars.RentalCar;
 import org.springframework.stereotype.Service;
 import java.sql.ResultSet;

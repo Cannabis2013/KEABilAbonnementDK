@@ -1,13 +1,16 @@
 package com.example.keabilabonnement.controllers;
 
-import com.example.keabilabonnement.contracts.models.Agreement;
-import com.example.keabilabonnement.contracts.repository.AgreementRepository;
-import com.example.keabilabonnement.contracts.repository.InspectionRepository;
-import com.example.keabilabonnement.contracts.repository.RepositoryUpdateException;
+import com.example.keabilabonnement.contracts.agreement.AgreementFactory;
+import com.example.keabilabonnement.contracts.agreement.AgreementRepository;
+import com.example.keabilabonnement.contracts.agreement.Agreement;
+import com.example.keabilabonnement.contracts.auxiliary.CarCustomerRepository;
+import com.example.keabilabonnement.contracts.auxiliary.CarDetails;
+import com.example.keabilabonnement.contracts.shared.RepositoryUpdateException;
+import com.example.keabilabonnement.contracts.inspection.*;
+import com.example.keabilabonnement.contracts.statistics.StatisticsRepository;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.repository.mysql.statistics.MySQLStatisticsRepository;
-import com.example.keabilabonnement.services.agreement.NewAgreementDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,13 +18,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
+/*
+    Implemented by group
+ */
+
 @Controller
 public class AgreementsController {
-    public AgreementsController(AgreementRepository repository, InspectionRepository inspectionRepository, NewAgreementDetails newAgreement, MySQLStatisticsRepository statisticsRepository) {
+    public AgreementsController(AgreementRepository repository, InspectionRepository inspectionRepository, MySQLStatisticsRepository statisticsRepository, AgreementFactory agreementFactory, CarCustomerRepository auxiliary) {
         this.agreementRepository = repository;
         this.inspectionRepository = inspectionRepository;
-        this.newAgreement = newAgreement;
         this.statisticsRepository = statisticsRepository;
+        this.agreementFactory = agreementFactory;
+        this.auxiliary = auxiliary;
     }
 
     @GetMapping("/")
@@ -41,17 +51,11 @@ public class AgreementsController {
 
     @GetMapping("/rental/new")
     public String newRental(Model model) {
-        newAgreement.fill(model);
-        return "/forms/create_agreement";
-    }
-
-    @GetMapping("/rental")
-    public String viewRental(@RequestParam String rentalId, Model model) {
-        Agreement agreement = agreementRepository.getAgreement(rentalId);
-        Report report = inspectionRepository.getReportByRental(rentalId);
+        RentalAgreement agreement = agreementFactory.empty();
+        List<CarDetails> cars = auxiliary.getCars();
         model.addAttribute("agreement", agreement);
-        model.addAttribute("report", report);
-        return "single_rental_view";
+        model.addAttribute("cars", cars);
+        return "/forms/create_agreement";
     }
 
     @PostMapping("/rental/new")
@@ -62,6 +66,15 @@ public class AgreementsController {
             return "redirect:/errors/CreateAgreementError";
         }
         return "redirect:/overview";
+    }
+
+    @GetMapping("/rental")
+    public String viewRental(@RequestParam String rentalId, Model model) {
+        Agreement agreement = agreementRepository.getAgreement(rentalId);
+        Report report = inspectionRepository.getReportByRental(rentalId);
+        model.addAttribute("agreement", agreement);
+        model.addAttribute("report", report);
+        return "single_rental_view";
     }
 
     @DeleteMapping("/rental/delete")
@@ -76,6 +89,7 @@ public class AgreementsController {
 
     private final AgreementRepository agreementRepository;
     private final InspectionRepository inspectionRepository;
-    private final NewAgreementDetails newAgreement;
-    private final MySQLStatisticsRepository statisticsRepository;
+    private final StatisticsRepository statisticsRepository;
+    private final AgreementFactory agreementFactory;
+    private final CarCustomerRepository auxiliary;
 }

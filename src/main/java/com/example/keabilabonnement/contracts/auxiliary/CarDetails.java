@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.contracts.models;
+package com.example.keabilabonnement.contracts.auxiliary;
 
 public interface CarDetails {
     String getBrand();

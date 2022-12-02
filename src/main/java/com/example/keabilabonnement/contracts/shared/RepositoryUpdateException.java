@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.contracts.repository;
+package com.example.keabilabonnement.contracts.shared;
 
 public class RepositoryUpdateException extends RuntimeException{
 }

@@ -1,11 +1,11 @@
 package com.example.keabilabonnement.repository.mysql.inspection;
 
+import com.example.keabilabonnement.contracts.agreement.AgreementFactory;
 import com.example.keabilabonnement.models.inspection.Damage;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.db.DBConnection;
 import com.example.keabilabonnement.factories.DamageReportFactory;
-import com.example.keabilabonnement.factories.RentalAgreementFactory;
 import org.springframework.stereotype.Service;
 
 import java.sql.PreparedStatement;
@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class MySQLInspections {
 
-    public MySQLInspections(RentalAgreementFactory rentalFactory, DamageReportFactory damageFactory) {
+    public MySQLInspections(AgreementFactory rentalFactory, DamageReportFactory damageFactory) {
         this.rentalFactory = rentalFactory;
         this.damageFactory = damageFactory;
     }
@@ -149,6 +149,6 @@ public class MySQLInspections {
         }
         return false;
     }
-    private final RentalAgreementFactory rentalFactory;
+    private final AgreementFactory rentalFactory;
     private final DamageReportFactory damageFactory;
 }

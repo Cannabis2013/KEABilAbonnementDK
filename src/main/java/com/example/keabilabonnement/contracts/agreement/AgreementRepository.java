@@ -1,6 +1,4 @@
-package com.example.keabilabonnement.contracts.repository;
-
-import com.example.keabilabonnement.contracts.models.Agreement;
+package com.example.keabilabonnement.contracts.agreement;
 
 import java.util.List;
 

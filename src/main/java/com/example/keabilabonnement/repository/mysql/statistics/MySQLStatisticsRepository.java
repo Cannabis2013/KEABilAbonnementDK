@@ -1,7 +1,7 @@
 package com.example.keabilabonnement.repository.mysql.statistics;
 
-import com.example.keabilabonnement.contracts.repository.StatisticsRepository;
-import com.example.keabilabonnement.factories.SQLStatisticsFactory;
+import com.example.keabilabonnement.contracts.statistics.StatisticsFactory;
+import com.example.keabilabonnement.contracts.statistics.StatisticsRepository;
 import com.example.keabilabonnement.models.analytics.Statistics;
 import com.example.keabilabonnement.services.db.DBConnection;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 @Service
 public class MySQLStatisticsRepository implements StatisticsRepository {
-    public MySQLStatisticsRepository(SQLStatisticsFactory factory) {
+    public MySQLStatisticsRepository(StatisticsFactory factory) {
         this.factory = factory;
     }
 
@@ -28,5 +28,5 @@ public class MySQLStatisticsRepository implements StatisticsRepository {
         }
     }
 
-    private final SQLStatisticsFactory factory;
+    private final StatisticsFactory factory;
 }

@@ -1,11 +1,11 @@
 package com.example.keabilabonnement.controllers;
 
-import com.example.keabilabonnement.contracts.repository.CarCustomerRepository;
-import com.example.keabilabonnement.contracts.repository.InspectionRepository;
-import com.example.keabilabonnement.contracts.repository.AgreementRepository;
+import com.example.keabilabonnement.contracts.agreement.AgreementFactory;
+import com.example.keabilabonnement.contracts.auxiliary.CarCustomerRepository;
+import com.example.keabilabonnement.contracts.inspection.InspectionRepository;
+import com.example.keabilabonnement.contracts.agreement.AgreementRepository;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.factories.DamageReportFactory;
-import com.example.keabilabonnement.factories.RentalAgreementFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class InspectionController {
 
-    public InspectionController(AgreementRepository repository, CarCustomerRepository auxiliary, InspectionRepository inspectionRepository, RentalAgreementFactory agreementFactory, DamageReportFactory damageReportFactory) {
+    public InspectionController(AgreementRepository repository, CarCustomerRepository auxiliary, InspectionRepository inspectionRepository, AgreementFactory agreementFactory, DamageReportFactory damageReportFactory) {
         this.repository = repository;
         this.auxiliary = auxiliary;
         this.inspectionRepository = inspectionRepository;
@@ -51,6 +51,6 @@ public class InspectionController {
     private final AgreementRepository repository;
     private final CarCustomerRepository auxiliary;
     private final InspectionRepository inspectionRepository;
-    private final RentalAgreementFactory agreementFactory;
+    private final AgreementFactory agreementFactory;
     private final DamageReportFactory damageReportFactory;
 }

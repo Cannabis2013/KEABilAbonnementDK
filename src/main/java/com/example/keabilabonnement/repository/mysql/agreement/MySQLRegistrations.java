@@ -1,9 +1,9 @@
 package com.example.keabilabonnement.repository.mysql.agreement;
 
-import com.example.keabilabonnement.contracts.models.Agreement;
+import com.example.keabilabonnement.contracts.agreement.AgreementFactory;
+import com.example.keabilabonnement.contracts.agreement.Agreement;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.db.DBConnection;
-import com.example.keabilabonnement.factories.RentalAgreementFactory;
 import org.springframework.stereotype.Service;
 
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 public class MySQLRegistrations {
-    public MySQLRegistrations(RentalAgreementFactory rentalAgreementFactory) {
+    public MySQLRegistrations(AgreementFactory rentalAgreementFactory) {
         this.rentalAgreementFactory = rentalAgreementFactory;
     }
 
@@ -87,5 +87,5 @@ public class MySQLRegistrations {
         return rentalAgreements;
     }
 
-    private final RentalAgreementFactory rentalAgreementFactory;
+    private final AgreementFactory rentalAgreementFactory;
 }

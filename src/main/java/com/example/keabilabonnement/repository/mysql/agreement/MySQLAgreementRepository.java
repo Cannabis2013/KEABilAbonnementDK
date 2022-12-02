@@ -1,8 +1,8 @@
 package com.example.keabilabonnement.repository.mysql.agreement;
 
-import com.example.keabilabonnement.contracts.models.Agreement;
-import com.example.keabilabonnement.contracts.repository.AgreementRepository;
-import com.example.keabilabonnement.contracts.repository.RepositoryUpdateException;
+import com.example.keabilabonnement.contracts.agreement.Agreement;
+import com.example.keabilabonnement.contracts.agreement.AgreementRepository;
+import com.example.keabilabonnement.contracts.shared.RepositoryUpdateException;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 

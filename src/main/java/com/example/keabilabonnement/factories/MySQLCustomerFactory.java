@@ -1,7 +1,7 @@
 package com.example.keabilabonnement.factories;
 
-import com.example.keabilabonnement.contracts.factories.CustomerFactory;
-import com.example.keabilabonnement.contracts.models.CustomerDetails;
+import com.example.keabilabonnement.contracts.auxiliary.CustomerFactory;
+import com.example.keabilabonnement.contracts.auxiliary.CustomerDetails;
 import com.example.keabilabonnement.models.customers.Customer;
 import org.springframework.stereotype.Service;
 
