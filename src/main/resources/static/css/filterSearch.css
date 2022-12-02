@@ -28,6 +28,7 @@
         border: 3px solid #3F455B;
         border-radius: 4px;
         padding: 5px;
+        cursor: not-allowed;
     }
 
     .carContainer{
@@ -77,14 +78,14 @@
     .searchContainer {
         box-sizing: border-box;
         align-items: center;
-
         background: #161928;
         border: 3px solid #3F455B;
         border-radius: 4px;
-
         padding: 3px;
+        cursor: not-allowed;
     }
     .fontSearch {
+        cursor: not-allowed;
         font-weight: 500;
         font-size: 20px;
         line-height: 24px;

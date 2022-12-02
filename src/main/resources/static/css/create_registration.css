@@ -53,16 +53,24 @@
     justify-content: end;
 }
 
-.submit-btn{
-    width: 128px;
-    height: 48px;
-    font-size: 1rem;
-    background: #5a6397;
-    border: 3px solid #3F455B;
-    border-radius: 20px;
-    color: white;
-    align-self: end;
+.btn-flex a {
+    text-decoration: none;
+    height: 42px;
 }
+
+.submit-btn {
+    width: 180px;
+    height: 62px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    background-color: #668CD7;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    align-items: center;
+}
+
 
 .submit-btn-flex{
     display: flex;

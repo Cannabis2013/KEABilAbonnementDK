@@ -4,6 +4,7 @@ import com.example.keabilabonnement.contracts.agreement.AgreementFactory;
 import com.example.keabilabonnement.contracts.auxiliary.CarCustomerRepository;
 import com.example.keabilabonnement.contracts.inspection.InspectionRepository;
 import com.example.keabilabonnement.contracts.agreement.AgreementRepository;
+import com.example.keabilabonnement.models.inspection.Damage;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.factories.DamageReportFactory;
 import org.springframework.stereotype.Controller;
@@ -27,14 +28,17 @@ public class InspectionController {
     @GetMapping("/report/damage/new")
     public String newReport(@RequestParam String rentalID, Model model) {
         Report damageReport = inspectionRepository.getReportByRental(rentalID);
+        Damage damage = damageReportFactory.emptyDamage();
         model.addAttribute("damageReport", damageReport);
-        return "/forms/createDamageReport";
+        model.addAttribute("damage", damage);
+        return "/forms/createDamage";
     }
 
     @PostMapping("/report/damage/new")
-    public String newReport(Report newDamage) {
-        if (inspectionRepository.addReport(newDamage))
-            return "redirect:/create_agreement";
+    public String newReport(Damage damage, @RequestParam String rentalId) {
+        if (inspectionRepository.addDamage(damage)) {
+            return "redirect:/rental?rentalId=" + rentalId;
+        }
         return "redirect:/errors/CreateDamageReportError";
     }
 

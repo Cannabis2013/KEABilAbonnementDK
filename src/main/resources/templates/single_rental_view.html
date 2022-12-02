@@ -11,12 +11,12 @@
 </head>
 <body>
     <div class="container">
-        <div th:replace="/fragments/navbar.html :: overviewNavBar"/>
+        <div th:replace="~{/fragments/navbar.html :: overviewNavBar}"/>
         <div class="top__line">
-            <div th:replace="/fragments/page_title :: title(Lejekontrakt, 'Oplysninger vedrørende en lejekontrakt')"/>
-            <div th:replace="/fragments/single_rental_overview/AgreementInfo.html :: info(${agreement})"/>
+            <div th:replace="~{/fragments/page_title :: title(Lejekontrakt, 'Oplysninger vedrørende en lejekontrakt')}"/>
+            <div th:replace="~{/fragments/single_rental_overview/AgreementInfo.html :: info(${agreement})}"/>
         </div>
-        <div th:replace="/fragments/single_rental_overview/cards.html :: cardGrid(${agreement}, ${report})"/>
+        <div th:replace="~{/fragments/single_rental_overview/cards.html :: cardGrid(${agreement}, ${report})}"/>
     </div>
 </body>
 </html>

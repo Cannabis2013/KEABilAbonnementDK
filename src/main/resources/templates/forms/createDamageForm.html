@@ -1,47 +1,46 @@
 
-<div th:fragment="createDamageForm(damageReport)">
+<div th:fragment="createDamageForm(damageReport, damage)">
     <form action="#"
-          th:action="@{/report/new}"
+          th:action="@{/report/damage/new(rentalId=${damageReport.getRentalId()})}"
           method="post"
-          th:object="${damageReport}">
+          th:object="${damage}">
+        <input type="hidden" th:name="reportID" th:value="${damageReport.getId()}"/>
+        <input th:field="*{id}" type="hidden">
         <div class="label-row">
-            <h1 class="default-font" style="color: white">Skade Rapport</h1>
-            <p class="default-font" style="color: #828692">Opret en ny skade rapport</p>
+            <h1 class="default-font" style="color: white">Skade</h1>
+            <p class="default-font" style="color: #828692">Opret en ny skade</p>
         </div>
-            <input th:field="*{id}" type="hidden">
             <label class="fontDamage" for="damageType" >Type</label>
             <div class="damageContainerType">
-            <input class="placeholderText" style="background-color: #161928;border-color: #161928; color:white;" type="text" id="damageType" name="type">
+            <input class="placeholderText" style="background-color: #161928;border-color: #161928; color:white;" type="text" th:field="*{type}" id="damageType" name="type">
         </div>
         <br>
         <div class="rowStyle">
         <div class="columnStyle">
-            <input th:field="*{id}" type="hidden">
             <label class="fontDamage" for="damagePrice" >Pris</label>
             <div class="damageContainer">
-                <input class="placeholderText" style="background-color: #161928;border-color: #161928; color:white;" type="text" placeholder="KR" id="damagePrice" name="price">
+                <input class="placeholderText" style="background-color: #161928;border-color: #161928; color:white;" type="text" th:field="*{cost}" placeholder="KR" id="damagePrice" name="price">
             </div>
         </div>
         <div class="columnStyle">
             <label class="fontDamage" for="damageDate" >Dato</label>
             <div class="damageContainer">
-                <input class="placeholderText" type="date" style="background-color: #161928;border: none; color:white; color-scheme:dark;" id="damageDate" name="date">
+                <input class="placeholderText" type="date" th:field="*{date}" style="background-color: #161928;border: none; color:white; color-scheme:dark;" id="damageDate" name="date">
             </div>
         </div>
         </div>
         <br>
         <div class="columnStyle">
-        <input th:field="*{id}" type="hidden">
         <label class="fontDamage" for="damageDesc" >Beskrivelse</label>
             <div class="damageContainerDesc">
-        <textarea id="damageDesc" name="desc" rows="4" cols="50" placeholder="" style="background-color: #161928;border-color: #161928; color:white; resize: none;" type="text"></textarea>
+        <textarea id="damageDesc" th:field="*{description}" name="desc" rows="4" cols="50" placeholder="" style="background-color: #161928;border: none; color:white; resize: none;" type="text"></textarea>
             </div>
             </div>
         <br>
         <br>
 
         <div class="btn-flex">
-            <div th:replace="/shared/crud_buttons/cancel_button.html :: cancelButton('/overview')"></div>
+            <div th:replace="/shared/crud_buttons/cancel_button.html :: cancelButton('/rental?rentalId=' + ${damageReport.getRentalId()})"></div>
             <div th:replace="/shared/crud_buttons/submit_button.html"></div>
         </div>
 

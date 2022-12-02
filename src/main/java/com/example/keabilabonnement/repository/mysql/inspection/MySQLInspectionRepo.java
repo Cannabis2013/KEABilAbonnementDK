@@ -2,6 +2,7 @@ package com.example.keabilabonnement.repository.mysql.inspection;
 
 import com.example.keabilabonnement.contracts.inspection.InspectionRepository;
 import com.example.keabilabonnement.contracts.inspection.InspectionUpdater;
+import com.example.keabilabonnement.models.inspection.Damage;
 import com.example.keabilabonnement.models.inspection.Report;
 import org.springframework.stereotype.Repository;
 
@@ -18,6 +19,11 @@ public class MySQLInspectionRepo implements InspectionRepository {
     @Override
     public boolean addReport(Report report) {
         return inspectionAdder.add(report);
+    }
+
+    @Override
+    public boolean addDamage(Damage damage) {
+        return inspectionAdder.addDamage(damage);
     }
 
     @Override

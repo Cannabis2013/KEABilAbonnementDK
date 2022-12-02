@@ -44,15 +44,16 @@ public class MySQLInspectionAdder {
                             Cost,
                             Id,
                             DamageReportId)
-                            VALUES (?, ?, ?, ?, ?, ?)
+                            VALUES (?, ?, ?, ?, ?, ?);
                             """);
+            System.out.println(newDamage.getReportID());
             damages.setString(1, newDamage.getType());//Setting values in
             damages.setString(2, newDamage.getDescription());
             damages.setDate(3, Date.valueOf(newDamage.getDate()));
             damages.setDouble(4, newDamage.getCost());
             damages.setString(5, newDamage.getId());
             damages.setString(6, newDamage.getReportID());
-
+            damages.execute();
         } catch (SQLException e) {//Error message if add doesn't work.
             printDbError(e);
             return false;
