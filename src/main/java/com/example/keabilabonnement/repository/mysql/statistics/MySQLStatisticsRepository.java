@@ -24,6 +24,7 @@ public class MySQLStatisticsRepository implements StatisticsRepository {
                     """).executeQuery();
             return factory.fromResultSet(result);
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
