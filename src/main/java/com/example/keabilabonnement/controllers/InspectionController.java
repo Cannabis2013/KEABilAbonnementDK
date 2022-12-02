@@ -26,7 +26,7 @@ public class InspectionController {
     }
 
     @GetMapping("/report/damage/new")
-    public String newReport(@RequestParam String rentalID, Model model) {
+    public String newDamage(@RequestParam String rentalID, Model model) {
         Report damageReport = inspectionRepository.getReportByRental(rentalID);
         Damage damage = damageReportFactory.emptyDamage();
         model.addAttribute("damageReport", damageReport);
@@ -35,7 +35,7 @@ public class InspectionController {
     }
 
     @PostMapping("/report/damage/new")
-    public String newReport(Damage damage, @RequestParam String rentalId) {
+    public String newDamage(Damage damage, @RequestParam String rentalId) {
         if (inspectionRepository.addDamage(damage)) {
             return "redirect:/rental?rentalId=" + rentalId;
         }
