@@ -1,7 +1,6 @@
-package com.example.keabilabonnement.repository.mysql.registration;
+package com.example.keabilabonnement.repository.mysql.agreement;
 
 import com.example.keabilabonnement.contracts.models.Agreement;
-import com.example.keabilabonnement.models.registration.RentalAgreement;
 import com.example.keabilabonnement.services.db.DBConnection;
 import org.springframework.stereotype.Service;
 

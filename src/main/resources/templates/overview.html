@@ -10,6 +10,7 @@
     <link rel="stylesheet" th:href="@{/css/overview.css}"/>
     <link rel="stylesheet" th:href="@{/css/pageTitle.css}"/>
     <link rel="stylesheet" th:href="@{/css/rental_card.css}"/>
+    <link rel="stylesheet" th:href="@{/css/annual_revenue.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -17,9 +18,10 @@
         <!--    Import navbar fragment    -->
         <div th:insert="/fragments/navbar.html :: overviewNavBar"></div>
         <!--    Import page title fragment    -->
-        <div th:insert="/fragments/page_title.html :: title('Udlejede biler', 'Samlet indtjening for udlejede biler i valgt periode')"></div>
+
+        <div th:replace="/fragments/overview/annual_revenue.html :: annualRevenue(${statistics.getRevenue()})"></div>
         <!--    Price for cars   -->
-        <div th:replace="/fragments/overview/filterSearch.html :: filterSearch(${activeCount}, ${inactiveCount})"></div>
+        <div th:replace="/fragments/overview/filterSearch.html :: filterSearch(${statistics.getActiveSubscriptions()}, ${statistics.getInactiveSubscription()})"></div>
 
         <br>
         <br>

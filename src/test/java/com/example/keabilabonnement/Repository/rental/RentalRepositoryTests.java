@@ -1,6 +1,6 @@
 package com.example.keabilabonnement.Repository.rental;
 
-import com.example.keabilabonnement.repository.mysql.registration.MySQLRegistrationAdder;
+import com.example.keabilabonnement.repository.mysql.agreement.MySQLRegistrationAdder;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;

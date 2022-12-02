@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.services.factories;
+package com.example.keabilabonnement.factories;
 
 import com.example.keabilabonnement.contracts.factories.CustomerFactory;
 import com.example.keabilabonnement.contracts.models.CustomerDetails;

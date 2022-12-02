@@ -1,25 +1,22 @@
 package com.example.keabilabonnement.controllers;
 
-import com.example.keabilabonnement.contracts.models.CarDetails;
 import com.example.keabilabonnement.contracts.repository.CarCustomerRepository;
 import com.example.keabilabonnement.contracts.repository.InspectionRepository;
-import com.example.keabilabonnement.contracts.repository.RegistrationRepository;
+import com.example.keabilabonnement.contracts.repository.AgreementRepository;
 import com.example.keabilabonnement.models.inspection.Report;
-import com.example.keabilabonnement.services.factories.DamageReportFactory;
-import com.example.keabilabonnement.services.factories.RentalAgreementFactory;
+import com.example.keabilabonnement.factories.DamageReportFactory;
+import com.example.keabilabonnement.factories.RentalAgreementFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
 
 @Controller
 public class InspectionController {
 
-    public InspectionController(RegistrationRepository repository, CarCustomerRepository auxiliary, InspectionRepository inspectionRepository, RentalAgreementFactory agreementFactory, DamageReportFactory damageReportFactory) {
+    public InspectionController(AgreementRepository repository, CarCustomerRepository auxiliary, InspectionRepository inspectionRepository, RentalAgreementFactory agreementFactory, DamageReportFactory damageReportFactory) {
         this.repository = repository;
         this.auxiliary = auxiliary;
         this.inspectionRepository = inspectionRepository;
@@ -51,7 +48,7 @@ public class InspectionController {
         return "redirect:err";
     }
 
-    private final RegistrationRepository repository;
+    private final AgreementRepository repository;
     private final CarCustomerRepository auxiliary;
     private final InspectionRepository inspectionRepository;
     private final RentalAgreementFactory agreementFactory;

@@ -1,4 +1,4 @@
-package com.example.keabilabonnement.services.factories;
+package com.example.keabilabonnement.factories;
 
 import com.example.keabilabonnement.models.inspection.Damage;
 import com.example.keabilabonnement.models.inspection.Report;
