@@ -4,7 +4,7 @@ import com.example.keabilabonnement.contracts.auxiliary.CarDetails;
 import com.example.keabilabonnement.contracts.auxiliary.CustomerDetails;
 import java.time.LocalDate;
 
-public interface Agreement extends CustomerDetails, CarDetails {
+public interface Agreement{
     String getId();
     void setId(String id);
     LocalDate getStart();
@@ -17,4 +17,7 @@ public interface Agreement extends CustomerDetails, CarDetails {
     void setPayment(double payment);
     void setCarNumber(String number);
     String getCarNumber();
+    String getCustomerLicenseID();
+
+    void setCustomerLicenseID(String licenseID);
 }

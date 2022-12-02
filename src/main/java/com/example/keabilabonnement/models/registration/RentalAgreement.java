@@ -70,4 +70,14 @@ public final class RentalAgreement extends RentalCar implements Agreement {
     public String getCarNumber() {
         return carNumber;
     }
+
+    @Override
+    public String getCustomerLicenseID() {
+        return licenseID;
+    }
+
+    @Override
+    public void setCustomerLicenseID(String licenseID) {
+        this.licenseID = licenseID;
+    }
 }
