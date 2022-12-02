@@ -41,7 +41,6 @@
       <div class="ipts-row ipts-row-dims">
         <label class="ipt-label default-font" for="cars">Vognnummer</label>
         <select th:field="*{carNumber}" id="cars" class="form-ipt">
-          <option value="0">Vælg en bil</option>
           <option th:each="car : ${cars}"
                   th:value="${car.getInternalNumber()}"
                   th:text="${
