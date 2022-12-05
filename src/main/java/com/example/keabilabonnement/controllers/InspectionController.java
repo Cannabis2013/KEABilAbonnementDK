@@ -42,6 +42,15 @@ public class InspectionController {
         return "redirect:/errors/CreateDamageReportError";
     }
 
+    // Deletes a damage from the press of an anchor-tag in
+    @PostMapping("/report/damage/delete")
+    public String deleteDamage(@RequestParam String damageId, @RequestParam String rentalId) {
+        if (inspectionRepository.deleteDamageById(damageId)) {
+            return "redirect:/rental?rentalId=" + rentalId;
+        }
+        return "redirect:err";
+    }
+
     @PostMapping("/report/new")
     public String createInspection(@RequestParam String rentalId) {
         Report report = damageReportFactory.emptyReport();
@@ -51,6 +60,10 @@ public class InspectionController {
         }
         return "redirect:err";
     }
+
+
+
+
 
     private final AgreementRepository repository;
     private final CarCustomerRepository auxiliary;

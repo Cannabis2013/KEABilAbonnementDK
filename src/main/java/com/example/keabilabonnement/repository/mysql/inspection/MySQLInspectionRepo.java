@@ -32,6 +32,12 @@ public class MySQLInspectionRepo implements InspectionRepository {
     }
 
     @Override
+    public boolean deleteDamageById(String id) {
+        return inspectionRemover.deleteDamageById(id);
+    }
+
+
+    @Override
     public Report getReportByRental(String id) {
         return inspections.getInspectionByRental(id);
     }

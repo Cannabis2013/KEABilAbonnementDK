@@ -39,7 +39,7 @@
             </div>
             <div class="damage__cards no-scrollbar">
                 <div th:if="${report.getDamages().size() > 0}" th:each="damage : ${report.getDamages()}">
-                    <div th:replace="~{/fragments/single_rental_overview/DamageCard.html :: damage(${damage})}"/>
+                    <div th:replace="~{/fragments/single_rental_overview/DamageCard.html :: damage(${damage}, ${agreement.getId()})}"/>
                 </div>
                 <div th:if="${report.getId() == null}" class="damage__error">
                     Der eksisterer ikke en skadesrapport
