@@ -36,6 +36,30 @@ public class DbInspectionRemover {
         }
     }
 
+    public boolean deleteDamageById(String id) {
+        try {
+            deleteDamage(id);
+        } catch (SQLException e) {
+            return false;
+        }
+        return true;
+    }
+
+
+    private void deleteDamage(String id) throws SQLException {
+        String sql = """
+                DELETE FROM damage
+                WHERE id=?;
+                """;
+        try {
+            PreparedStatement statement = DBConnection.statement(sql);
+            statement.setString(1, id);
+            statement.execute();
+        } catch (SQLException e) {
+            throw new SQLException(e);
+        }
+    }
+
     private void deleteDamageReport(String id) throws SQLException {
 
         String sql = """

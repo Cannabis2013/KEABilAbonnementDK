@@ -191,6 +191,28 @@
     margin-top: 1rem;
 }
 
+.damage__card__date__delete__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#damage__delete__button:hover {
+    background-color: #d13040;
+}
+#damage__delete__button {
+    background-color: #eb394b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    width: 60px;
+    font-weight: 500;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
 .damage__card__info__item {
     display: flex;
     flex-direction: column;

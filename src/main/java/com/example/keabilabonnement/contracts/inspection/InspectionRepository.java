@@ -10,6 +10,7 @@ public interface InspectionRepository {
     boolean addReport(Report report);
     boolean addDamage(Damage damage);
     boolean removeReport(String id);
+    boolean deleteDamageById(String id);
     Report getReportByRental(String id);
     List<Report> getAllReports();
     List<Report> getAllReportsByCarNumber(String rentalID);
