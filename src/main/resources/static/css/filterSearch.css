@@ -1,0 +1,96 @@
+
+    .displayAll {
+        box-sizing: content-box;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .filterPeriodeDisplay {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .activeInactiveDisplay{
+        width: 80px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 4px;
+        margin-left: 12px;
+    }
+
+    .filterPeriodeContainer {
+        box-sizing: border-box;
+        align-self: center;
+        background: #161928;
+        border: 3px solid #3F455B;
+        border-radius: 4px;
+        padding: 5px;
+        cursor: not-allowed;
+    }
+
+    .carContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        width: 100px;
+    }
+
+    #activeBG{
+        background: #668CD7;
+    }
+    #inactiveBG{
+        background: #3D455A;
+    }
+
+    .spacing {
+        padding-right: 3px;
+    }
+
+
+    .fontFilterPeriode {
+
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+
+        color: #3F455B;
+
+    }
+
+    .fontActiveInactive{
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 10px;
+        color: #FFFFFF;
+    }
+
+    .searchDisplay{
+        display: grid;
+        grid-auto-rows: 1fr 1fr;
+        justify-content: right;
+    }
+
+    .searchContainer {
+        box-sizing: border-box;
+        align-items: center;
+        background: #161928;
+        border: 3px solid #3F455B;
+        border-radius: 4px;
+        padding: 3px;
+        cursor: not-allowed;
+    }
+    .fontSearch {
+        cursor: not-allowed;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+
+        color: #3F455B;
+    }
+
+

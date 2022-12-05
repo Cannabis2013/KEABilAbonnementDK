@@ -1,0 +1,22 @@
+<div th:fragment="info(agreement)" class="agreement__info">
+    <div class="agreement__info__grid">
+        <div class="agreement__info__grid__card">
+            <div class="agreement__info__item__single">
+                <label>MÅNEDLIG YDELSE</label>
+                <div th:text="${agreement.getPayment()} + ' kr.'" class="agreement__info__text"></div>
+            </div>
+        </div>
+        <div class="agreement__info__grid__card">
+            <div class="agreement__info__subgrid">
+                <div class="agreement__info__item">
+                    <label>START-DATO</label>
+                    <div th:text="${agreement.getStart()}" class="agreement__info__text"></div>
+                </div>
+                <div class="agreement__info__item">
+                    <label>SLUT-DATO</label>
+                    <div th:text="${agreement.getExpiration()}" class="agreement__info__text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

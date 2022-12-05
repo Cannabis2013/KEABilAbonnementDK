@@ -1,0 +1,29 @@
+.ar-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.revenue-box{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    height: 130px;
+}
+
+.revenue-text{
+    color: white;
+    font-size: 3rem;
+}
+
+.interval-descriptor{
+    font-size: 0.75rem;
+    color: #828692;
+}
+
+.ar-font{
+    font-family: var(--inter);
+    font-weight: 800;
+}

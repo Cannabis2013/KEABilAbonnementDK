@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root {
+    --inter: 'Inconsolata', monospace;
+    --form-bg-color: #161928;
+    --color: #A4AAB4;
+    --button-blue: #668CD7;
+    --second-bg-color: #161928;
+    --border-color: #292D38;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0E121C;
+    font-family: var(--inter);
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+.default-font{
+    font-family: 'Inter', serif;
+    font-style: normal;
+}
+

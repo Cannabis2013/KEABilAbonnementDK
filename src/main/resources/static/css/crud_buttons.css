@@ -1,0 +1,27 @@
+.submit-btn{
+    width: 128px;
+    height: 48px;
+    font-size: 1rem;
+    background: #5a6397;
+    border: 3px solid #3F455B;
+    border-radius: 20px;
+    color: white;
+    align-self: end;
+}
+
+
+.submit-btn-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    flex-direction: row;
+}
+
+.submit-btn:hover{
+    background: rgba(90, 99, 151, 0.66);
+}
+
+.submit-btn:active{
+    scale: 0.90;
+}

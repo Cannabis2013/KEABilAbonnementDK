@@ -1,0 +1,26 @@
+<div th:fragment="damage(damage, rentalId)" class="damage__card">
+    <div class="damage__wrapper">
+        <div class="damage__card__date__delete__wrapper">
+            <div id="damage__card__date" th:text="${damage.getDate()}"></div>
+            <form action="#"
+                  th:action="@{/report/damage/delete(damageId=${damage.getId()}, rentalId=${rentalId})}"
+                  method="post">
+                <button id="damage__delete__button">Slet</button>
+            </form>
+        </div>
+        <div class="damage__card__info">
+            <div class="damage__card__info__item">
+                <label class="damage__card__info__item__desc">TYPE</label>
+                <div class="damage__card__info__item__value" th:text="${damage.getType()}"></div>
+            </div>
+            <div class="damage__card__info__item">
+                <label id="damage__card__info__item__right" class="damage__card__info__item__desc">PRIS</label>
+                <div class="damage__card__info__item__value" th:text="${damage.getCost()} + ' kr'"></div>
+            </div>
+        </div>
+        <div class="damage__card__description">
+            <label class="damage__card__info__item__desc">Beskrivelse</label>
+            <div class="damage__card__info__item__value" th:text="${damage.getDescription()}"/>
+        </div>
+    </div>
+</div>
