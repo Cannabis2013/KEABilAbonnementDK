@@ -10,8 +10,8 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 @Service
-public class MySQLRegistrationAdder {
-    public MySQLRegistrationAdder() {
+public class AgreementPersistence {
+    public AgreementPersistence() {
     }
 
     public Boolean add(Agreement agreement) {

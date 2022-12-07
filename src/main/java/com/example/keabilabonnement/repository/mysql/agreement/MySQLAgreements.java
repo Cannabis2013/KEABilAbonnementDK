@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MySQLRegistrations {
-    public MySQLRegistrations(AgreementFactory rentalAgreementFactory) {
+public class MySQLAgreements {
+    public MySQLAgreements(AgreementFactory rentalAgreementFactory) {
         this.rentalAgreementFactory = rentalAgreementFactory;
     }
 
-    public Agreement  getRegistration(String id){
+    public Agreement getAgreement(String id){
         String sql = """
                 SELECT *
                 FROM RentalAgreement
@@ -43,7 +43,7 @@ public class MySQLRegistrations {
 
         return null;
     }
-    public List<Agreement> getAllRegistrations(){
+    public List<Agreement> getAllAgreements(){
         List<Agreement > rentalAgreements = new ArrayList<>();
         String sql = """
                 SELECT *
@@ -64,7 +64,7 @@ public class MySQLRegistrations {
         }
         return rentalAgreements;
     }
-    public List<Agreement > getAllActiveRegistrations(){
+    public List<Agreement > getAllActiveAgreements(){
         List<Agreement > rentalAgreements = new ArrayList<>();
         String sql = """
                 SELECT *

@@ -1,6 +1,6 @@
 package com.example.keabilabonnement.Repository.rental;
 
-import com.example.keabilabonnement.repository.mysql.agreement.MySQLRegistrationAdder;
+import com.example.keabilabonnement.repository.mysql.agreement.AgreementPersistence;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -24,7 +24,7 @@ public class RentalRepositoryTests {
     }
 
     @Autowired
-    private MySQLRegistrationAdder dbRegistrationAdder;
+    private AgreementPersistence dbRegistrationAdder;
 
     @Autowired
     private RentalFactoryTest rentalFactory;
