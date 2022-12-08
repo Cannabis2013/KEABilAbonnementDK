@@ -5,14 +5,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-// A singleton class for DB connection. There is only one instance for the entirety of the program.
-// There can be only one! (Highlander=)
+// A singleton class for DB connection.
+// There is only one instance for the entirety of the program. (There can be only one! - Highlander=)
 public class DBConnection {
 
-    private static DBConnection instance;
-    private final Connection connection;
+    private static DBConnection instance; //A static variable of the DBConnection class is created.
+    private final Connection connection; //A final variable of Connection class is created.
 
-    //Constructor without parameters
+    //Constructor that calls for establishDBConnection method
     private DBConnection() {
         connection = establishDBConnection();
     }
@@ -23,9 +23,9 @@ public class DBConnection {
         String db_url = System.getenv("ConStr");
         String username = System.getenv("DbUser");
         String password = System.getenv("DbPass");
-        try {//Make Connection with SQLException.
+        try {//Make Connection
             return DriverManager.getConnection(db_url,username,password);
-        } catch (SQLException e) {
+        } catch (SQLException e) { //SQL Exception if connection fails.
             System.out.println("Failed to establish a database connection");
             e.printStackTrace();
         }
@@ -49,5 +49,4 @@ public class DBConnection {
             throw new SQLException();
         return conn.prepareStatement(sql);
     }
-
 }
