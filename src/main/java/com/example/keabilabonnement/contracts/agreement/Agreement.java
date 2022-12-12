@@ -2,10 +2,11 @@ package com.example.keabilabonnement.contracts.agreement;
 
 import com.example.keabilabonnement.contracts.auxiliary.CarDetails;
 import com.example.keabilabonnement.contracts.auxiliary.CustomerDetails;
+import com.example.keabilabonnement.contracts.shared.Entity;
+
 import java.time.LocalDate;
 
-public interface Agreement{
-    String getId();
+public interface Agreement extends Entity {
     void setId(String id);
     LocalDate getStart();
     void setStart(LocalDate start);
