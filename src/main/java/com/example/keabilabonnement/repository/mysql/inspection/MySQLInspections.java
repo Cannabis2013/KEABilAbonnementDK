@@ -1,6 +1,7 @@
 package com.example.keabilabonnement.repository.mysql.inspection;
 
 import com.example.keabilabonnement.contracts.agreement.AgreementFactory;
+import com.example.keabilabonnement.contracts.shared.Entity;
 import com.example.keabilabonnement.models.inspection.Damage;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
@@ -113,13 +114,13 @@ public class MySQLInspections {
         List<RentalAgreement> agreements = new ArrayList<>();
         List<Damage> damages = new ArrayList<>();
         while (set.next()) {
-            RentalAgreement agreement = rentalFactory.fromResultSet(set);
+            RentalAgreement agreement = rentalFactory.agreementFromResultSet(set);
             Report report = damageFactory.reportFromResultSet(set);
             Damage damage = damageFactory.damageFromResultSet(set);
             damages.add(damage);
-            if (!listContainsReport(reports, report.getId()))
+            if (!ContainObject(reports, report.getId()))
                 reports.add(report);
-            if (!listContainsAgreement(agreements, agreement.getId()))
+            if (!ContainObject(agreements, agreement.getId()))
                 agreements.add(agreement);
         }
 
@@ -132,23 +133,17 @@ public class MySQLInspections {
     }
 
 
-    private boolean listContainsReport(List<Report> reports, String id) {
-        for (Report report : reports) {
-            if (report.getId().equals(id)) {
-                return true;
+    private <T> boolean ContainObject(List<T> objs, String id) {
+        for (T obj : objs) {
+            if (obj instanceof Entity) {
+                if (((Entity) obj).getId().equals(id)) {
+                    return true;
+                }
             }
         }
         return false;
     }
 
-    private boolean listContainsAgreement(List<RentalAgreement> agreements, String id) {
-        for (RentalAgreement agreement : agreements) {
-            if (agreement.getId().equals(id)) {
-                return true;
-            }
-        }
-        return false;
-    }
     private final AgreementFactory rentalFactory;
     private final DamageReportFactory damageFactory;
 }
