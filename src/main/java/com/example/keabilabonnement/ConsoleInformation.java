@@ -8,10 +8,10 @@ public class ConsoleInformation {
                 Powered by Spring and Thymeleaf
                 
                 Authors:
-                    Stefan Andreasen aka Harry Maguire
+                    Stefan Andreas Jensen aka Harry Maguire
                     Martin Hansen aka Pepsi Martin
-                    Muraat Kaan aka Djengis Kaan
-                    Nikki Delerian aka Nikki Delorian
+                    Murat Kaan aka Djengis Kaan
+                    Nikki Deleuran aka Nikki Delorian
                 
                 Endpoints:
                     Root: http://localhost:8080/

@@ -16,7 +16,7 @@ public class MySQLInspectionUpdater_imp1 implements InspectionUpdater {
     }
 
     public boolean update(Report report) {
-        //report parameter is still here but report in DB is empty.
+        //Report parameter is still here but report in DB is empty.
         return remover.remove(report.getId()) && adder.add(report);
     }
 
