@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class MySQLCarCustomerRepo implements CarCustomerRepository {
         List<CarDetails> listOfCar = new LinkedList<>();
 
         String sql = """
-                SELECT * FROM Car;
+                SELECT * FROM AvailableCars;
                 """;
 
         try {

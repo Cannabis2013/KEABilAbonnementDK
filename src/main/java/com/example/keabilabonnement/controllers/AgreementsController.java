@@ -53,6 +53,8 @@ public class AgreementsController {
     public String newRental(Model model) {
         RentalAgreement agreement = agreementFactory.empty();
         List<CarDetails> cars = auxiliary.getCars();
+        if(cars.isEmpty())
+            return "/NoAvailableCars/AllNotAvailablePage";
         model.addAttribute("agreement", agreement);
         model.addAttribute("cars", cars);
         return "/forms/create_agreement";
