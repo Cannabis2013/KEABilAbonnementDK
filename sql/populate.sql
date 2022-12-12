@@ -16,7 +16,8 @@ values
     ("BMW","335i",2018,"JENSWRVILDMEDDANS","TS466"),
     ("Lada","500 CLASSIC",1987,"GLSPOSTNORD44ABC","TS112"),
     ("DC","Batmobil",2012,"GOTHAMNEEDSYOUNOW","TS102"),
-    ("Ford","Mondeo",2019,"FORDCLASSICGM1912","TS318");
+    ("Ford","Mondeo",2019,"FORDCLASSICGM1912","TS318"),
+    ("Nissan","Skyline GTR",2006,"2013PAULWALKERRIP","TS119");
 
 insert into Customer (License_Id, Name, Address, PhoneNumber)
 values

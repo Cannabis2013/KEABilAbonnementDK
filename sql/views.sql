@@ -1,14 +1,17 @@
-CREATE VIEW ActiveRevenue
-AS
-SELECT SUM(Payment) AS Revenue  FROM bilabonnement.RentalAgreement ra;
+CREATE VIEW ActiveRevenue AS
+SELECT SUM(Payment) AS Revenue FROM bilabonnement.RentalAgreement ra;
 
-CREATE VIEW ActiveSubscriptions
-AS
-SELECT COUNT(*) AS 'Active' FROM RentalAgreement ra
-WHERE ra.StartDate <= NOW() AND ra.ExpirationDate >= NOW();
+CREATE VIEW AvailableCars AS
+SELECT * FROM Car c
+LEFT JOIN RentalAgreement ra on ra.CarNumber = c.Number
+WHERE CarNumber IS NULL;
 
-CREATE VIEW InActiveSubscriptions
-AS
-SELECT COUNT(*) as 'Inactive' FROM RentalAgreement ra
-WHERE ra.StartDate >= NOW() AND ra.ExpirationDate >= NOW()
-OR ra.StartDate <= NOW() AND ra.ExpirationDate <= NOW();
+CREATE VIEW NumberOfavailableCars AS
+SELECT COUNT(*) 'Available' FROM Car c
+LEFT JOIN RentalAgreement ra on ra.CarNumber = c.Number
+WHERE CarNumber IS NULL;
+
+CREATE VIEW NumberOfUnavailableCars AS
+SELECT COUNT(*) 'Unavailable' FROM Car c
+LEFT JOIN RentalAgreement ra on ra.CarNumber = c.Number
+WHERE CarNumber != "";

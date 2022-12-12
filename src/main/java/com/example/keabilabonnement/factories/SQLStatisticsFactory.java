@@ -13,9 +13,8 @@ public class SQLStatisticsFactory implements StatisticsFactory {
         var statistics = new Statistics();
         if(set.next()){
             statistics.setRevenue(set.getDouble("Revenue"));
-            statistics.setActiveSubscriptions(set.getInt("Active"));
-            statistics.setInactiveSubscription(set.getInt("Inactive"));
-            statistics.setTotal(set.getInt("Inactive"));
+            statistics.setAvailableCars(set.getInt("Available"));
+            statistics.setUnavailableCars(set.getInt("UnAvailable"));
         }
         return statistics;
     }

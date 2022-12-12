@@ -19,8 +19,7 @@ public class MySQLStatisticsRepository implements StatisticsRepository {
         ResultSet result;
         try {
             result = DBConnection.statement("""
-                    SELECT ar.Revenue ,as2.Active, as3.Inactive, COUNT(ra.Id) as total
-                    FROM ActiveRevenue ar , ActiveSubscriptions as2,InActiveSubscriptions as3, RentalAgreement ra ;
+                    SELECT * FROM ActiveRevenue, NumberOfavailableCars, NumberOfUnavailableCars; ;
                     """).executeQuery();
             return factory.fromResultSet(result);
         } catch (SQLException e) {

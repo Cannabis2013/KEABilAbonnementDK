@@ -21,7 +21,7 @@
 
         <div th:replace="/fragments/overview/annual_revenue.html :: annualRevenue(${statistics.getRevenue()})"></div>
         <!--    Price for cars   -->
-        <div th:replace="/fragments/overview/filterSearch.html :: filterSearch(${statistics.getActiveSubscriptions()}, ${statistics.getInactiveSubscription()})"></div>
+        <div th:replace="/fragments/overview/filterSearch.html :: filterSearch(${statistics.getAvailableCars()}, ${statistics.getUnavailableCars()})"></div>
 
         <br>
         <br>
