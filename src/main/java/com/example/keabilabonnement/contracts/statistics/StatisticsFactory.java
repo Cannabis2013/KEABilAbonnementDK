@@ -6,5 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public interface StatisticsFactory {
+
+    /*
+
+        Authors: Nikki Deleuran - M. Kaan Arici - Stefan Jensen - Martin Hansen
+
+    */
+
     Statistics fromResultSet(ResultSet set) throws SQLException;
 }

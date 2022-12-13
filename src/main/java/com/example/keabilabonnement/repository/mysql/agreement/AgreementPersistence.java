@@ -12,6 +12,13 @@ import java.time.LocalDate;
 
 @Service
 public class AgreementPersistence {
+
+    /*
+
+        Author: Martin Hansen
+
+    */
+
     public AgreementPersistence() {
     }
 

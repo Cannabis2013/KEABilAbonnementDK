@@ -16,6 +16,13 @@ import java.util.UUID;
 
 @Service
 public class RentalAgreementFactory implements AgreementFactory {
+
+    /*
+
+        Author: Martin Hansen
+
+    */
+
     private final CarFactory carFactory;
     private final CustomerFactory customerFactory;
 

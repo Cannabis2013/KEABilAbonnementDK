@@ -6,8 +6,14 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 // A singleton class for DB connection.
-// (There can be only one! - Highlander=)
 public class DBConnection {
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     //A static variable of the DBConnection class is created.
     private static DBConnection instance;
     //A final variable of Connection class is created.

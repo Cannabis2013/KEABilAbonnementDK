@@ -14,6 +14,11 @@ import java.util.List;
 
 @Service
 public class MySQLAgreements {
+
+    /*
+        Author: Stefan Jensen
+    */
+
     public MySQLAgreements(AgreementFactory rentalAgreementFactory) {
         this.rentalAgreementFactory = rentalAgreementFactory;
     }

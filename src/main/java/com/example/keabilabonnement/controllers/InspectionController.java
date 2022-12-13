@@ -17,6 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class InspectionController {
 
+    /*
+
+        Authors: Nikki Deleuran - M. Kaan Arici
+
+    */
+
     public InspectionController(AgreementRepository repository, CarCustomerRepository auxiliary, InspectionRepository inspectionRepository, AgreementFactory agreementFactory, DamageReportFactory damageReportFactory) {
         this.repository = repository;
         this.auxiliary = auxiliary;

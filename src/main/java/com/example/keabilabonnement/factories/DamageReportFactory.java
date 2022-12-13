@@ -11,6 +11,13 @@ import java.util.UUID;
 
 @Service
 public class DamageReportFactory {
+
+    /*
+
+        Author: Stefan Jensen
+
+    */
+
     public Report emptyReport() {
         Report report = new Report();
         report.setId(UUID.randomUUID().toString());
