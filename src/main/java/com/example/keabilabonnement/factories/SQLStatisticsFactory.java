@@ -8,6 +8,13 @@ import java.sql.SQLException;
 
 @Service
 public class SQLStatisticsFactory implements StatisticsFactory {
+
+    /*
+
+        Author: Martin Hansen
+
+    */
+
     @Override
     public Statistics fromResultSet(ResultSet set) throws SQLException {
         var statistics = new Statistics();

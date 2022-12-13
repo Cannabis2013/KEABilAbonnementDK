@@ -1,6 +1,13 @@
 package com.example.keabilabonnement;
 
 public class ConsoleInformation {
+
+   /*
+
+        Author: Martin Hansen
+
+   */
+
     public static void Print(){
         System.out.println("""
                 KEABilAbonnement

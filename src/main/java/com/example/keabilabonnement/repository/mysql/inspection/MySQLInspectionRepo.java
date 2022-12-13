@@ -11,6 +11,13 @@ import java.util.List;
 @Repository
 public class MySQLInspectionRepo implements InspectionRepository {
 
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
+
     private final MySQLInspectionAdder inspectionAdder;
     private final MySQLInspections inspections;
     private final DbInspectionRemover inspectionRemover;

@@ -8,6 +8,13 @@ import java.util.List;
 
 @Repository
 public class MySQLAgreementRepository implements AgreementRepository {
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     public MySQLAgreementRepository(AgreementPersistence adder, MySQLAgreements registrations, MySQLRegistrationRemover remover) {
         this.adder = adder;
         this.registrations = registrations;

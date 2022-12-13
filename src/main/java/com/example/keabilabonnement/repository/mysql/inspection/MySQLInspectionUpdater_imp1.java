@@ -7,6 +7,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class MySQLInspectionUpdater_imp1 implements InspectionUpdater {
 
+    /*
+
+        Author: M. Kaan Arici
+
+    */
+
     private final MySQLInspectionAdder adder;
     private final DbInspectionRemover remover;
 

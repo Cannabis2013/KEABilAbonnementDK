@@ -9,6 +9,13 @@ import java.util.List;
 import java.util.UUID;
 
 public interface AgreementFactory {
+
+    /*
+
+        Authors: Nikki Deleuran - M. Kaan Arici - Stefan Jensen - Martin Hansen
+
+    */
+
     RentalAgreement empty();
 
     RentalAgreement agreementFromResultSet(ResultSet set) throws SQLException;

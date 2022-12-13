@@ -9,6 +9,13 @@ import java.sql.SQLException;
 @Service
 public class DbInspectionRemover {
 
+
+    /*
+
+        Author: Nikki Deleuran
+
+    */
+
     public boolean remove(String id) {
 
         try {

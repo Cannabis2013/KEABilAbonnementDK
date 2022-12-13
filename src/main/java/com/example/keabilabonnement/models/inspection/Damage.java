@@ -3,6 +3,13 @@ package com.example.keabilabonnement.models.inspection;
 import java.time.LocalDate;
 
 public class Damage{
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     private String id;
     private String type;
     private String description;

@@ -7,10 +7,10 @@ import com.example.keabilabonnement.contracts.auxiliary.CarCustomerRepository;
 import com.example.keabilabonnement.contracts.auxiliary.CarDetails;
 import com.example.keabilabonnement.contracts.shared.RepositoryUpdateException;
 import com.example.keabilabonnement.contracts.inspection.*;
-import com.example.keabilabonnement.contracts.statistics.StatisticsRepository;
+import com.example.keabilabonnement.contracts.statistics.StatisticsService;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
-import com.example.keabilabonnement.repository.mysql.statistics.MySQLStatisticsRepository;
+import com.example.keabilabonnement.repository.mysql.statistics.MySQLStatisticsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,13 +20,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-/*
-    Implemented by group
- */
-
 @Controller
 public class AgreementsController {
-    public AgreementsController(AgreementRepository repository, InspectionRepository inspectionRepository, MySQLStatisticsRepository statisticsRepository, AgreementFactory agreementFactory, CarCustomerRepository auxiliary) {
+
+    /*
+
+        Authors: Martin Hansen - Stefan Jensen
+
+    */
+
+
+    public AgreementsController(AgreementRepository repository, InspectionRepository inspectionRepository, MySQLStatisticsService statisticsRepository, AgreementFactory agreementFactory, CarCustomerRepository auxiliary) {
         this.agreementRepository = repository;
         this.inspectionRepository = inspectionRepository;
         this.statisticsRepository = statisticsRepository;
@@ -91,7 +95,7 @@ public class AgreementsController {
 
     private final AgreementRepository agreementRepository;
     private final InspectionRepository inspectionRepository;
-    private final StatisticsRepository statisticsRepository;
+    private final StatisticsService statisticsRepository;
     private final AgreementFactory agreementFactory;
     private final CarCustomerRepository auxiliary;
 }

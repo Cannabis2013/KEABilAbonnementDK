@@ -18,6 +18,11 @@ import java.util.List;
 @Service
 public class MySQLInspections {
 
+    /*
+        Author: Stefan Jensen
+        Tiny bit refactoring of variable names done by Martin Hansen
+    */
+
     public MySQLInspections(AgreementFactory rentalFactory, DamageReportFactory damageFactory) {
         this.rentalFactory = rentalFactory;
         this.damageFactory = damageFactory;

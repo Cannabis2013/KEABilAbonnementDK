@@ -7,6 +7,13 @@ import java.util.List;
 
 
 public interface InspectionRepository {
+
+    /*
+
+        Authors: Nikki Deleuran - M. Kaan Arici - Stefan Jensen - Martin Hansen
+
+    */
+
     boolean addReport(Report report);
     boolean addDamage(Damage damage);
     boolean removeReport(String id);
