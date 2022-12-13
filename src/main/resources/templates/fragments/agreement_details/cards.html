@@ -2,12 +2,12 @@
     <!--  Customer Information Card  -->
     <div class="card">
         <div class="card__wrapper">
-            <div th:insert="~{/fragments/single_rental_overview/CardTitle.html :: cardTitle(Kundeinformation)}"/>
+            <div th:insert="~{/fragments/agreement_details/CardTitle.html :: cardTitle(Kundeinformation)}"/>
             <div class="info__area">
-                <div th:replace="~{/fragments/single_rental_overview/InfoBox.html :: infoBox(NAVN, ${agreement.getCustomerName()})}"/>
-                <div th:replace="~{/fragments/single_rental_overview/InfoBox.html :: infoBox(ADRESSE, ${agreement.getCustomerAddress()})}"/>
-                <div th:replace="~{/fragments/single_rental_overview/InfoBox.html :: infoBox(TELEFONNUMMER, ${agreement.getCustomerPhone()})}"/>
-                <div th:replace="~{/fragments/single_rental_overview/InfoBox.html :: infoBox(KØREKORTSNUMMER, ${agreement.getLicenseID()})}"/>
+                <div th:replace="~{/fragments/agreement_details/InfoBox.html :: infoBox(NAVN, ${agreement.getCustomerName()})}"/>
+                <div th:replace="~{/fragments/agreement_details/InfoBox.html :: infoBox(ADRESSE, ${agreement.getCustomerAddress()})}"/>
+                <div th:replace="~{/fragments/agreement_details/InfoBox.html :: infoBox(TELEFONNUMMER, ${agreement.getCustomerPhone()})}"/>
+                <div th:replace="~{/fragments/agreement_details/InfoBox.html :: infoBox(KØREKORTSNUMMER, ${agreement.getLicenseID()})}"/>
             </div>
         </div>
     </div>
@@ -15,12 +15,12 @@
     <!--  Car Information Card  -->
     <div class="card">
         <div class="card__wrapper">
-            <div th:insert="~{/fragments/single_rental_overview/CardTitle.html :: cardTitle(Bilinformation)}"/>
+            <div th:insert="~{/fragments/agreement_details/CardTitle.html :: cardTitle(Bilinformation)}"/>
             <div class="info__area">
-                <div th:replace="~{/fragments/single_rental_overview/InfoBox.html :: infoBox(BILNUMMER, ${agreement.getCarNumber()})}"/>
-                <div th:replace="~{/fragments/single_rental_overview/InfoBox.html :: infoBox(STELNUMMER, ${agreement.getVin()})}"/>
-                <div th:replace="~{/fragments/single_rental_overview/InfoBox.html :: infoBox(MÆRKE, ${agreement.getBrand()})}"/>
-                <div th:replace="~{/fragments/single_rental_overview/InfoBox.html :: infoBox(MODEL, ${agreement.getModel()} + ', ' + ${agreement.getYear()})}"/>
+                <div th:replace="~{/fragments/agreement_details/InfoBox.html :: infoBox(BILNUMMER, ${agreement.getCarNumber()})}"/>
+                <div th:replace="~{/fragments/agreement_details/InfoBox.html :: infoBox(STELNUMMER, ${agreement.getVin()})}"/>
+                <div th:replace="~{/fragments/agreement_details/InfoBox.html :: infoBox(MÆRKE, ${agreement.getBrand()})}"/>
+                <div th:replace="~{/fragments/agreement_details/InfoBox.html :: infoBox(MODEL, ${agreement.getModel()} + ', ' + ${agreement.getYear()})}"/>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
             </div>
             <div class="damage__cards no-scrollbar">
                 <div th:if="${report.getDamages().size() > 0}" th:each="damage : ${report.getDamages()}">
-                    <div th:replace="~{/fragments/single_rental_overview/DamageCard.html :: damage(${damage}, ${agreement.getId()})}"/>
+                    <div th:replace="~{/fragments/agreement_details/DamageCard.html :: damage(${damage}, ${agreement.getId()})}"/>
                 </div>
                 <div th:if="${report.getId() == null}" class="damage__error">
                     Der eksisterer ikke en skadesrapport

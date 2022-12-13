@@ -3,11 +3,12 @@ package com.example.keabilabonnement.repository.mysql.agreement;
 import com.example.keabilabonnement.contracts.agreement.Agreement;
 import com.example.keabilabonnement.services.db.DBConnection;
 import org.springframework.stereotype.Service;
-
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
+
+// Implemented by Martin Hansen
 
 @Service
 public class AgreementPersistence {

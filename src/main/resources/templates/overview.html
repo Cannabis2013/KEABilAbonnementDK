@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <!--    Import navbar fragment    -->
-        <div th:insert="/fragments/navbar.html :: overviewNavBar"></div>
+        <div th:insert="/fragments/shared/navbar.html :: overviewNavBar"></div>
         <!--    Import page title fragment    -->
 
         <div th:replace="/fragments/overview/annual_revenue.html :: annualRevenue(${statistics.getRevenue()})"></div>

@@ -31,7 +31,7 @@ public class InspectionController {
         Damage damage = damageReportFactory.emptyDamage();
         model.addAttribute("damageReport", damageReport);
         model.addAttribute("damage", damage);
-        return "/forms/createDamage";
+        return "/forms/damage/createDamage";
     }
 
     @PostMapping("/report/damage/new")
@@ -60,10 +60,6 @@ public class InspectionController {
         }
         return "redirect:err";
     }
-
-
-
-
 
     private final AgreementRepository repository;
     private final CarCustomerRepository auxiliary;

@@ -54,10 +54,10 @@ public class AgreementsController {
         RentalAgreement agreement = agreementFactory.empty();
         List<CarDetails> cars = auxiliary.getCars();
         if(cars.isEmpty())
-            return "/NoAvailableCars/AllNotAvailablePage";
+            return "/no_cars_available";
         model.addAttribute("agreement", agreement);
         model.addAttribute("cars", cars);
-        return "/forms/create_agreement";
+        return "/forms/agreement/create_agreement";
     }
 
     @PostMapping("/rental/new")
@@ -76,7 +76,7 @@ public class AgreementsController {
         Report report = inspectionRepository.getReportByRental(rentalId);
         model.addAttribute("agreement", agreement);
         model.addAttribute("report", report);
-        return "single_rental_view";
+        return "agreement_details";
     }
 
     @DeleteMapping("/rental/delete")

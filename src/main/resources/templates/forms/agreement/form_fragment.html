@@ -1,3 +1,5 @@
+<!-- Implemented by Martin Hansen -->
+
 <div th:fragment="formFragment(agreement,cars)" xmlns:th="http://www.thymeleaf.org">
   <form action="#"
         th:action="@{/rental/new}"
@@ -49,8 +51,8 @@
       </div>
     </div>
     <div class="btn-flex">
-      <div th:replace="/shared/crud_buttons/cancel_button.html :: cancelButton('/overview')"></div>
-      <div th:replace="/shared/crud_buttons/submit_button.html"></div>
+      <div th:replace="/fragments/shared/cancel_button.html :: cancelButton('/overview')"></div>
+      <div th:replace="/fragments/shared/submit_button.html"></div>
     </div>
   </form>
 </div>
