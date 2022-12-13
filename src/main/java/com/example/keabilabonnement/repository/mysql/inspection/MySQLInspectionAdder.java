@@ -14,6 +14,12 @@ import java.util.UUID;
 @Service
 public class MySQLInspectionAdder {
 
+    /*
+
+        Author: M. Kaan Arici
+
+    */
+
     public Boolean add(Report newDamageReport) {
         try {
             PreparedStatement damageReport = DBConnection.statement(//Connection established.

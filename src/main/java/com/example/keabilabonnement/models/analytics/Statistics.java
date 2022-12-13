@@ -1,6 +1,13 @@
 package com.example.keabilabonnement.models.analytics;
 
 public class Statistics {
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     private double revenue;
     private int availableCars;
     private int unavailableCars;

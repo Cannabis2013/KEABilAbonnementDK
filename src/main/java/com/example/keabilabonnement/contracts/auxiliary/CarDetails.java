@@ -1,6 +1,13 @@
 package com.example.keabilabonnement.contracts.auxiliary;
 
 public interface CarDetails {
+
+    /*
+
+        Authors: Nikki Deleuran - M. Kaan Arici - Stefan Jensen - Martin Hansen
+
+    */
+
     String getBrand();
 
     void setBrand(String brand);

@@ -17,6 +17,12 @@ import java.util.List;
 @Repository
 public class MySQLCarCustomerRepo implements CarCustomerRepository {
 
+    /*
+
+        Author: Nikki Deleuran
+
+    */
+
     public MySQLCarCustomerRepo(CarFactory carFactory, CustomerFactory customerFactory) {
         this.carFactory = carFactory;
         this.customerFactory = customerFactory;

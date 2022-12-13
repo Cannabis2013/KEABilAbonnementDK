@@ -7,6 +7,13 @@ import java.sql.SQLException;
 
 @Service
 public class MySQLRegistrationRemover {
+
+    /*
+
+        Author: Martin Hansen
+
+    */
+
     public boolean remove(String id) {
         try {
             var statement = DBConnection.statement("""

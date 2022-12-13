@@ -9,6 +9,13 @@ import java.sql.SQLException;
 
 @Service
 public class MySQLCarFactory implements CarFactory {
+
+    /*
+
+        Author: M. Kaan Arici
+
+    */
+
     @Override
     public CarDetails buildFromResultSet(ResultSet set) {
         try {

@@ -7,6 +7,13 @@ import com.example.keabilabonnement.contracts.shared.Entity;
 import java.time.LocalDate;
 
 public interface Agreement extends Entity {
+
+    /*
+
+        Authors: Nikki Deleuran - M. Kaan Arici - Stefan Jensen - Martin Hansen
+
+    */
+
     void setId(String id);
     LocalDate getStart();
     void setStart(LocalDate start);

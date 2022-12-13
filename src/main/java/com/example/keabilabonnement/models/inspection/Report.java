@@ -8,6 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Report implements Entity {
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     private String id;
 
     public String getId() {

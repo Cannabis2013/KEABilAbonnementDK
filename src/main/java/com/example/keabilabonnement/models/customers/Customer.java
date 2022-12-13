@@ -3,6 +3,13 @@ package com.example.keabilabonnement.models.customers;
 import com.example.keabilabonnement.contracts.auxiliary.CustomerDetails;
 
 public class Customer implements CustomerDetails {
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     protected String licenseID;
     protected String customerName;
     protected String customerAddress;
