@@ -6,7 +6,6 @@ import com.example.keabilabonnement.contracts.auxiliary.CarFactory;
 import com.example.keabilabonnement.contracts.auxiliary.CustomerFactory;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 import org.springframework.stereotype.Service;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -32,11 +31,13 @@ public class RentalAgreementFactory implements AgreementFactory {
     }
 
     private RentalAgreement buildRentalWithId() {
-        RentalAgreement rentalAgreement = new RentalAgreement();
+        var rentalAgreement = new RentalAgreement();
+        var start = LocalDate.now();
+        var expiration = LocalDate.now().plusMonths(1);
         rentalAgreement.setId(UUID.randomUUID().toString());
-        rentalAgreement.setStart(LocalDate.now());
-        rentalAgreement.setExpiration(LocalDate.now());
-        rentalAgreement.setDelevery(LocalDate.now());
+        rentalAgreement.setStart(start);
+        rentalAgreement.setExpiration(expiration);
+        rentalAgreement.setDelevery(expiration);
         return rentalAgreement;
     }
 

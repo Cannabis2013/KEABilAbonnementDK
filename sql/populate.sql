@@ -24,7 +24,8 @@ values
     ("12345678","Jens Kværner","Kværnergade 22, 2200 København DK","12121212"),
     ("98765432","Martin Hansen","Hyben Alle 56 1.MF, Kastrup, DK","31165870"),
     ("35123342","Elon Musk","Twitter Street 1, Los Angeles, US","24432123"),
-    ("64321345","Jason Watt","Tømmerupvej 105, 2770 Kastrup, DK","32519881");
+    ("64321345","Jason Watt","Tømmerupvej 105, 2770 Kastrup, DK","32519881"),
+    ("45382345","Muraat Kaan","Galatasary Alle 22, 3060 Espergærde, DK","32519881");
 
 insert into RentalAgreement (StartDate, ExpirationDate, DeliveryDate, Payment, Id, CarNumber, CustomerLicense_Id)
 values

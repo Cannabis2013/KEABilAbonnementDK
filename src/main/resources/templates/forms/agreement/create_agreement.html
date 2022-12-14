@@ -20,7 +20,7 @@
   <div th:replace="/fragments/shared/navbar.html :: overviewNavBar"></div>
 
   <div th:replace="/fragments/shared/page_title.html :: title(Lejekontrakt, 'Opret en ny kontrakt')"/>
-  <div th:replace="/forms/agreement/form_fragment.html :: formFragment(${agreement},${cars})"></div>
+  <div th:replace="/forms/agreement/form_fragment.html :: formFragment(${agreement},${cars},${customers})"></div>
 </div>
 </body>
 </html>

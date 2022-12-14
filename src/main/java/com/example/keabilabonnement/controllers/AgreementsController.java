@@ -1,12 +1,11 @@
 package com.example.keabilabonnement.controllers;
 
+import com.example.keabilabonnement.contracts.agreement.Agreement;
 import com.example.keabilabonnement.contracts.agreement.AgreementFactory;
 import com.example.keabilabonnement.contracts.agreement.AgreementRepository;
-import com.example.keabilabonnement.contracts.agreement.Agreement;
 import com.example.keabilabonnement.contracts.auxiliary.CarCustomerRepository;
-import com.example.keabilabonnement.contracts.auxiliary.CarDetails;
+import com.example.keabilabonnement.contracts.inspection.InspectionRepository;
 import com.example.keabilabonnement.contracts.shared.RepositoryUpdateException;
-import com.example.keabilabonnement.contracts.inspection.*;
 import com.example.keabilabonnement.contracts.statistics.StatisticsService;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
@@ -18,8 +17,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
 @Controller
 public class AgreementsController {
 
@@ -28,7 +25,6 @@ public class AgreementsController {
         Authors: Martin Hansen - Stefan Jensen
 
     */
-
 
     public AgreementsController(AgreementRepository repository, InspectionRepository inspectionRepository, MySQLStatisticsService statisticsRepository, AgreementFactory agreementFactory, CarCustomerRepository auxiliary) {
         this.agreementRepository = repository;
@@ -56,11 +52,13 @@ public class AgreementsController {
     @GetMapping("/rental/new")
     public String newRental(Model model) {
         RentalAgreement agreement = agreementFactory.empty();
-        List<CarDetails> cars = auxiliary.getCars();
+        var cars = auxiliary.getCars();
+        var customers = auxiliary.getCustomers();
         if(cars.isEmpty())
             return "no_cars_available";
         model.addAttribute("agreement", agreement);
         model.addAttribute("cars", cars);
+        model.addAttribute("customers",customers);
         return "/forms/agreement/create_agreement";
     }
 
