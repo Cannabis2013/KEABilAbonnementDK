@@ -4,6 +4,13 @@ import com.example.keabilabonnement.contracts.auxiliary.CarDetails;
 import com.example.keabilabonnement.models.customers.Customer;
 
 public class RentalCar extends Customer implements CarDetails {
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     protected String carNumber;
     protected String vin;
     protected int year;

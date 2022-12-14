@@ -1,10 +1,18 @@
 package com.example.keabilabonnement.models.registration;
 
 import com.example.keabilabonnement.contracts.agreement.Agreement;
+import com.example.keabilabonnement.contracts.shared.Entity;
 import com.example.keabilabonnement.models.cars.RentalCar;
 import java.time.LocalDate;
 
 public final class RentalAgreement extends RentalCar implements Agreement {
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     private String id;
 
     @Override

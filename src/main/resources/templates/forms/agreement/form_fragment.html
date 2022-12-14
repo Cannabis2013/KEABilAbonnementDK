@@ -1,0 +1,50 @@
+<!-- Author: Martin Hansen -->
+
+<div th:fragment="formFragment(agreement,cars,customers)" xmlns:th="http://www.thymeleaf.org">
+  <form action="#"
+        th:action="@{/rental/new}"
+        method="post"
+        th:object="${agreement}">
+    <input th:field="*{id}" type="hidden">
+    <input th:field="*{vin}" type="hidden">
+    <div class="form form-grid">
+      <div class="ipts-row ipts-row-dims">
+        <label class="ipt-label default-font" for="customers">Kørekort nummer</label>
+        <select th:field="*{licenseID}" id="customers" class="form-ipt">
+          <option th:each="customer : ${customers}"
+                  th:value="${customer.getLicenseID()}"
+                  th:text="${customer.getLicenseID()+' ('+customer.getCustomerName()+')'}">></option>
+        </select>
+      </div>
+      <div class="ipts-row ipts-row-dims">
+        <label class="ipt-label default-font">Start dato</label>
+        <input th:value="${agreement.getStart().toString()}" type="date" id="start" name="start" class="form-ipt">
+      </div>
+      <div class="ipts-row ipts-row-dims">
+        <label class="ipt-label default-font" for="cars">Vognnummer</label>
+        <select th:field="*{carNumber}" id="cars" class="form-ipt">
+          <option th:each="car : ${cars}"
+                  th:value="${car.getInternalNumber()}"
+                  th:text="${
+                  car.getInternalNumber()+' ('+car.getBrand()+' '+ car.getModel()+')'}">></option>
+        </select>
+      </div>
+      <div class="ipts-row ipts-row-dims">
+        <label class="ipt-label default-font" for="expiration">Slut dato</label>
+        <input th:value="${agreement.getExpiration().toString()}"id="expiration" name="expiration" type="date" class="form-ipt">
+      </div>
+      <div class="ipts-row ipts-row-dims">
+        <label class="ipt-label default-font" for="payment">Månedlig ydelse</label>
+        <input placeholder="3499" id="payment" name="payment" type="number" class="form-ipt">
+      </div>
+      <div class="ipts-row ipts-row-dims">
+        <label class="ipt-label default-font" for="delevery">Afleverings dato</label>
+        <input th:value="${agreement.getDelevery().toString()}"id="delevery" name="delevery" type="date" class="form-ipt">
+      </div>
+    </div>
+    <div class="btn-flex">
+      <div th:replace="/fragments/shared/cancel_button.html :: cancelButton('/overview')"></div>
+      <div th:replace="/fragments/shared/submit_button.html"></div>
+    </div>
+  </form>
+</div>

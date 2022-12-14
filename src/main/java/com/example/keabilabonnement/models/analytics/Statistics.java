@@ -1,10 +1,16 @@
 package com.example.keabilabonnement.models.analytics;
 
 public class Statistics {
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     private double revenue;
-    private int activeSubscriptions;
-    private int inactiveSubscription;
-    private int total;
+    private int availableCars;
+    private int unavailableCars;
 
     public double getRevenue() {
         return revenue;
@@ -14,27 +20,20 @@ public class Statistics {
         this.revenue = revenue;
     }
 
-    public int getActiveSubscriptions() {
-        return activeSubscriptions;
+    public int getAvailableCars() {
+        return availableCars;
     }
 
-    public void setActiveSubscriptions(int activeSubscriptions) {
-        this.activeSubscriptions = activeSubscriptions;
+    public void setAvailableCars(int availableCars) {
+        this.availableCars = availableCars;
     }
 
-    public int getInactiveSubscription() {
-        return inactiveSubscription;
+    public int getUnavailableCars() {
+        return unavailableCars;
     }
 
-    public void setInactiveSubscription(int inactiveSubscription) {
-        this.inactiveSubscription = inactiveSubscription;
+    public void setUnavailableCars(int unavailableCars) {
+        this.unavailableCars = unavailableCars;
     }
 
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
-    }
 }

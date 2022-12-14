@@ -11,6 +11,13 @@ import java.util.List;
 @Repository
 public class MySQLInspectionRepo implements InspectionRepository {
 
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
+
     private final MySQLInspectionAdder inspectionAdder;
     private final MySQLInspections inspections;
     private final DbInspectionRemover inspectionRemover;
@@ -58,7 +65,7 @@ public class MySQLInspectionRepo implements InspectionRepository {
         return inspectionUpdater.update(report);
     }
 
-    public MySQLInspectionRepo(MySQLInspectionAdder inspectionAdder, MySQLInspections inspections, DbInspectionRemover inspectionRemover, MySQLInspectionUpdater_imp1 inspectionUpdater) {
+    public MySQLInspectionRepo(MySQLInspectionAdder inspectionAdder, MySQLInspections inspections, DbInspectionRemover inspectionRemover, MySQLInspectionUpdater inspectionUpdater) {
         this.inspectionAdder = inspectionAdder;
         this.inspections = inspections;
         this.inspectionRemover = inspectionRemover;

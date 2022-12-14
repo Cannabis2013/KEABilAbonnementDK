@@ -1,12 +1,20 @@
 package com.example.keabilabonnement.models.inspection;
 
+import com.example.keabilabonnement.contracts.shared.Entity;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Report {
+public class Report implements Entity {
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     private String id;
 
     public String getId() {

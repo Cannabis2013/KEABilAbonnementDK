@@ -10,6 +10,13 @@ import java.sql.SQLException;
 
 @Service
 public class MySQLCustomerFactory implements CustomerFactory {
+
+    /*
+
+        Author: Nikki Deleuran
+
+    */
+
     @Override
     public CustomerDetails buildFromResultSet(ResultSet set) {
         try {

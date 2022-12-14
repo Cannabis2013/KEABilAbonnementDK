@@ -13,12 +13,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MySQLRegistrations {
-    public MySQLRegistrations(AgreementFactory rentalAgreementFactory) {
+public class MySQLAgreements {
+
+    /*
+        Author: Stefan Jensen
+    */
+
+    public MySQLAgreements(AgreementFactory rentalAgreementFactory) {
         this.rentalAgreementFactory = rentalAgreementFactory;
     }
 
-    public Agreement  getRegistration(String id){
+    public Agreement getAgreement(String id){
         String sql = """
                 SELECT *
                 FROM RentalAgreement
@@ -29,22 +34,19 @@ public class MySQLRegistrations {
                 WHERE Id=?;
                 """;
         try {
-            // RentalAgreement - Car - Customer
             PreparedStatement statement = DBConnection.statement(sql);
             statement.setString(1, id);
             ResultSet set = statement.executeQuery();
-            RentalAgreement agreement = new RentalAgreement();
-            while (set.next())
-                agreement = rentalAgreementFactory.fromResultSet(set);
-            return agreement;
+            return rentalAgreementFactory.agreementFromResultSet(set);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return null;
     }
-    public List<Agreement> getAllRegistrations(){
-        List<Agreement > rentalAgreements = new ArrayList<>();
+
+
+    public List<Agreement> getAllAgreements(){
         String sql = """
                 SELECT *
                 FROM RentalAgreement
@@ -53,19 +55,10 @@ public class MySQLRegistrations {
                 INNER JOIN Customer
                 ON RentalAgreement.CustomerLicense_Id = Customer.License_Id;
                 """;
-        try {
-            PreparedStatement query = DBConnection.statement(sql);
-            ResultSet set = query.executeQuery();
-            while (set.next()) {
-                rentalAgreements.add(rentalAgreementFactory.fromResultSet(set));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return rentalAgreements;
+        return agreementsFromDatabase(sql);
     }
-    public List<Agreement > getAllActiveRegistrations(){
-        List<Agreement > rentalAgreements = new ArrayList<>();
+
+    public List<Agreement > getAllActiveAgreements(){
         String sql = """
                 SELECT *
                 FROM RentalAgreement
@@ -73,18 +66,20 @@ public class MySQLRegistrations {
                 ON RentalAgreement.CarNumber = Car.Number
                 INNER JOIN Customer
                 ON RentalAgreement.CustomerLicense_Id = Customer.License_Id
-                WHERE NOW() < ExpirationDate;
+                WHERE STARTDATE < NOW() AND NOW() < ExpirationDate;
                 """;
+        return agreementsFromDatabase(sql);
+    }
+
+    private List<Agreement> agreementsFromDatabase(String sql) {
         try {
             PreparedStatement query = DBConnection.statement(sql);
             ResultSet set = query.executeQuery();
-            while (set.next()) {
-                rentalAgreements.add(rentalAgreementFactory.fromResultSet(set));
-            }
+            return rentalAgreementFactory.agreementsFromResultSet(set);
         } catch (SQLException e) {
             e.printStackTrace();
+            return new ArrayList<>();
         }
-        return rentalAgreements;
     }
 
     private final AgreementFactory rentalAgreementFactory;

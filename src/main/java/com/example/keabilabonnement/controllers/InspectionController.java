@@ -17,6 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class InspectionController {
 
+    /*
+
+        Authors: Nikki Deleuran - M. Kaan Arici
+
+    */
+
     public InspectionController(AgreementRepository repository, CarCustomerRepository auxiliary, InspectionRepository inspectionRepository, AgreementFactory agreementFactory, DamageReportFactory damageReportFactory) {
         this.repository = repository;
         this.auxiliary = auxiliary;
@@ -31,7 +37,7 @@ public class InspectionController {
         Damage damage = damageReportFactory.emptyDamage();
         model.addAttribute("damageReport", damageReport);
         model.addAttribute("damage", damage);
-        return "/forms/createDamage";
+        return "/forms/damage/createDamage";
     }
 
     @PostMapping("/report/damage/new")
@@ -60,10 +66,6 @@ public class InspectionController {
         }
         return "redirect:err";
     }
-
-
-
-
 
     private final AgreementRepository repository;
     private final CarCustomerRepository auxiliary;

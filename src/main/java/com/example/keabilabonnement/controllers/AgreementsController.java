@@ -1,16 +1,15 @@
 package com.example.keabilabonnement.controllers;
 
+import com.example.keabilabonnement.contracts.agreement.Agreement;
 import com.example.keabilabonnement.contracts.agreement.AgreementFactory;
 import com.example.keabilabonnement.contracts.agreement.AgreementRepository;
-import com.example.keabilabonnement.contracts.agreement.Agreement;
 import com.example.keabilabonnement.contracts.auxiliary.CarCustomerRepository;
-import com.example.keabilabonnement.contracts.auxiliary.CarDetails;
+import com.example.keabilabonnement.contracts.inspection.InspectionRepository;
 import com.example.keabilabonnement.contracts.shared.RepositoryUpdateException;
-import com.example.keabilabonnement.contracts.inspection.*;
-import com.example.keabilabonnement.contracts.statistics.StatisticsRepository;
+import com.example.keabilabonnement.contracts.statistics.StatisticsService;
 import com.example.keabilabonnement.models.inspection.Report;
 import com.example.keabilabonnement.models.registration.RentalAgreement;
-import com.example.keabilabonnement.repository.mysql.statistics.MySQLStatisticsRepository;
+import com.example.keabilabonnement.repository.mysql.statistics.MySQLStatisticsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,15 +17,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
-/*
-    Implemented by group
- */
-
 @Controller
 public class AgreementsController {
-    public AgreementsController(AgreementRepository repository, InspectionRepository inspectionRepository, MySQLStatisticsRepository statisticsRepository, AgreementFactory agreementFactory, CarCustomerRepository auxiliary) {
+
+    /*
+
+        Authors: Martin Hansen - Stefan Jensen
+
+    */
+
+    public AgreementsController(AgreementRepository repository, InspectionRepository inspectionRepository, MySQLStatisticsService statisticsRepository, AgreementFactory agreementFactory, CarCustomerRepository auxiliary) {
         this.agreementRepository = repository;
         this.inspectionRepository = inspectionRepository;
         this.statisticsRepository = statisticsRepository;
@@ -52,10 +52,14 @@ public class AgreementsController {
     @GetMapping("/rental/new")
     public String newRental(Model model) {
         RentalAgreement agreement = agreementFactory.empty();
-        List<CarDetails> cars = auxiliary.getCars();
+        var cars = auxiliary.getCars();
+        var customers = auxiliary.getCustomers();
+        if(cars.isEmpty())
+            return "no_cars_available";
         model.addAttribute("agreement", agreement);
         model.addAttribute("cars", cars);
-        return "/forms/create_agreement";
+        model.addAttribute("customers",customers);
+        return "/forms/agreement/create_agreement";
     }
 
     @PostMapping("/rental/new")
@@ -74,7 +78,7 @@ public class AgreementsController {
         Report report = inspectionRepository.getReportByRental(rentalId);
         model.addAttribute("agreement", agreement);
         model.addAttribute("report", report);
-        return "single_rental_view";
+        return "agreement_details";
     }
 
     @DeleteMapping("/rental/delete")
@@ -89,7 +93,7 @@ public class AgreementsController {
 
     private final AgreementRepository agreementRepository;
     private final InspectionRepository inspectionRepository;
-    private final StatisticsRepository statisticsRepository;
+    private final StatisticsService statisticsRepository;
     private final AgreementFactory agreementFactory;
     private final CarCustomerRepository auxiliary;
 }

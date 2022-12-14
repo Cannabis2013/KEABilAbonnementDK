@@ -1,3 +1,6 @@
+<!--
+    Authors: M. Kaan Arici - Nikki Deleuran - Martin Hansen
+-->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -16,12 +19,12 @@
 <body>
     <div class="container">
         <!--    Import navbar fragment    -->
-        <div th:insert="/fragments/navbar.html :: overviewNavBar"></div>
+        <div th:insert="/fragments/shared/navbar.html :: overviewNavBar"></div>
         <!--    Import page title fragment    -->
 
         <div th:replace="/fragments/overview/annual_revenue.html :: annualRevenue(${statistics.getRevenue()})"></div>
         <!--    Price for cars   -->
-        <div th:replace="/fragments/overview/filterSearch.html :: filterSearch(${statistics.getActiveSubscriptions()}, ${statistics.getInactiveSubscription()})"></div>
+        <div th:replace="/fragments/overview/filterSearch.html :: filterSearch(${statistics.getAvailableCars()}, ${statistics.getUnavailableCars()})"></div>
 
         <br>
         <br>

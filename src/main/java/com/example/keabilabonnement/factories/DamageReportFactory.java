@@ -11,6 +11,13 @@ import java.util.UUID;
 
 @Service
 public class DamageReportFactory {
+
+    /*
+
+        Author: Stefan Jensen
+
+    */
+
     public Report emptyReport() {
         Report report = new Report();
         report.setId(UUID.randomUUID().toString());
@@ -29,7 +36,7 @@ public class DamageReportFactory {
         Damage damage = new Damage();
         String id = set.getString("Damage.id");
         // If id is not set, we can assume the rest of the damage values are null as well
-        // as damage for the specific report does not exist then.
+        // As damage for the specific report does not exist then.
         if (id == null)
             return null;
         damage.setId(set.getString("Damage.Id"));

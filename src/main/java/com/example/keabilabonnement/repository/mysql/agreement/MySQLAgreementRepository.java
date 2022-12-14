@@ -8,7 +8,14 @@ import java.util.List;
 
 @Repository
 public class MySQLAgreementRepository implements AgreementRepository {
-    public MySQLAgreementRepository(MySQLRegistrationAdder adder, MySQLRegistrations registrations, MySQLRegistrationRemover remover) {
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
+    public MySQLAgreementRepository(AgreementPersistence adder, MySQLAgreements registrations, MySQLRegistrationRemover remover) {
         this.adder = adder;
         this.registrations = registrations;
         this.remover = remover;
@@ -28,20 +35,20 @@ public class MySQLAgreementRepository implements AgreementRepository {
 
     @Override
     public Agreement getAgreement(String id) {
-        return registrations.getRegistration(id);
+        return registrations.getAgreement(id);
     }
 
     @Override
     public List<Agreement> getAllRegistrations() {
-        return registrations.getAllRegistrations();
+        return registrations.getAllAgreements();
     }
 
     @Override
     public List<Agreement > getActiveAgreements() {
-        return registrations.getAllActiveRegistrations();
+        return registrations.getAllActiveAgreements();
     }
 
-    private final MySQLRegistrationAdder adder;
-    private final MySQLRegistrations registrations;
+    private final AgreementPersistence adder;
+    private final MySQLAgreements registrations;
     private final MySQLRegistrationRemover remover;
 }

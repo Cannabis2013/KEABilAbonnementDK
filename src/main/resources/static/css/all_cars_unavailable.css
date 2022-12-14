@@ -3,6 +3,16 @@
     Author: Martin Hansen
 
 */
+.ua-dims{
+    width: 100%;
+}
+
+.ua-grid{
+    display: grid;
+    grid-auto-flow: row;
+    gap:15px;
+}
+
 .submit-btn{
     width: 128px;
     height: 48px;
@@ -11,7 +21,6 @@
     border: 3px solid #3F455B;
     border-radius: 20px;
     color: white;
-    align-self: end;
 }
 
 

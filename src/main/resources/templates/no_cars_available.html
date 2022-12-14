@@ -1,0 +1,30 @@
+
+<!-- Author: Martin Hansen-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" th:href="@{/css/global.css}"/>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}"/>
+    <link rel="stylesheet" th:href="@{/css/all_cars_unavailable.css}"/>
+</head>
+<body>
+  <div class="container">
+      <div th:insert="/fragments/shared/navbar.html :: overviewNavBar"></div>
+      <br><br>
+      <div class="ua-dims ua-grid">
+          <h1 style="color: white">Alle biler er desværre udlejet for tiden.</h1>
+          <p></p>
+          <form style="width: min-content;">
+              <button class="submit-btn submit-btn-flex" th:formaction="@{/overview}" th:formmethod="get">
+                  <img width="20px" style="border-radius: 9px;"  th:src="@{/images/cancel_icon.png}">
+                  Gå tilbage
+              </button>
+          </form>
+      </div>
+  </div>
+</body>
+</html>

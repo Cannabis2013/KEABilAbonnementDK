@@ -1,9 +1,11 @@
+<!-- Author: Martin Hansen -->
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <link href="../../static/css/global.css">
+  <link href="../../../static/css/global.css">
   <link rel="stylesheet" th:href="@{/css/global.css}"/>
   <link rel="stylesheet" th:href="@{/css/create_registration.css}"/>
   <link rel="stylesheet" th:href="@{/css/navbar.css}"/>
@@ -15,10 +17,10 @@
   <!-- Top panel section
   <top fragment>
   -->
-  <div th:replace="/fragments/navbar.html :: overviewNavBar"></div>
+  <div th:replace="/fragments/shared/navbar.html :: overviewNavBar"></div>
 
-  <div th:replace="/fragments/page_title.html :: title(Lejekontrakt, 'Opret en ny kontrakt')"/>
-  <div th:replace="/forms/form_fragment.html :: formFragment(${agreement},${cars})"></div>
+  <div th:replace="/fragments/shared/page_title.html :: title(Lejekontrakt, 'Opret en ny kontrakt')"/>
+  <div th:replace="/forms/agreement/form_fragment.html :: formFragment(${agreement},${cars},${customers})"></div>
 </div>
 </body>
 </html>

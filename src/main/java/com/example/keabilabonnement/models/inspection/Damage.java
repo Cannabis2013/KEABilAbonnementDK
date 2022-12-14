@@ -3,7 +3,19 @@ package com.example.keabilabonnement.models.inspection;
 import java.time.LocalDate;
 
 public class Damage{
+
+    /*
+
+        Authors: Martin Hansen - Nikki Deleuran - M. Kaan Arici - Stefan Jensen
+
+    */
+
     private String id;
+    private String type;
+    private String description;
+    private LocalDate date;
+    private double cost;
+    private String reportID;
 
     public String getId() {
         return id;
@@ -11,20 +23,6 @@ public class Damage{
 
     public void setId(String id) {
         this.id = id;
-    }
-    private String type;
-    private String description;
-    private LocalDate date;
-    private double cost;
-    private String reportID;
-
-
-    public String getReportID() {
-        return reportID;
-    }
-
-    public void setReportID(String reportID) {
-        this.reportID = reportID;
     }
 
     public String getType() {
@@ -58,4 +56,13 @@ public class Damage{
     public void setCost(double cost) {
         this.cost = cost;
     }
+
+    public String getReportID() {
+        return reportID;
+    }
+
+    public void setReportID(String reportID) {
+        this.reportID = reportID;
+    }
+
 }
