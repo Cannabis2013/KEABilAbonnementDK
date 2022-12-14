@@ -65,7 +65,7 @@ public class MySQLInspectionRepo implements InspectionRepository {
         return inspectionUpdater.update(report);
     }
 
-    public MySQLInspectionRepo(MySQLInspectionAdder inspectionAdder, MySQLInspections inspections, DbInspectionRemover inspectionRemover, MySQLInspectionUpdater_imp1 inspectionUpdater) {
+    public MySQLInspectionRepo(MySQLInspectionAdder inspectionAdder, MySQLInspections inspections, DbInspectionRemover inspectionRemover, MySQLInspectionUpdater inspectionUpdater) {
         this.inspectionAdder = inspectionAdder;
         this.inspections = inspections;
         this.inspectionRemover = inspectionRemover;

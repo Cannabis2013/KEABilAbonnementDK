@@ -36,6 +36,7 @@ public class RentalAgreementFactory implements AgreementFactory {
         rentalAgreement.setId(UUID.randomUUID().toString());
         rentalAgreement.setStart(LocalDate.now());
         rentalAgreement.setExpiration(LocalDate.now());
+        rentalAgreement.setDelevery(LocalDate.now());
         return rentalAgreement;
     }
 

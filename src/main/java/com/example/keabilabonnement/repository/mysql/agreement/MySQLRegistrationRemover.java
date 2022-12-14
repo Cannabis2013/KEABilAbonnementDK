@@ -4,8 +4,6 @@ import com.example.keabilabonnement.services.db.DBConnection;
 import org.springframework.stereotype.Service;
 import java.sql.SQLException;
 
-// Implemented by Martin Hansen
-
 @Service
 public class MySQLRegistrationRemover {
 
