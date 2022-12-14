@@ -13,17 +13,17 @@ public class MySQLInspectionUpdater implements InspectionUpdater {
 
     */
 
-    private final MySQLInspectionAdder adder;
-    private final DbInspectionRemover remover;
+    private final MySQLInspectionAdder damageAdder;
+    private final DbInspectionRemover damageRemover;
 
     public MySQLInspectionUpdater(MySQLInspectionAdder adder, DbInspectionRemover remover) {
-        this.adder = adder;
-        this.remover = remover;
+        this.damageAdder = adder;
+        this.damageRemover = remover;
     }
 
+    //A primitive update method that first deletes the damage to make new one.
     public boolean update(Report report) {
-        //Report parameter is still here but report in DB is empty.
-        return remover.remove(report.getId()) && adder.add(report);
+        return damageRemover.remove(report.getId()) && damageAdder.add(report);
     }
 
 }
