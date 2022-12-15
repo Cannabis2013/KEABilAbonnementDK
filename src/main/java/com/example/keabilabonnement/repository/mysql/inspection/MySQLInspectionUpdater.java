@@ -16,13 +16,11 @@ public class MySQLInspectionUpdater implements InspectionUpdater {
 
     private final MySQLInspectionAdder adder;
     private final DbInspectionRemover remover;
-    private final MySQLInspections finder;
 
 
-    public MySQLInspectionUpdater(MySQLInspectionAdder adder, DbInspectionRemover remover, MySQLInspections finder) {
+    public MySQLInspectionUpdater(MySQLInspectionAdder adder, DbInspectionRemover remover) {
         this.adder = adder;
         this.remover = remover;
-        this.finder = finder;
     }
 
     //A primitive damage update method that first deletes and then adds.
@@ -54,27 +52,5 @@ public class MySQLInspectionUpdater implements InspectionUpdater {
         }
         return true;
     }
-
-
-    /*public boolean update(Report report) {
-        String rentalID = report.getRentalId();
-        damage.getInspectionByRental(rentalID);
-        try{
-            damageRemover.remove(report.getId());
-            damageAdder.add(report);
-        } catch (Exception e) {
-            System.out.println("Damage Update Fail.");
-            e.printStackTrace();
-            return false;
-        }
-        return true;
-    }*/
-
-/*    public boolean update(Report report) {
-        String rentalID = report.getRentalId();
-        damage.getInspectionByRental(rentalID);
-        return damageRemover.remove(report.getId()) && damageAdder.add(report);
-    }*/
-
 }
 
