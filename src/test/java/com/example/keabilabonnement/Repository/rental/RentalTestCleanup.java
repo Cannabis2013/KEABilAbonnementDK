@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 
+// Author: Martin Hansen
+
 @Service
 public class RentalTestCleanup {
     public void cleanUp(){
