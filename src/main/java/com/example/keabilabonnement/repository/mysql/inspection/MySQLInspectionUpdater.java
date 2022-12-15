@@ -25,7 +25,7 @@ public class MySQLInspectionUpdater implements InspectionUpdater {
         this.finder = finder;
     }
 
-    //A primitive damage update method that 1st deletes and then adds.
+    //A primitive damage update method that first deletes and then adds.
     @Override
     public boolean updateDamage(Damage damage) {
         String id = damage.getId();
@@ -40,7 +40,7 @@ public class MySQLInspectionUpdater implements InspectionUpdater {
         return true;
     }
 
-    //A primitive update method that 1st deletes and then adds a new report.
+    //A primitive update method that first deletes and then adds a new report.
     @Override
     public boolean update(Report report) {
         String reportId = report.getId();

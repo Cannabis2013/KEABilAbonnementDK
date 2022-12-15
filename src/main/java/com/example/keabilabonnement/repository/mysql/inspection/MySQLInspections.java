@@ -28,25 +28,6 @@ public class MySQLInspections {
         this.damageFactory = damageFactory;
     }
 
-    public Damage getDamageById (String id){
-        Damage damage = new Damage();
-        damage.setId(id);
-        String sql = """
-                SELECT *
-                FROM Damage
-                WHERE id=?
-                """;
-        try{
-            PreparedStatement query = DBConnection.statement(sql);
-            query.setString(1, id);
-            ResultSet set = query.executeQuery();
-            return damageFactory.damageFromResultSet(set);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     public Report getInspectionByRental(String rentalID) {
         String sql = """
                 SELECT *
