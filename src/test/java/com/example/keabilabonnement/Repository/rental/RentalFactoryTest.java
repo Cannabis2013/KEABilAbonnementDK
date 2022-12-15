@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.UUID;
 
+// Author: Martin Hansen
 @Service
 class RentalFactoryTest {
     public RentalAgreement rentalOne(){
