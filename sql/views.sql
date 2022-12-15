@@ -3,7 +3,10 @@ SELECT SUM(Payment) AS Revenue FROM bilabonnement.RentalAgreement ra;
 
 CREATE VIEW AvailableCars AS
 SELECT c.Brand, c.Year, c.Model, c.VIN, c.Number FROM Car c
-LEFT JOIN RentalAgreement ra on ra.CarNumber = c.Number
+LEFT JOIN (
+	select * from rentalagreement ra1
+	where ra1.StartDate < now() and ra1.ExpirationDate > now()
+) ra on ra.CarNumber = c.Number
 WHERE CarNumber IS NULL;
 
 CREATE VIEW ActiveAgreements
@@ -17,6 +20,9 @@ LEFT JOIN ActiveAgreements ra on ra.CarNumber = c.Number
 WHERE CarNumber IS null;
 
 CREATE VIEW NumberOfUnavailableCars AS
-SELECT COUNT(*) 'Unavailable' FROM Car c
-LEFT JOIN RentalAgreement ra on ra.CarNumber = c.Number
+SELECT count(*) 'UnAvailable' FROM Car c
+LEFT JOIN (
+	select * from rentalagreement ra1
+	where ra1.StartDate < now() and ra1.ExpirationDate > now()
+) ra on ra.CarNumber = c.Number
 WHERE CarNumber != "";
